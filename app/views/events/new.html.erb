@@ -1,0 +1,27 @@
+<div class="">
+
+	<%= form_tag('/events', method: :post) do %>
+	<h2>
+		投稿する
+	</h2>
+	<span>日付（必須）</span><input type="date" name="event_date"><br/>
+	<input type="text" name="prefecture" placeholder="都道府県（必須）"><br/>
+	<input type="text" name="court" placeholder="テニスコート"><br/>
+	<input type="text" name="court_url" placeholder="URL"><br/>
+	<input type="text" name="meeting_place" placeholder="集合場所（必須）"><br/>
+	<span>集合時間（必須）</span><input type="time" name="meeting_time" step="300"><br/>
+	<textarea cols="30" name="access" placeholder="アクセス" rows="5"></textarea><br/>
+	参加費：<input type="number" min="1" max="9999" name="budget">円
+		<br>
+	<input type="integer" name="max_member" placeholder="募集人数">人<br/>
+	<input type="integer" name="joining" placeholder="参加人数">人<br/>
+	<textarea cols="30" name="remarks" placeholder="備考" rows="10"></textarea><br/>
+	ラケット：
+		<input type="radio" name="racket" value="1" checked>持参
+		<input type="radio" name="racket" value="2">有料レンタル
+		<input type="radio" name="racket" value="3">無料レンタル
+		<br>
+	<!-- カレントユーザーID -->
+    <input type="submit" value="投稿">
+	<% end %>
+</div>

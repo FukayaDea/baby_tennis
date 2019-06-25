@@ -1,0 +1,54 @@
+<div class="contents">
+
+    <div class="post">
+		投稿者：<a href="/users/<%= @event.user.id %>"><%= @event.user.nickname %></a><br>
+		日付：<%= @event.event_date %><br>
+		エリア：<%= @event.prefecture %><br>
+		コート：<%= @event.court %><br>
+		URL：<%= @event.court_url %><br>
+		集合場所：<%= @event.meeting_place %><br>
+		集合時間：<%= @event.meeting_time %><br>
+		アクセル：<%= @event.access %><br>
+		参加費：<%= @event.budget %>円<br>
+		募集人数：<%= @event.max_member %>人<br>
+		参加人数：<%= @event.joining %>人<br>
+		<% if @event.racket == 1 %>
+		  ラケット：持参<br>
+		<% elsif @event.racket == 2 %>
+		  ラケット：有料レンタル<br>
+		<% else %>
+		  ラケット：無料レンタル<br>
+		<% end %>
+		備考：<%= simple_format(@event.remarks) %>
+	</div>
+
+	<% if user_signed_in? && @event.user.id != current_user.id %>	
+	<div>
+		<%= form_tag(groups_path, method: :post) do %>
+		  <%= hidden_field_tag(:event_id, @event.id) %>
+		  <%= submit_tag("参加する", class: 'btn') %>
+		<% end %>
+	</div>
+	<% end %>
+
+    <div class="comments">
+		<%= form_tag(new_comment_path, method: :get) do %>
+		  <%= hidden_field_tag(:event_id, @event.id) %>
+		  <%= submit_tag("コメントする", class: 'btn') %>
+		<% end %>
+	    <p>コメント欄</p>
+		<% @event.comments.each do |comment| %>
+		  <a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a><br>
+		  <%= comment.text %><br>
+		  <% if user_signed_in? && comment.user.id == current_user.id %>
+		    <%= link_to '削除', "/comments/#{comment.id}", method: :delete %><br>
+		  <% end %>
+		<% end %>
+		
+		<% if user_signed_in? && @event.user.id == current_user.id %>
+		<%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
+	    <%= link_to '削除', "/events/#{@event.id}", method: :delete %><br>
+	    <% end %>
+    </div>
+	<a class="btn" href="/">TOPへ戻る</a>
+</div>

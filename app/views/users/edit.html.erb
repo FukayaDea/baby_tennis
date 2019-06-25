@@ -1,0 +1,15 @@
+<div>
+	<%= form_for current_user do |f| %>
+	
+      <div class="form-group file">
+      	<h2>プロフィール画像</h2>
+        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
+	    <h2>登録情報</h2>
+		<%= f.text_field :nickname, placeholder: "ニックネーム" %><br>
+		<%= f.text_field :career, placeholder: "テニス歴" %> <br>
+		<%= f.text_field :play_erea, placeholder: "活動エリア" %><br>
+		<%= f.text_field :profile, placeholder: "自己紹介" %><br>
+		<%= f.submit "編集", class: 'btn' %>
+	</div>
+	<% end %>
+</div>
