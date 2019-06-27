@@ -1,7 +1,13 @@
 <div class="contents ">
+<!-- 検索 -->
   <div class="search">
-    <p>検索</p>
+    <p>エリア検索</p>
+    <%= form_tag(search_path, method: :get ) do %>
+      <%= text_field_tag :keyword %>
+      <%= submit_tag 'Search', :name => nil %>
+    <% end %>
   </div>
+
   <div class="main">
     <% @events.each do |event| %>
     <div class="content_post">
@@ -14,7 +20,7 @@
       日時：<%= event.event_date %><br>
       エリア：<%= event.prefecture %><br>
       集合場所：<%= event.meeting_place %><br>
-      集合時間：<%= event.meeting_time %><br>
+      集合時間：<%= event.meeting_time.strftime("%H時%M分") %><br>
       コメント<%= event.comments.count %>件<br>
 
       <%= link_to '詳細', "/events/#{event.id}", method: :get %>

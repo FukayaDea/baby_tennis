@@ -7,11 +7,11 @@
 		コート：<%= @event.court %><br>
 		URL：<%= @event.court_url %><br>
 		集合場所：<%= @event.meeting_place %><br>
-		集合時間：<%= @event.meeting_time %><br>
-		アクセル：<%= @event.access %><br>
+		集合時間：<%= @event_time %><br>
+		アクセス：<%= @event.access %><br>
 		参加費：<%= @event.budget %>円<br>
 		募集人数：<%= @event.max_member %>人<br>
-		参加人数：<%= @event.joining %>人<br>
+		参加人数：<%= @groups.count %>人<br>
 		<% if @event.racket == 1 %>
 		  ラケット：持参<br>
 		<% elsif @event.racket == 2 %>
@@ -20,14 +20,19 @@
 		  ラケット：無料レンタル<br>
 		<% end %>
 		備考：<%= simple_format(@event.remarks) %>
+		<%= link_to '参加者', group_path, method: :get %><br>
 	</div>
 
 	<% if user_signed_in? && @event.user.id != current_user.id %>	
 	<div>
-		<%= form_tag(groups_path, method: :post) do %>
-		  <%= hidden_field_tag(:event_id, @event.id) %>
-		  <%= submit_tag("参加する", class: 'btn') %>
+        <% unless @groups.exists?(user_id: current_user.id) %>
+
+			<%= form_tag(groups_path, method: :post) do %>
+			  <%= hidden_field_tag(:event_id, @event.id) %>
+			  <%= submit_tag("参加する", class: 'btn') %>
+			<% end %>    
 		<% end %>
+
 	</div>
 	<% end %>
 

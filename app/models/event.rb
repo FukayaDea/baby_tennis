@@ -9,7 +9,7 @@ class Event < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_one :feed_content, as: :content, dependent: :destroy
      # グループテーブル リレーション
-    has_one :group
+    has_many :groups
 
     def user_comment(user_id)
     	Comment.find_by(user_id: user_id, event_id: id)
@@ -21,6 +21,6 @@ class Event < ApplicationRecord
     end
 
     def create_group
-    	self.group = Group.create(event_id: id, user_id: user.id )
+    	Group.create(event_id: id, user_id: user.id )
     end
 end

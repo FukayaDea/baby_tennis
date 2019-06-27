@@ -1,0 +1,8 @@
+<% @groups.each do |group| %>
+	<a href="/users/<%= group.user.id %>"><%= group.user.nickname %></a>さん<br>
+	  <% if user_signed_in? &&  group.user.id == current_user.id && unless group.event.user_id == current_user.id %>
+	    <%= link_to '参加をやめる', "/groups/#{group.id}", method: :delete %><br>
+	  <% end %>
+	  <% end %>
+
+<% end %>

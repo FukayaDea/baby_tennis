@@ -25,7 +25,9 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])
+		@event_time = @event.meeting_time.strftime("%H時%M分")
 		@comments = @event.comments
+		@groups = Group.where(event_id: params[:id])
 	end
 
 	def destroy
@@ -34,9 +36,12 @@ class EventsController < ApplicationController
 		redirect_to action: :index
 	end
 
+	# 検索
+
 	def search
 		@events = Event.where('prefecture LIKE(?)', "%#{params[:keyword]}%")
 	end
+
 
 	private
 	def event_params
