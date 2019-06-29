@@ -68,3 +68,6 @@ gem 'bootstrap-material-design'
 gem 'pry-rails'
 gem 'mini_magick'
 gem 'kaminari'
+
+gem 'jquery-rails' 
+gem 'jquery-ui-rails'

@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 	def show
-		@user = User.includes(:events, :comments, :commented_events).find(params[:id])
-		@events = @user.events.order(created_at: :desc).page(params[:page]).per(2)
+		@user = User.includes(:events, :comments, :commented_events, :like_events).find(params[:id])
+		@events = @user.events.order(created_at: :desc).page(params[:page]).per(5)
 		@co_events = @user.commented_events.order(created_at: :desc).distinct
 		@comments = @user.comments.order(created_at: :desc)
-		@event_comments = EventComment.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(2)
-		@groups = Group.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(2)
+		@event_comments = EventComment.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(5)
+		@groups = Group.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(5)
+		@like_events = LikeEvent.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(5)
 	end
 
 	def edit

@@ -3,7 +3,7 @@ class EventsController < ApplicationController
     before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@events = Event.includes(:user, :comments).all.order(created_at: :desc).page(params[:page]).per(5)
+		@events = Event.includes(:user, :comments, :like_events).all.order(created_at: :desc).page(params[:page]).per(5)
 	end
 
 	def new
@@ -37,10 +37,11 @@ class EventsController < ApplicationController
 	end
 
 	def show
-		@event = Event.find(params[:id])
+		@event = Event.includes(:groups, :like_events).find(params[:id])
 		@event_time = @event.meeting_time.strftime("%H時%M分")
 		@comments = @event.comments
 		@groups = Group.where(event_id: params[:id])
+		@like_events = LikeEvent.where(event_id: params[:id])
 	end
 
 	def destroy

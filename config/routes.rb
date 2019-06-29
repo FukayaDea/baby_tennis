@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :comments, only: [:new, :create, :destroy]
   resources :groups, only: [:show, :create, :destroy]
+  resources :like_events, only: [:show, :create, :destroy]
 
   get 'search' => 'events#search'
 end

@@ -23,6 +23,7 @@
       集合場所：<%= event.meeting_place %><br>
       集合時間：<%= event.meeting_time.strftime("%H時%M分") %><br>
       コメント<%= event.comments.count %>件<br>
+      気になる<%= event.like_events.count %>件<br>
 
       <%= link_to '詳細', "/events/#{event.id}", method: :get %>
       

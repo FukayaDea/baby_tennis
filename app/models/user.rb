@@ -11,6 +11,7 @@ class User < ApplicationRecord
   # グループテーブル　リレーション
   has_many :event_groups, through: :events, source: :group, dependent: :destroy
   has_many :event_comments, dependent: :destroy
+  has_many :like_events, dependent: :destroy
 
   has_one_attached :image, dependent: :destroy
 

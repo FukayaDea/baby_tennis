@@ -20,6 +20,7 @@
 		  ラケット：無料レンタル<br>
 		<% end %>
 		備考：<%= simple_format(@event.remarks) %>
+		気になる<%= @like_events.count %>件<br>
 		<%= link_to '参加者', group_path, method: :get %><br>
 		<% if user_signed_in? && @event.user.id == current_user.id %>
 			<%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
@@ -34,7 +35,14 @@
 			<%= form_tag(groups_path, method: :post) do %>
 			  <%= hidden_field_tag(:event_id, @event.id) %>
 			  <%= submit_tag("参加する", class: 'btn') %>
-			<% end %>    
+			<% end %> 
+		<% end %>
+
+		<% unless @like_events.exists?(user_id: current_user.id) %>
+			<%= form_tag(like_events_path, method: :post) do %>
+			  <%= hidden_field_tag(:event_id, @event.id) %>
+			  <%= submit_tag("気になる", class: 'btn') %>
+			<% end %> 
 		<% end %>
 
 	</div>
