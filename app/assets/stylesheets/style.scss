@@ -23,6 +23,8 @@ $accent: #57C3E9;
 	width: 540px;
 }
 
+
+
 // 投稿
 .content_post {
 	border: 2px solid #888;
@@ -50,7 +52,22 @@ $accent: #57C3E9;
 	border-bottom: 2px solid #888;
 }
 
+.join_events {
+	margin: 10px 0;
+	border-bottom: 2px solid #888;
+}
+
 .co_events {
+	margin: 10px 0;
+	border-bottom: 2px solid #888;
+}
+
+.user_comments {
+	margin: 10px 0;
+	border-bottom: 2px solid #888;
+}
+
+.user_comment {
 	margin: 10px 0;
 	border-bottom: 2px solid #888;
 }

@@ -23,26 +23,57 @@
 			<div>
 				<%= event.event_date %>
 				<%= event.prefecture %>
-				<%= link_to 'イベント詳細', "/events/#{event.id}", method: :get %><br>
+				<%= link_to 'イベント詳細', "/events/#{event.id}", method: :get %>
+				<%= link_to '参加者', "/groups/#{event.id}", method: :get %><br>
 			</div>
 			<% end %>
+			<%= paginate(@events) %>
 	    </div>
 
-	    <div class="co_events">
+	    <% if user_signed_in? && @user.id == current_user.id && @groups.present? %>
+
+	    <div class="join_events">
+	    <p><%= @user.nickname %>さんの参加イベント</p>
+		    <% @groups.each do |group| %>
+		    	<%= group.event.event_date %>
+				<%= group.event.prefecture %>
+				<%= link_to 'イベント詳細', "/events/#{group.event.id}", method: :get %><br>
+		    <% end %>
+		    <%= paginate(@groups) %>
+		</div>
+
+	    <% end %>
+
+	    
+
+
+
+	    <!-- <div class="co_events">
 			<p><%= @user.nickname %>さんのコメントしたイベント</p>
 			<% @co_events.each do |event| %>
 				
 				<%= event.event_date %>
 				<%= event.prefecture %>
-				<%= link_to 'イベント詳細', "/events/#{event.id}", method: :get %><br>
+				<%= link_to 'イベント詳細', "/events/#{event.id}", method: :get %>
+				<%= link_to '参加者', "/groups/#{event.id}", method: :get %><br>
 
 			<% end %>
 	    </div>
 
-		<p><%= @user.nickname %>さんのコメント</p>
-		<% @comments.each do |comment| %>
-			<%= comment.text %>
-			<%= link_to 'イベント詳細', "/events/#{comment.event.id}", method: :get %><br>
+
+	    <div class="user_comments">
+
+		<% @event_comments.each do |event_comment| %>
+		<div class="user_comment">
+		    <p><%= @user.nickname %>さんのコメントしたイベント</p>
+			<%= event_comment.event.event_date %>
+			<%= event_comment.event.prefecture %>
+			<%= link_to 'イベント詳細', "/events/#{event_comment.event.id}", method: :get %><br>
+			<p><%= @user.nickname %>さんのコメント</p>
+			<%= event_comment.comment.text %><br>
+		</div>
 		<% end %>
+		<%= paginate(@event_comments) %>
+		</div>
 	</div>
 </div>

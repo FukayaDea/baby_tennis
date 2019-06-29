@@ -3,15 +3,23 @@ class EventsController < ApplicationController
     before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@events = Event.includes(:user, :comments).all.order(created_at: :desc)
+		@events = Event.includes(:user, :comments).all.order(created_at: :desc).page(params[:page]).per(5)
 	end
 
 	def new
-		
+		@event = Event.new
 	end
 
 	def create
-		Event.create(event_params)
+		@event = Event.create(event_params)
+		if @event.save
+			return
+		else
+			flash[:alert] = "投稿に失敗しました"
+			@event = @event
+			redirect_to action: :new
+		end
+
 	end
 
 	def edit
@@ -33,6 +41,7 @@ class EventsController < ApplicationController
 	def destroy
 		event = Event.find(params[:id])
 		event.destroy
+		flash[:notice] = "イベントを削除しました"
 		redirect_to action: :index
 	end
 

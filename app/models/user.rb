@@ -4,15 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :events
-  has_many :comments, ->{ order("created_at DESC") }
-  has_many :commented_events, through: :comments, source: :event
+  has_many :events, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :commented_events, through: :comments, source: :event, dependent: :destroy
   
   # グループテーブル　リレーション
-  has_many :event_groups, through: :events, source: :group
+  has_many :event_groups, through: :events, source: :group, dependent: :destroy
+  has_many :event_comments, dependent: :destroy
 
-
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
 
   validates :nickname, presence: true
 end

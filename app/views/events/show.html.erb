@@ -37,9 +37,11 @@
 	<% end %>
 
     <div class="comments">
+    	<% if user_signed_in? %>
 		<%= form_tag(new_comment_path, method: :get) do %>
 		  <%= hidden_field_tag(:event_id, @event.id) %>
 		  <%= submit_tag("コメントする", class: 'btn') %>
+		<% end %>
 		<% end %>
 	    <p>コメント欄</p>
 		<% @event.comments.each do |comment| %>

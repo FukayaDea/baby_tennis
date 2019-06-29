@@ -4,6 +4,9 @@
 	<h2>
 		投稿する
 	</h2>
+
+	<%= render 'layouts/error_messages', event: @event %>
+
 	<span>日付（必須）</span><input type="date" name="event_date"><br/>
 	<input type="text" name="prefecture" placeholder="都道府県（必須）"><br/>
 	<input type="text" name="court" placeholder="テニスコート"><br/>
@@ -21,7 +24,7 @@
 		<input type="radio" name="racket" value="2">有料レンタル
 		<input type="radio" name="racket" value="3">無料レンタル
 		<br>
-	<!-- カレントユーザーID -->
+
     <input type="submit" value="投稿">
 	<% end %>
 </div>
