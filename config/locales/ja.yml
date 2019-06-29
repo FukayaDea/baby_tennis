@@ -4,6 +4,10 @@ ja:
     password: パスワード
     group_id: グループ名
     user: ユーザー
+    event_date: 日付
+    prefecture: エリア
+    meeting_place: 集合場所
+    meeting_time: 集合時間
   date:
     abbr_day_names:
     - 日

@@ -1,5 +1,6 @@
 <% if event.errors.any? %>
   <div class="alert alert-warning">
+  	<h3>入力した内容にエラーが<%= @event.errors.count %>件あります</h3>
     <ul>
       <% event.errors.full_messages.each do |message| %>
         <li><%= message %></li>

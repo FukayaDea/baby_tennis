@@ -21,6 +21,10 @@
 		<% end %>
 		備考：<%= simple_format(@event.remarks) %>
 		<%= link_to '参加者', group_path, method: :get %><br>
+		<% if user_signed_in? && @event.user.id == current_user.id %>
+			<%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
+		    <%= link_to '削除', "/events/#{@event.id}", method: :delete %><br>
+	    <% end %>
 	</div>
 
 	<% if user_signed_in? && @event.user.id != current_user.id %>	
@@ -52,10 +56,6 @@
 		  <% end %>
 		<% end %>
 		
-		<% if user_signed_in? && @event.user.id == current_user.id %>
-		<%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
-	    <%= link_to '削除', "/events/#{@event.id}", method: :delete %><br>
-	    <% end %>
     </div>
 	<a class="btn" href="/">TOPへ戻る</a>
 </div>

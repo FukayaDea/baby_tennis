@@ -15,9 +15,8 @@ class EventsController < ApplicationController
 		if @event.save
 			return
 		else
-			flash[:alert] = "投稿に失敗しました"
-			@event = @event
-			redirect_to action: :new
+			flash.now[:alert] = "投稿に失敗しました"
+			render action: :new
 		end
 
 	end
@@ -27,8 +26,14 @@ class EventsController < ApplicationController
 	end
 
 	def update
-		event = Event.find(params[:id])
-		event.update(update_params)
+		@event = Event.find(params[:id])
+		@event.update(update_params)
+		if @event.save
+			return
+		else
+			flash.now[:alert] = "編集に失敗しました"
+			render action: :edit
+		end
 	end
 
 	def show
@@ -54,7 +59,7 @@ class EventsController < ApplicationController
 
 	private
 	def event_params
-		params.permit(:event_date, :prefecture, :court, :court_url, :meeting_place, :meeting_time, :access, :budget, :max_member, :joining, :racket, :remarks).merge(user_id: current_user.id)
+		params.require(:event).permit(:event_date, :prefecture, :court, :court_url, :meeting_place, :meeting_time, :access, :budget, :max_member, :joining, :racket, :remarks).merge(user_id: current_user.id)
 	end
 
 	def update_params

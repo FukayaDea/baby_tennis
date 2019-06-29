@@ -4,6 +4,9 @@
   </h2>
   <div class="col-lg-12">
     <%= form_for(@event) do |f| %>
+
+    <%= render 'layouts/error_messages', event: f.object %>
+    
       <div class="form-group">
       	日付（必須）：
       	<%= f.date_field :event_date, placeholder: "日付（必須）", class:"form-control" %><br>
