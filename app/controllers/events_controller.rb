@@ -39,9 +39,10 @@ class EventsController < ApplicationController
 	def show
 		@event = Event.includes(:groups, :like_events).find(params[:id])
 		@event_time = @event.meeting_time.strftime("%H時%M分")
-		@comments = @event.comments
+		@comments = @event.comments.order(created_at: :desc).page(params[:page]).per(5)
 		@groups = Group.where(event_id: params[:id])
 		@like_events = LikeEvent.where(event_id: params[:id])
+		@comment = Comment.new
 	end
 
 	def destroy

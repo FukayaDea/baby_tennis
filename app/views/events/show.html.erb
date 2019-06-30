@@ -49,21 +49,28 @@
 	<% end %>
 
     <div class="comments">
-    	<% if user_signed_in? %>
-		<%= form_tag(new_comment_path, method: :get) do %>
-		  <%= hidden_field_tag(:event_id, @event.id) %>
-		  <%= submit_tag("コメントする", class: 'btn') %>
-		<% end %>
-		<% end %>
 	    <p>コメント欄</p>
-		<% @event.comments.each do |comment| %>
+		<% @comments.each do |comment| %>
 		  <a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a><br>
 		  <%= comment.text %><br>
 		  <% if user_signed_in? && comment.user.id == current_user.id %>
 		    <%= link_to '削除', "/comments/#{comment.id}", method: :delete %><br>
 		  <% end %>
 		<% end %>
-		
+		<%= paginate(@comments) %>
+
     </div>
+
+    <% if user_signed_in? %>
+
+    <%= form_for @comment do |f| %>
+      <div class="form-group">
+        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"50", rows:"3", autofocus:"true", class:"form-control" %>
+      </div>
+      <%= f.hidden_field :event_id, :value => @event.id %>
+      <%= f.submit "コメントする", class:"btn"%>
+    <% end %>
+
+    <% end %>
 	<a class="btn" href="/">TOPへ戻る</a>
 </div>

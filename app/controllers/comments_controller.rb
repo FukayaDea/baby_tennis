@@ -8,7 +8,9 @@ class CommentsController < ApplicationController
 
 	def create
 		@comment = Comment.create(create_params)
-		redirect_to :root and return
+		@event = Event.includes(:groups, :like_events).find(create_params[:event_id])
+		# render 'create.js.erb'
+		redirect_to controller: :events, action: :show, id: @event.id
 	end
 
 	def destroy
