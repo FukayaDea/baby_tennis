@@ -32,10 +32,10 @@
   height: 360px;
   padding: 20px;
 
-  .centor { /* .contentsの中の.rightに対する記述 */
-    display: none; /* 最初、右のコンテンツは非表示にする */
+  .centor {
+    display: none;
   }
-  .right { /* .contentsの中の.rightに対する記述 */
-    display: none; /* 最初、右のコンテンツは非表示にする */
+  .right {
+    display: none;
   }
 }

@@ -10,25 +10,9 @@
   </div>
 
   <div class="main">
-    <% @events.each do |event| %>
-    <div class="content_post">
-      投稿者：<a href="/users/<%= event.user.id %>"><%= event.user.nickname %></a><br>
-    <% if user_signed_in? && event.user.id == current_user.id %>
-      <%= link_to '編集', "/events/#{event.id}/edit", method: :get %>
-      <%= link_to '削除', "/events/#{event.id}", method: :delete %><br>
-    <% end %>
-  
-      日時：<%= event.event_date %><br>
-      エリア：<%= event.prefecture %><br>
-      集合場所：<%= event.meeting_place %><br>
-      集合時間：<%= event.meeting_time.strftime("%H時%M分") %><br>
-      コメント<%= event.comments.count %>件<br>
-      気になる<%= event.like_events.count %>件<br>
 
-      <%= link_to '詳細', "/events/#{event.id}", method: :get %>
-      
-    </div>
-    <% end %>
+    <%= render @events %>
+
     <%= paginate(@events) %>
   </div>
 </div>

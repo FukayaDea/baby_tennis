@@ -87,3 +87,19 @@ $accent: #57C3E9;
     color: lighten($accent, 15%);
   }
 }
+
+// フラッシュ
+.alert {
+	text-align: center;
+}
+.alert-success {
+    background-color: #bde9ff;
+    border-color: #bde9ff;
+    color: #4c6977;
+}
+ 
+.alert-danger {
+    background-color: #f3c0c0;
+    border-color: #f3c0c0;
+    color: #3e3a3a;
+}
