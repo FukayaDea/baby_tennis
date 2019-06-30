@@ -20,7 +20,7 @@
     color: #fff;
     text-align: center;
 
-    &.selected {/* .tab-menuの中のliの内、.selectedが与えられているものに対する記述 */
+    &.selected {
       background-color: #fff;
       color: #AECD6A;
     }
@@ -32,10 +32,10 @@
   height: 360px;
   padding: 20px;
 
-  .like_events { /* .contentsの中の.rightに対する記述 */
+  .centor { /* .contentsの中の.rightに対する記述 */
     display: none; /* 最初、右のコンテンツは非表示にする */
   }
-  .user_comments { /* .contentsの中の.rightに対する記述 */
+  .right { /* .contentsの中の.rightに対する記述 */
     display: none; /* 最初、右のコンテンツは非表示にする */
   }
 }
