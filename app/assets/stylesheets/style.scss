@@ -198,6 +198,7 @@ height: 48px;
 
 .content {
 	padding-top: 20px;
+	overflow: scroll;
 
     height: calc(100vh - 115px);
 }
@@ -210,23 +211,47 @@ height: 48px;
 .post {
 	border: 2px solid #888;
 	margin: 2.5px auto;
-	min-height: 500px;
+	min-height: 480px;
 	width: 600px;
-	padding: 20px;
+	padding: 25px 35px;
 	background-color: #FFF;
 	p {
 	border-bottom: 1px solid #BBB;
 	}
-	.text {
-	p {
-	border-bottom: none;
-	}
+	.check {
+	width: 500px;
+
+    }
+	.edit {
+	padding-top: 10px;
+	text-align: right;
 	}
 }
 
+.checkbtn {
+	margin: 15px 0 0 15px;
+	width: 80px;
+	background-color: $accent;
+	border-radius: 3px;
+	color: #FFF;
+	  &:hover {
+	    background-color: lighten($accent, 15%);
+	    color: #FF9900;
+	  }
+}
+
+.editbtn {
+	background-color: #888;
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+	border-radius: 3px;
+	color: #FFF;
+}
+
 .postbtn {
-	width: 600px;
-	margin: 2.5px auto;
+	width: 500px;
+	margin: 20px auto 0;
 	text-align: center;
 }
 

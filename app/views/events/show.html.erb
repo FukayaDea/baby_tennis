@@ -3,41 +3,47 @@
 	<div class="eve_show">
 
 	    <div class="post">
-			<p><span class="data">投稿者：</span><a href="/users/<%= @event.user.id %>"><%= @event.user.nickname %></a></p>
-			<p><span class="data">日付：</span><%= @event.event_date %><</p>
-			<p><span class="data">エリア：</span><%= @event.prefecture %></p>
-			<p><span class="data">コート：</span><%= @event.court %></p>
-			<p><span class="data">URL：</span><%= @event.court_url %></p>
-			<p><span class="data">集合場所：</span><%= @event.meeting_place %></p>
-			<p><span class="data">集合時間：</span><%= @event_time %></p>
-			<p><span class="data">アクセス：</span><%= @event.access %></p>
-			<p><span class="data">参加費：</span><%= @event.budget %>円</p>
-			<p><span class="data">募集人数：</span><%= @event.max_member %>人</p>
-			<p><span class="data">参加人数：</span><%= @groups.count %>人</p>
+			<p><span class="data">投稿者　　</span><a href="/users/<%= @event.user.id %>"><%= @event.user.nickname %></a></p>
+			<p><span class="data">日付　　　</span><%= @event.event_date %></p>
+			<p><span class="data">エリア　　</span><%= @event.prefecture %></p>
+			<p><span class="data">コート　　</span><%= @event.court %></p>
+			<p><span class="data">URL　　　</span><%= @event.court_url %></p>
+			<p><span class="data">集合場所　</span><%= @event.meeting_place %></p>
+			<p><span class="data">集合時間　</span><%= @event_time %></p>
+			<p><span class="data">アクセス　</span><%= @event.access %></p>
+			<p><span class="data">参加費　　</span><%= @event.budget %>円</p>
+			<p><span class="data">募集人数　</span><%= @event.max_member %>人</p>
+			<p><span class="data">参加人数　</span><%= @groups.count %>人</p>
 			<% if @event.racket == 1 %>
-			  <p><span class="data">ラケット：</span>持参</p>
+			  <p><span class="data">ラケット　</span>持参</p>
 			<% elsif @event.racket == 2 %>
-			  <p><span class="data">ラケット：</span>有料レンタル</p>
+			  <p><span class="data">ラケット　</span>有料レンタル</p>
 			<% else %>
-			  <p><span class="data">ラケット：</span>無料レンタル</p>
+			  <p><span class="data">ラケット　</span>無料レンタル</p>
 			<% end %>
-			<span class="data">備考：</span><%= simple_format(@event.remarks) %>
-			<p><span class="data">気になる</span><%= @like_events.count %>件</p>
-			<p><span class="data"><%= link_to '参加者', group_path, method: :get %>：</span>
+			<span class="data">備考　　　</span><%= simple_format(@event.remarks) %>
+			<p><span class="data">気になる　</span><%= @like_events.count %>件</p>
+			<p><span class="data"><%= link_to '参加者', group_path, method: :get %>　　</span>
 			<% @groups.each do |group| %>
 			<a href="/users/<%= group.user.id %>"><%= group.user.nickname %></a>さん
 			<% end %></p>
 
 			<% if user_signed_in? && @event.user.id == current_user.id %>
-				<%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
-			    <%= link_to '削除', "/events/#{@event.id}", method: :delete %><br>
+			<div class="edit">
+				<%= link_to '編集', "/events/#{@event.id}/edit", method: :get, class: :editbtn %>
+			    <%= link_to '削除', "/events/#{@event.id}", method: :delete, class: :editbtn %><br>
+			</div>
 		    <% end %>
-			<% unless @like_events.exists?(user_id: current_user.id) %>
+		    
+			<% unless @like_events.exists?(user_id: current_user.id) || @event.user.id == current_user.id %>
+			<div class="check">
 				<%= form_tag(like_events_path, method: :post) do %>
 				  <%= hidden_field_tag(:event_id, @event.id) %>
-				  <%= submit_tag("気になる", class: 'btn') %>
-				<% end %> 
+				  <%= submit_tag("気になる", class: 'checkbtn') %>
+				<% end %>
+			</div>
 			<% end %>
+
 		<% if user_signed_in? && @event.user.id != current_user.id %>	
 	        <% unless @groups.exists?(user_id: current_user.id) %>
 	        <div class="postbtn">

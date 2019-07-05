@@ -29,7 +29,7 @@ class EventsController < ApplicationController
 		@event = Event.find(params[:id])
 		@event.update(update_params)
 		if @event.save
-			return
+			redirect_to action: :show
 		else
 			flash.now[:alert] = "編集に失敗しました"
 			render action: :edit
