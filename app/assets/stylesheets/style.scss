@@ -1,44 +1,251 @@
+// 変数
+$accent: #57C3E9;
+$black: #292929;
+$dark: #666;
+$darkGray: #999999;
+$gray: #D8D8D8;
+$lightGray: #f5f5f3;
+$white: white;
 
 // ヘッダー
-header #title {
-	background-color: #0066FF;
-	a {
-	color: #FFF;
+
+header {
+    position: fixed;
+    width: 100%;
+    h1 {
+	  text-align: center;
+	  margin: 0 auto;
+      width: 100%;
+      height: 48px;
+      background-color: #0066FF;
 	}
 }
 
-// ナビ
-nav {
-	background-color: #DDD;
+a {
+  text-decoration: none;
 }
 
 
-// 変数
-$accent: #57C3E9;
+#title a {
+text-decoration: none;
+color: #FFF;
+display: inline-block;
+height: 48px;
+}
 
+// ナビ
+#nav {
+	background-color: #33CC66;
+	height: 40px;
+	width: 100%;
+	.nav {
+	float: left;
+	margin-left: 100px;
+	}
+	.user {
+	float: right;
+	right: 10px;
+	margin-right: 100px;
+	}
+	a {
+	text-decoration: none;
+    color: #009966;
+	}
+}
+.nav_btn {
+	border: 0.5px solid #009966;
+	background-color: #FFF;
+	font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 7px;
+    width: 105px;
+  &:hover {
+    background-color: #FFFF55;
+  }
+}
+
+#main {
+	padding-top: 88px;
+	background-color: #EEFFFF;
+}
+
+#footer {
+	background-color: #0066FF;
+	height: 30px;
+	padding-top: 10px;
+}
+
+// インデックス
+
+.contents{
+	padding-top: 0;
+}
+
+.main {
+  padding-top: 10px;
+  margin: 0 auto;
+  width: 800px;
+
+}
+
+#post {
+    margin-top: 20px;
+    margin-right: 25px;
+	float: right;
+}
+
+.post_btn {
+	border: 2px solid #0066FF;
+	background-color: #0066FF;
+	font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 7px;
+    width: 120px;
+    color: #FFF;
+  &:hover {
+    border-color: lighten(#0066FF, 15%);
+    background-color: lighten(#0066FF, 15%);
+  }
+}
+
+#search {
+	float: left;
+	margin-top: 5px;
+	margin-left: 25px;
+}
+
+.content_posts {
+	width: 750px;
+	margin: 0 auto;
+	padding-top: 80px;
+}
+
+// 投稿
+.content_post {
+	border: 2px solid #AAA;
+	background-color: #FFF;
+	height: 240px;
+	margin: 10px;
+	padding: 30px 85px;
+	border-radius: 10px;
+	p {
+	font-size: 18px;
+	line-height:32px;
+	}
+}
+.data {
+	font-weight: bold;
+}
+.big {
+	height: 150px;
+}
+.post_user {
+	float: left;
+	clear: both;
+	margin-right: 55px;
+	img {
+	border-radius: 7px;
+	}
+}
+.post_contain {
+	float: left;
+	margin-right: 55px;
+}
+.sub_contain {
+	float: left;
+}
+
+.more {
+	width: 360px;
+	margin: 0 auto;
+    font-size: 20px;
+	clear: both;
+	font-weight: bold;
+    text-align: center;
+    background-color: #FF9900;
+    border-radius: 3px;
+    a {
+    color: #FFF;
+    display: inline-block;
+    width: 100%;
+    }
+    &:hover {
+	    background-color: $accent;
+	  }
+}
+
+// ボタン
+
+.btn_mo {
+	width: 360px;
+	margin: 0 auto;
+    font-size: 20px;
+	font-weight: bold;
+    text-align: center;
+    background-color: #FF9900;
+    border-radius: 3px;
+    color: #FFF;
+    &:hover {
+	    background-color: $accent;
+	  }
+}
+
+// イベント詳細
+
+.content {
+	padding-top: 20px;
+
+    height: calc(100vh - 115px);
+}
+
+.eve_show {
+	margin: 0 auto;
+	width: 800px;
+}
+
+.post {
+	border: 2px solid #888;
+	margin: 2.5px auto;
+	min-height: 500px;
+	width: 600px;
+	padding: 20px;
+	background-color: #FFF;
+	p {
+	border-bottom: 1px solid #BBB;
+	}
+	.text {
+	p {
+	border-bottom: none;
+	}
+	}
+}
+
+.postbtn {
+	width: 600px;
+	margin: 2.5px auto;
+	text-align: center;
+}
+
+.comments {
+	border: 2px solid #888;
+	margin: 2.5px auto;
+	width: 600px;
+	background-color: #FFF;
+}
+.commbtn {
+	width: 600px;
+	margin: 2.5px auto;
+	text-align: center;
+}
 
 // 画像
 .image {
 	height: 400px;
 	width: 540px;
-}
-
-
-
-// 投稿
-.content_post {
-	border: 2px solid #888;
-	margin: 2.5px 0;
-}
-
-.post {
-	border: 2px solid #888;
-	margin: 2.5px 0;
-}
-
-.comments {
-	border: 2px solid #888;
-	margin: 2.5px 0;
 }
 
 // ユーザー
@@ -89,6 +296,7 @@ $accent: #57C3E9;
 }
 
 // フラッシュ
+
 .alert {
 	text-align: center;
 }
@@ -102,4 +310,91 @@ $accent: #57C3E9;
     background-color: #f3c0c0;
     border-color: #f3c0c0;
     color: #3e3a3a;
+}
+
+// 検索
+
+.search{
+  box-sizing: border-box;
+
+}
+.search input[type="text"]{
+  background: #ccddf5;
+  border: none;
+  height: 2.0em;
+}
+.search input[type="text"]:focus {
+  outline: 0;
+}
+.search input[type="submit"]{
+  cursor: pointer;
+  border: none;
+  background: #3879D9;
+  color: #fff;
+  outline : none;
+  height: 2.2em;
+  width: 85px;
+}
+.search ::-webkit-input-placeholder {
+  color: #3879D9;
+}
+
+
+
+// サインアップ・サインイン
+.sign {
+	width: 450px;
+	margin: 0 auto;
+}
+
+#sign {
+  padding-top: 80px;
+  h2 {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: $dark;
+  }
+  form {
+  width: 450px;
+  margin: 10px auto;
+  }
+  input,textarea {
+    width: 100%;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    font-family: "游ゴシック", "YuGothic";
+  }
+  input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+  input[type="submit"] {
+    background-color: $accent;
+    border-radius: 20px;
+    color: #fff;
+    border: 0;
+    font-size: 25px;
+    &:hover {
+      background-color: lighten($accent, 10%);
+    }
+  }
+}
+
+
+.check {
+	white-space: nowrap;
+	display: inline;
+}
+
+.check_box {
+width: 10px;
+display: inline;
+}
+
+
+// イベント投稿
+.row {
+	padding-top: 100px;
 }

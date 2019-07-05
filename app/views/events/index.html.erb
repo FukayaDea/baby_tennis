@@ -1,18 +1,28 @@
 <div class="contents ">
 
+<div class="main">
+
+<% if user_signed_in? %>
+  <div id="post">
+    <a href="/events/new" class="post_btn">イベント作成</a>
+  </div>
+ <% end %>
+
 <!-- 検索 -->
-  <div class="search">
+  <div id="search">
     <p>エリア検索</p>
-    <%= form_tag(search_path, method: :get ) do %>
-      <%= text_field_tag :keyword %>
+    <%= form_tag(search_path, method: :get, class: 'search' ) do %>
+      <%= text_field_tag :keyword, '', placeholder: "都道府県を入力" %>
       <%= submit_tag 'Search', :name => nil %>
     <% end %>
   </div>
 
-  <div class="main">
+  <div class="content_posts">
 
-    <%= render @events %>
+  <%= render @events %>
+
+  </div>
 
     <%= paginate(@events) %>
-  </div>
+</div>
 </div>

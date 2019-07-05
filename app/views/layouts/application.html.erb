@@ -4,42 +4,50 @@
     <title>Tennis</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "https://unpkg.com/ress/dist/ress.min.css" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'faulse' %>
     <%= stylesheet_link_tag "https://unpkg.com/ress/dist/ress.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header>
+    <header id="header">
+
       <h1 id="title"><a href="/">tennis</a></h1>
-      <nav class="user_nav">
-       <% if user_signed_in? %>
-        <div class="grid-6">
-          <a href="/users/<%= current_user.id %>">マイページ</a>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <a id="post" href="/events/new">投稿する</a>
+
+      <nav id="nav">
+      <div class="nav">
+        <a href="/chats" class="nav_btn">雑談</a>
+        <a href="/tennis_infos" class="nav_btn">情報交換</a>
+      </div>
+
+      <% if user_signed_in? %>
+        <div class="user">
+          <a href="/users/<%= current_user.id %>" class="nav_btn" >マイページ</a>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav_btn' %>
         </div>
+
       <% else %>
-        <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        <div class="user">
+          <%= link_to "ログイン", new_user_session_path, class: 'nav_btn' %>
+          <%= link_to "新規登録", new_user_registration_path, class: 'nav_btn' %>
         </div>
       <% end %>
-      <div class="grid-6">
-        <a href="/chats">雑談</a>
-        <a href="/tennis_infos">情報交換</a>
-      </div>
-      </nav>
 
+      </nav>
 
     </header>
 
 
-    <section>
+    <section id="main">
       <!--   フラッシュメッセージ -->
       <%= bootstrap_flash %>
       <%= yield %>
     </section>
+
+    <footer id="footer">
+      
+    </footer>
 
   </body>
 </html>

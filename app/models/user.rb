@@ -17,5 +17,5 @@ class User < ApplicationRecord
 
   has_one_attached :image, dependent: :destroy
 
-  validates :nickname, presence: true
+  validates :nickname, :over20, presence: true
 end

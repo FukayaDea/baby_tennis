@@ -1,76 +1,79 @@
-<div class="contents">
+<div class="content">
 
-    <div class="post">
-		投稿者：<a href="/users/<%= @event.user.id %>"><%= @event.user.nickname %></a><br>
-		日付：<%= @event.event_date %><br>
-		エリア：<%= @event.prefecture %><br>
-		コート：<%= @event.court %><br>
-		URL：<%= @event.court_url %><br>
-		集合場所：<%= @event.meeting_place %><br>
-		集合時間：<%= @event_time %><br>
-		アクセス：<%= @event.access %><br>
-		参加費：<%= @event.budget %>円<br>
-		募集人数：<%= @event.max_member %>人<br>
-		参加人数：<%= @groups.count %>人<br>
-		<% if @event.racket == 1 %>
-		  ラケット：持参<br>
-		<% elsif @event.racket == 2 %>
-		  ラケット：有料レンタル<br>
-		<% else %>
-		  ラケット：無料レンタル<br>
+	<div class="eve_show">
+
+	    <div class="post">
+			<p><span class="data">投稿者：</span><a href="/users/<%= @event.user.id %>"><%= @event.user.nickname %></a></p>
+			<p><span class="data">日付：</span><%= @event.event_date %><</p>
+			<p><span class="data">エリア：</span><%= @event.prefecture %></p>
+			<p><span class="data">コート：</span><%= @event.court %></p>
+			<p><span class="data">URL：</span><%= @event.court_url %></p>
+			<p><span class="data">集合場所：</span><%= @event.meeting_place %></p>
+			<p><span class="data">集合時間：</span><%= @event_time %></p>
+			<p><span class="data">アクセス：</span><%= @event.access %></p>
+			<p><span class="data">参加費：</span><%= @event.budget %>円</p>
+			<p><span class="data">募集人数：</span><%= @event.max_member %>人</p>
+			<p><span class="data">参加人数：</span><%= @groups.count %>人</p>
+			<% if @event.racket == 1 %>
+			  <p><span class="data">ラケット：</span>持参</p>
+			<% elsif @event.racket == 2 %>
+			  <p><span class="data">ラケット：</span>有料レンタル</p>
+			<% else %>
+			  <p><span class="data">ラケット：</span>無料レンタル</p>
+			<% end %>
+			<span class="data">備考：</span><%= simple_format(@event.remarks) %>
+			<p><span class="data">気になる</span><%= @like_events.count %>件</p>
+			<p><span class="data"><%= link_to '参加者', group_path, method: :get %>：</span>
+			<% @groups.each do |group| %>
+			<a href="/users/<%= group.user.id %>"><%= group.user.nickname %></a>さん
+			<% end %></p>
+
+			<% if user_signed_in? && @event.user.id == current_user.id %>
+				<%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
+			    <%= link_to '削除', "/events/#{@event.id}", method: :delete %><br>
+		    <% end %>
+			<% unless @like_events.exists?(user_id: current_user.id) %>
+				<%= form_tag(like_events_path, method: :post) do %>
+				  <%= hidden_field_tag(:event_id, @event.id) %>
+				  <%= submit_tag("気になる", class: 'btn') %>
+				<% end %> 
+			<% end %>
+		<% if user_signed_in? && @event.user.id != current_user.id %>	
+	        <% unless @groups.exists?(user_id: current_user.id) %>
+	        <div class="postbtn">
+				<%= form_tag(groups_path, method: :post) do %>
+				  <%= hidden_field_tag(:event_id, @event.id) %>
+				  <%= submit_tag("参加する", class: 'btn_mo') %>
+		    </div>
+				<% end %> 
+			<% end %>
 		<% end %>
-		備考：<%= simple_format(@event.remarks) %>
-		気になる<%= @like_events.count %>件<br>
-		<%= link_to '参加者', group_path, method: :get %><br>
-		<% if user_signed_in? && @event.user.id == current_user.id %>
-			<%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
-		    <%= link_to '削除', "/events/#{@event.id}", method: :delete %><br>
+		</div>
+
+	    <% if user_signed_in? %>
+
+	    <div class="commbtn">
+		    <%= form_for @comment do |f| %>
+		      <div class="form-group">
+		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"50", rows:"3", autofocus:"true", class:"form-control" %>
+		      </div>
+		      <%= f.hidden_field :event_id, :value => @event.id %>
+		      <%= f.submit "コメントする", class:"btn_mo"%>
+		    <% end %>
+	    </div>
 	    <% end %>
-	</div>
+	    <div class="comments">
+		    <p>コメント欄</p>
+			<% @comments.each do |comment| %>
+			  <a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a><br>
+			  <%= comment.text %><br>
+			  <% if user_signed_in? && comment.user.id == current_user.id %>
+			    <%= link_to '削除', "/comments/#{comment.id}", method: :delete %><br>
+			  <% end %>
+			<% end %>
+			<%= paginate(@comments) %>
 
-	<% if user_signed_in? && @event.user.id != current_user.id %>	
-	<div>
-        <% unless @groups.exists?(user_id: current_user.id) %>
-
-			<%= form_tag(groups_path, method: :post) do %>
-			  <%= hidden_field_tag(:event_id, @event.id) %>
-			  <%= submit_tag("参加する", class: 'btn') %>
-			<% end %> 
-		<% end %>
-
-		<% unless @like_events.exists?(user_id: current_user.id) %>
-			<%= form_tag(like_events_path, method: :post) do %>
-			  <%= hidden_field_tag(:event_id, @event.id) %>
-			  <%= submit_tag("気になる", class: 'btn') %>
-			<% end %> 
-		<% end %>
-
-	</div>
-	<% end %>
-
-    <div class="comments">
-	    <p>コメント欄</p>
-		<% @comments.each do |comment| %>
-		  <a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a><br>
-		  <%= comment.text %><br>
-		  <% if user_signed_in? && comment.user.id == current_user.id %>
-		    <%= link_to '削除', "/comments/#{comment.id}", method: :delete %><br>
-		  <% end %>
-		<% end %>
-		<%= paginate(@comments) %>
-
+	    </div>
+		<a class="btn" href="/">TOPへ戻る</a>
     </div>
-
-    <% if user_signed_in? %>
-
-    <%= form_for @comment do |f| %>
-      <div class="form-group">
-        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"50", rows:"3", autofocus:"true", class:"form-control" %>
-      </div>
-      <%= f.hidden_field :event_id, :value => @event.id %>
-      <%= f.submit "コメントする", class:"btn"%>
-    <% end %>
-
-    <% end %>
-	<a class="btn" href="/">TOPへ戻る</a>
 </div>
