@@ -1,4 +1,4 @@
-<div class="row form">
+<div class="content">
   <h2>
 	投稿する
   </h2>
@@ -8,31 +8,31 @@
     <%= render 'layouts/error_messages', event: f.object %>
 
       <div class="form-group">
-      	日付（必須）：
-      	<%= f.date_field :event_date, placeholder: "日付（必須）", class:"form-control" %><br>
-      	エリア（必須）：
-        <%= f.text_field :prefecture, placeholder: "都道府県（必須）",class:"form-control" %><br>
-        コート：
-        <%= f.text_field :court, placeholder: "コート", class:"form-control" %><br>
-        URL:
-        <%= f.text_field :court_url, placeholder: "URL", class:"form-control" %><br>
-        集合場所（必須）：
-        <%= f.text_field :meeting_place, placeholder: "集合場所（必須）", class:"form-control" %><br>
-        集合時間（必須）：
-        <%= f.time_field :meeting_time, placeholder: "集合時間（必須）", class:"form-control" %><br>
-        アクセス：<br>
+      	<p><span class="data">日付（必須）：</span>
+      	<%= f.date_field :event_date, placeholder: "日付（必須）", class:"form-control" %></p>
+      	<p><span class="data">エリア（必須）：</span>
+        <%= f.text_field :prefecture, placeholder: "都道府県（必須）",class:"form-control" %></p>
+        <p><span class="data">コート：</span>
+        <%= f.text_field :court, placeholder: "コート", class:"form-control" %></p>
+        <p><span class="data">URL:</span>
+        <%= f.text_field :court_url, placeholder: "URL", class:"form-control" %></p>
+        <p><span class="data">集合場所（必須）：</span>
+        <%= f.text_field :meeting_place, placeholder: "集合場所（必須）", class:"form-control" %></p>
+        <p><span class="data">集合時間（必須）：</span>
+        <%= f.time_field :meeting_time, placeholder: "集合時間（必須）", class:"form-control" %></p>
+        <p><span class="data">アクセス：</span></p>
         <%= f.text_area :access, placeholder: "アクセス", cols:"30", rows:"5", class:"form-control" %><br>
-        参加費：
-        <%= f.number_field :budget, class:"form-control" %>円<br>
-        募集人数：
-        <%= f.number_field :max_member, class:"form-control" %>人<br>
-        参加人数：
-        <%= f.number_field :joining, class:"form-control" %>人<br>
-        <label>ラケット：
+        <p><span class="data">参加費：</span>
+        <%= f.number_field :budget, class:"form-control" %>円</p>
+        <p><span class="data">募集人数：</span>
+        <%= f.number_field :max_member, class:"form-control" %>人</p>
+        <p><span class="data">参加人数：</span>
+        <%= f.number_field :joining, class:"form-control" %>人</p>
+        <p><label><span class="data">ラケット：</span>
         <%= f.radio_button :racket, "1" %>持参</label>
         <label><%= f.radio_button :racket, "2" %>有料レンタル</label>
-        <label><%= f.radio_button :racket, "3" %>無料レンタル</label><br>
-        備考：<br>
+        <label><%= f.radio_button :racket, "3" %>無料レンタル</label></p>
+        <p><span class="data">備考：</span></p>
         <%= f.text_area :remarks, placeholder: "備考", cols:"30", rows:"10", class:"form-control" %><br>
         
       </div>

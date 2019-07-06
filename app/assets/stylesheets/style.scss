@@ -37,6 +37,10 @@ a {
   }
 }
 
+.small {
+	font-size: 14px;
+}
+
 .erea {
     display: inline-block;
 	width: 70px;
@@ -445,19 +449,31 @@ height: 48px;
 }
 
 #sign {
-  padding-top: 80px;
+  padding: 30px 30px 35px;
+  width: 600px;
+  margin: 100px auto;
+  min-height: 350px;
+  border: 1px solid $gray;
+  border-radius: 3px;
+  background-color: #FFF;
   h2 {
   margin-top: 10px;
   text-align: center;
-  font-weight: normal;
+  font-weight: bald;
   font-size: 20px;
-  color: $dark;
+  color: #666666;
+  }
+  p {
+  color: #666666;
+  padding: 20px 0 5px;
   }
   form {
   width: 450px;
   margin: 10px auto;
+  
   }
   input,textarea {
+    background-color: #FFFFEE;
     width: 100%;
     border: 1px solid $gray;
     border-radius: 5px;
@@ -468,6 +484,7 @@ height: 48px;
     height: 16px;
   }
   input[type="submit"] {
+    margin: 10px 0;
     background-color: $accent;
     border-radius: 20px;
     color: #fff;

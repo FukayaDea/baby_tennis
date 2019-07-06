@@ -8,31 +8,31 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :ニックネーム %><br />
+      <p><span class="data"><%= f.label :ニックネーム %></span></p>
       <%= f.text_field :nickname, placeholder: 'ニックネームを入力(必須)',autofocus: true %>
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
+      <p><span class="data"><%= f.label :email %></span></p>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %>
+      <p><span class="data"><%= f.label :password %></span>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %>文字以上)</em>
-      <% end %><br />
+      <% end %></p>
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= f.label :パスワード確認 %><br />
+      <p><span class="data"><%= f.label :パスワード確認 %></span></p>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= f.label :年齢確認（※ユーザー登録できるのは２０歳以上の方に限ります） %><br />
-      <%= f.check_box :over20, {} , 1, nil %>20歳以上
+      <p><span class="data"><%= f.label :年齢確認 %></span><span class="small">（※ユーザー登録できるのは２０歳以上の方に限ります)</span><br>
+      <%= f.check_box :over20, {} , 1, nil %><span class="data">20歳以上</span></p>
     </div>
 
     <div class="actions">
