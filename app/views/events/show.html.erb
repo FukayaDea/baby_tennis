@@ -2,12 +2,14 @@
 
 	<div class="eve_show">
 
+		<h2>イベント詳細</h2>
+
 	    <div class="post">
 			<p><span class="data">投稿者　　</span><a href="/users/<%= @event.user.id %>"><%= @event.user.nickname %></a></p>
 			<p><span class="data">日付　　　</span><%= @event.event_date %></p>
 			<p><span class="data">エリア　　</span><%= @event.prefecture %></p>
 			<p><span class="data">コート　　</span><%= @event.court %></p>
-			<p><span class="data">URL　　　</span><%= @event.court_url %></p>
+			<p><span class="data">URL　　　</span><a href="<%= @event.court_url %>"><%= @event.court_url %></a></p>
 			<p><span class="data">集合場所　</span><%= @event.meeting_place %></p>
 			<p><span class="data">集合時間　</span><%= @event_time %></p>
 			<p><span class="data">アクセス　</span><%= @event.access %></p>
@@ -61,7 +63,7 @@
 	    <div class="commbtn">
 		    <%= form_for @comment do |f| %>
 		      <div class="form-group">
-		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"50", rows:"3", autofocus:"true", class:"form-control" %>
+		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"60", rows:"3", autofocus:"true", class:"form-control" %>
 		      </div>
 		      <%= f.hidden_field :event_id, :value => @event.id %>
 		      <%= f.submit "コメントする", class:"btn_mo"%>
@@ -69,17 +71,29 @@
 	    </div>
 	    <% end %>
 	    <div class="comments">
-		    <p>コメント欄</p>
+		    <span class="data">コメント欄</span>
+		    <% unless @comments.exists? %>
+		      <p>まだコメントはありません。</p>
+		      <p>たくさんコメントをして、みんなでテニスを楽しみましょう！</p>		    	
+		    <% end %>
 			<% @comments.each do |comment| %>
-			  <a href="/users/<%= comment.user.id %>"><%= comment.user.nickname %></a><br>
-			  <%= comment.text %><br>
+			<div class="comment">
+			<ul>
+			  <li><%= comment.created_at.strftime("%Y/%m/%d/%H:%M") %>
 			  <% if user_signed_in? && comment.user.id == current_user.id %>
-			    <%= link_to '削除', "/comments/#{comment.id}", method: :delete %><br>
+			  <li><%= link_to 'コメントを削除', "/comments/#{comment.id}", method: :delete, class: "editbtn" %>
 			  <% end %>
+			  </ul>			  
+			  <p><a href="/users/<%= comment.user.id %>">◆ <%= comment.user.nickname %></a></p>			
+			  <p>　<%= comment.text %></p>
+			  
+			</div>
 			<% end %>
 			<%= paginate(@comments) %>
 
 	    </div>
+	    <div class="back">
 		<a class="btn" href="/">TOPへ戻る</a>
+	    </div>
     </div>
 </div>

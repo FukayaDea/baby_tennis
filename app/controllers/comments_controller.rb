@@ -16,7 +16,8 @@ class CommentsController < ApplicationController
 	def destroy
 		comment = Comment.find(params[:id])
 		comment.destroy
-		redirect_to :root and return
+		event = comment.event
+		redirect_to controller: :events, action: :show, id: event.id
 	end
 
 	private
