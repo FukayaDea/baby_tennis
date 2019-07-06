@@ -49,7 +49,7 @@ $purple: #660099;
   width: 800px;
   margin-left: 0px;
   margin-bottom: 20px;
-  min-height: 500px;
+  min-height: 300px;
   padding-left: 0px;
   ul {
     margin: 0;
@@ -79,7 +79,7 @@ $purple: #660099;
 .tab_contents {
 
   background-color: #fff;
-  min-height: 470px;
+  min-height: 270px;
   .centor {
     display: none;
   }
@@ -90,11 +90,10 @@ $purple: #660099;
 }
 
 .left {
-  padding: 20px;
 }
 
 .centor {
-  padding: 20px;
+
 }
 
 .user_comments {
@@ -107,13 +106,27 @@ $purple: #660099;
 }
 
 .join_events {
-  margin: 10px 0;
-  border-bottom: 2px solid #888;
+  padding: 20px 45px 20px 135px;
 }
 
-.co_events {
-  margin: 10px 0;
+.join_event {
+  margin: 15px 0;
   border-bottom: 2px solid #888;
+  p {
+  margin: 5px 0 0px;
+  }
+}
+
+.like_events {
+  padding: 20px 45px 20px 135px;
+}
+
+.like_event {
+  margin: 15px 0;
+  border-bottom: 2px solid #888;
+  p {
+  margin: 5px 0 0px;
+  }
 }
 
 .user_comments {

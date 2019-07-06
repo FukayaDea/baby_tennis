@@ -15,10 +15,10 @@
 		    </div>
 
 		    <div class="pro_txt">
-				<p><span class="data">ニックネーム　</span><%= @user.nickname %></p>
 				<p><span class="data">テニス歴　　　</span><%= @user.career %></p>
 				<p><span class="data">活動エリア　　</span><%= @user.play_erea %></p>
 				<p><span class="data">フリー　　　　</span><%= @user.profile %></p>
+				<p><span class="data">SNSリンク　</span><a href="<%= @user.link %>" ><%= @user.link %></p>
 		    </div>
 	    </div>
 
@@ -52,26 +52,34 @@
 				<div class="tab_contents">
 
 				    <div class="left">
+				    <div class="left join_events">
 				    <p><span class="data"><%= @user.nickname %>さんの参加イベント</span></p>
 					    <% @groups.each do |group| %>
+					    <div class="left join_event">
 					    	<p><%= group.event.event_date.strftime("%Y/%m/%d") %>｜
 							<span class="erea"><%= group.event.prefecture %></span>
 							<%= link_to 'イベント詳細', "/events/#{group.event.id}", method: :get %>　
 							<%= link_to '参加をやめる', "/groups/#{group.id}", method: :delete %></p>
+						</div>
 					    <% end %>
 					    <%= paginate(@groups) %>
 					</div>
+				    </div>
 
 				    <div class="centor">
+				    <div class="centor like_events">
 				    <p><span class="data"><%= @user.nickname %>さんの気になるイベント</span></p>
 					    <% @like_events.each do |like_event| %>
+					    <div class="centor like_event">
 					    	<p><%= like_event.event.event_date.strftime("%Y/%m/%d") %>｜
 							<span class="erea"><%= like_event.event.prefecture %></span>
 							<%= link_to 'イベント詳細', "/events/#{like_event.event.id}", method: :get %>　
 							<%= link_to '削除', "/like_events/#{like_event.id}", method: :delete %></p>
+						</div>
 					    <% end %>
 					    <%= paginate(@groups) %>
 					</div>
+				    </div>
 
 		    <% end %>
 

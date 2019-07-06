@@ -1,14 +1,15 @@
-<div>
+<div class="content">
 	<%= form_for current_user do |f| %>
-	
+	<h3>登録情報</h3>
       <div class="form-group file">
-      	<h2>プロフィール画像</h2>
-        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
-	    <h2>登録情報</h2>
-		<%= f.text_field :nickname, placeholder: "ニックネーム" %><br>
-		<%= f.text_field :career, placeholder: "テニス歴" %> <br>
-		<%= f.text_field :play_erea, placeholder: "活動エリア" %><br>
-		<%= f.text_field :profile, placeholder: "自己紹介" %><br>
+      	<p><span class="data">プロフィール画像：</span>
+        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %></p>
+	    
+		<p><span class="data">ニックネーム：</span><%= f.text_field :nickname, placeholder: "ニックネーム", class:"form-control" %></p>
+		<p><span class="data">テニス歴：</span><%= f.text_field :career, placeholder: "テニス歴", class:"form-control" %></p>
+		<p><span class="data">活動エリア：</span><%= f.text_field :play_erea, placeholder: "活動エリア", class:"form-control" %></p>
+		<p><span class="data">フリー：</span><br><%= f.text_area :profile, placeholder: "自己紹介", cols:"50", rows:"3", class:"form-control" %></p>
+		<p><span class="data">SNSリンク：</span><%= f.text_field :link, placeholder: "Twitterやブログなど", class:"form-control" %></p>
 		<%= f.submit "編集", class: 'btn' %>
 	</div>
 	<% end %>
