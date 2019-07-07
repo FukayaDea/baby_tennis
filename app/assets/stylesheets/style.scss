@@ -26,7 +26,7 @@ header {
 
 h2 {
 	font-size: 35px;
-	color: $orange;
+
 }
 
 a {
@@ -37,10 +37,20 @@ a {
   }
 }
 
+img {
+  object-fit: cover; 
+}
+
 .small {
 	font-size: 14px;
 }
-
+.name {
+	display: inline-block;
+	width: 110px;
+	overflow: hidden;
+	padding: 0 auto;
+	text-align: center;
+}
 .erea {
     display: inline-block;
 	width: 70px;
@@ -60,12 +70,12 @@ height: 48px;
 	width: 100%;
 	.nav {
 	float: left;
-	margin-left: 100px;
+	margin-left: 155px;
 	}
 	.user {
 	float: right;
 	right: 10px;
-	margin-right: 100px;
+	margin-right: 155px;
 	}
 	a {
 	text-decoration: none;
@@ -74,7 +84,7 @@ height: 48px;
 }
 .nav_btn {
 	border: 0.5px solid #009966;
-	background-color: #FFF;
+	background-color: #FFFF99;
 	font-weight: bold;
     text-align: center;
     border-radius: 5px;
@@ -82,7 +92,7 @@ height: 48px;
     margin-top: 7px;
     width: 105px;
   &:hover {
-    background-color: #FFFF55;
+    background-color: #FFFFFF;
   }
 }
 
@@ -112,7 +122,7 @@ height: 48px;
 
 #post {
     margin-top: 20px;
-    margin-right: 25px;
+    margin-right: 60px;
 	float: right;
 }
 
@@ -135,11 +145,11 @@ height: 48px;
 #search {
 	float: left;
 	margin-top: 5px;
-	margin-left: 25px;
+	margin-left: 60px;
 }
 
 .content_posts {
-	width: 750px;
+	width: 680px;
 	margin: 0 auto;
 	padding-top: 80px;
 }
@@ -149,11 +159,13 @@ height: 48px;
 	border: 2px solid #AAA;
 	background-color: #FFF;
 	height: 240px;
+
 	margin: 10px;
-	padding: 30px 85px;
-	border-radius: 10px;
+	padding: 30px 45px;
+	border-radius: 6px;
 	p {
 	font-size: 18px;
+	padding-top: 7px;
 	line-height:32px;
 	}
 }
@@ -162,25 +174,32 @@ height: 48px;
 }
 .big {
 	height: 150px;
+	min-width: 500px;
+	max-width: 520px;
+	margin: 0 auto;
 }
 .post_user {
 	float: left;
 	clear: both;
-	margin-right: 55px;
+	margin-right: 40px;
+	p {
+	padding-top: 0;
+	height: 30px;
+	}
 	img {
 	border-radius: 7px;
 	}
 }
 .post_contain {
 	float: left;
-	margin-right: 55px;
+	margin-right: 40px;
 }
 .sub_contain {
 	float: left;
 }
 
 .more {
-	width: 360px;
+	width: 330px;
 	margin: 0 auto;
     font-size: 20px;
 	clear: both;
@@ -196,6 +215,22 @@ height: 48px;
     &:hover {
 	    background-color: $accent;
 	  }
+}
+
+// 完了
+
+.success {
+	height: 200px;
+	width: 400px;
+	margin: 30px auto;
+	h2 {
+	text-align: center;
+	padding: 0 30px;
+	}
+}
+.success .btn {
+	width: 250px;
+	margin: 35px 75px;
 }
 
 // ボタン
@@ -339,10 +374,13 @@ height: 48px;
 
 // 入力フォーム
 .form-group {
-    margin-top: 25px;
+    margin-top: 10px;
 	.form-control {
 	border: 1px solid #888;
 	background-color: #fff;
+	}
+	.len {
+	width: 465px;
 	}
 }
 
@@ -357,6 +395,9 @@ height: 48px;
 .user_show {
 	width: 800px;
 	margin: 0 auto;
+	h2 {
+	color: $orange;
+	}
 }
 
 .profile {
@@ -370,6 +411,9 @@ height: 48px;
 	.pro_img {
 		float: left;
 		margin-right: 20px;
+		img {
+		border-radius: 7px;
+		}
 	}
 	.pro_txt {
 		float: left;
@@ -394,6 +438,22 @@ height: 48px;
   &:hover {
     border-color: lighten($accent, 15%);
     color: lighten($accent, 15%);
+  }
+}
+
+.edi_btn {
+	width: 140px;
+    font-size: 20px;
+    border: 2px solid $accent;
+    color: #FFF;
+    background-color: $accent;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+  &:hover {
+    border-color: lighten($accent, 15%);
+    background-color: lighten($accent, 15%);
   }
 }
 
@@ -441,6 +501,22 @@ height: 48px;
   color: #3879D9;
 }
 
+.result {
+	h3 {
+	text-align: center;
+	}
+	.pagination {
+	padding-top: 0;
+	}
+	.content {
+	height: calc(90vh - 190px);
+	}
+	.btn {
+	margin: 10px 0;
+	}
+}
+
+	
 
 // サインアップ・サインイン
 .sign {

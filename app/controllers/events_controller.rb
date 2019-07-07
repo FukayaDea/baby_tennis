@@ -55,7 +55,7 @@ class EventsController < ApplicationController
 	# 検索
 
 	def search
-		@events = Event.where('prefecture LIKE(?)', "%#{params[:keyword]}%")
+		@events = Event.where('prefecture LIKE(?)', "%#{params[:keyword]}%").order(created_at: :desc).page(params[:page]).per(5)
 	end
 
 

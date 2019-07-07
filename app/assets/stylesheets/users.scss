@@ -149,3 +149,26 @@ $purple: #660099;
   height: 35px;
   margin: 0px 0 20px;
 }
+
+
+.user_edit_frame {
+  height: 500px;
+  width: 600px;
+  margin: 30px auto;
+  border: 2px solid #BBB;
+  border-radius: 3px;
+  background-color: #FFFFEE;
+  h3 {
+  text-align: center;
+  color: $blue;
+  }
+}
+
+.user_edit {
+  width: 470px;
+  margin: 30px auto;
+  .edi_btn {
+  width: 466px;
+  margin: 15px 0;
+  }
+}

@@ -1,29 +1,35 @@
-<p>検索結果</p>
+<div class="contents">
 
-<% if @events.exists? %>
+	<div class="main result">
+	  <h3>検索結果</h3>
+	<!-- 検索 -->
+	  <div id="search">
 
-	<% @events.each do |event| %>
-
-	<div class="content_post">
-	      投稿者：<a href="/users/<%= event.user.id %>"><%= event.user.nickname %></a><br>
-	    <% if user_signed_in? && event.user.id == current_user.id %>
-	      <%= link_to '編集', "/events/#{event.id}/edit", method: :get %>
-	      <%= link_to '削除', "/events/#{event.id}", method: :delete %><br>
+	    <p>エリア検索</p>
+	    <%= form_tag(search_path, method: :get, class: 'search' ) do %>
+	      <%= text_field_tag :keyword, '', placeholder: "都道府県を入力" %>
+	      <%= submit_tag 'Search', :name => nil %>
 	    <% end %>
-	  
-	      日時：<%= event.event_date %><br>
-	      エリア：<%= event.prefecture %><br>
-	      集合場所：<%= event.meeting_place %><br>
-	      集合時間：<%= event.meeting_time.strftime("%H時%M分") %><br>
-	      コメント<%= event.comments.count %>件<br>
+	  </div>
 
-	      <%= link_to '詳細', "/events/#{event.id}", method: :get %>
-	      
+	  <div class="content_posts">
+	  <% if @events.exists? %>
+
+	  <%= render @events %>
+	　<%= paginate(@events) %>
+
+	  <% else %>
+
+		  <div class="content">
+
+		　<h3>一致するものはありません</h3>
+
+		  </div>
+
+	　<% end %>
+
+	  <a class="btn" href="/">TOPへ戻る</a>
+	  </div>
+
 	</div>
-	<% end %>
-
-<% else %>
-
-<h2>一致するものはありません</h2>
-
-<% end %>
+</div>

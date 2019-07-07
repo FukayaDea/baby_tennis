@@ -1,16 +1,25 @@
 <div class="content">
-	<%= form_for current_user do |f| %>
-	<h3>登録情報</h3>
-      <div class="form-group file">
-      	<p><span class="data">プロフィール画像：</span>
-        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %></p>
-	    
-		<p><span class="data">ニックネーム：</span><%= f.text_field :nickname, placeholder: "ニックネーム", class:"form-control" %></p>
-		<p><span class="data">テニス歴：</span><%= f.text_field :career, placeholder: "テニス歴", class:"form-control" %></p>
-		<p><span class="data">活動エリア：</span><%= f.text_field :play_erea, placeholder: "活動エリア", class:"form-control" %></p>
-		<p><span class="data">フリー：</span><br><%= f.text_area :profile, placeholder: "自己紹介", cols:"50", rows:"3", class:"form-control" %></p>
-		<p><span class="data">SNSリンク：</span><%= f.text_field :link, placeholder: "Twitterやブログなど", class:"form-control" %></p>
-		<%= f.submit "編集", class: 'btn' %>
-	</div>
-	<% end %>
+	<div class="user_edit_frame">
+		<div class="user_edit">
+		<%= form_for current_user do |f| %>
+		<h3>登録情報</h3>
+	      <div class="form-group file">
+	      	<p><span class="data">プロフィール画像</span></p>
+	        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
+		    
+			<p><span class="data">ニックネーム</span></p>
+			<%= f.text_field :nickname, placeholder: "ニックネーム", class:"form-control" %>
+			<p><span class="data">テニス歴：</span></p>
+			<%= f.text_field :career, placeholder: "テニス歴", class:"form-control" %>
+			<p><span class="data">活動エリア</span></p>
+			<%= f.text_field :play_erea, placeholder: "活動エリア", class:"form-control" %></p>
+			<p><span class="data">フリー</span></p>
+			<%= f.text_area :profile, placeholder: "自己紹介", cols:"50", rows:"3", class:"form-control" %>
+			<p><span class="data">SNSリンク</span></p>
+			<%= f.text_field :link, placeholder: "Twitterやブログなど", class:"form-control len" %><br>
+			<%= f.submit "編集", class: 'edi_btn' %>
+		</div>
+		<% end %>
+        </div>
+    </div>
 </div>
