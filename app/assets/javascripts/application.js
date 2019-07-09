@@ -15,3 +15,11 @@
 //= require activestorage
 
 //= require_tree .
+
+$(window).on("load", function() {
+  $("button").on("click", function() {
+    $(this).hide();
+    $(".alert-danger").hide();
+    $(".alert-success").hide();
+  });
+});

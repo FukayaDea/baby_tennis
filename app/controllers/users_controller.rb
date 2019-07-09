@@ -15,7 +15,13 @@ class UsersController < ApplicationController
 
 	def update
 		current_user.update(update_params)
-		redirect_to action: :show
+
+		if current_user.save
+			redirect_to action: :show
+		else
+			flash.now[:alert] = "編集に失敗しました"
+			render action: :edit
+		end
 	end
 
 	private
