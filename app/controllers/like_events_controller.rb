@@ -12,7 +12,8 @@ class LikeEventsController < ApplicationController
 	def destroy
 		like_event = LikeEvent.find(params[:id])
 		like_event.destroy
-		redirect_to :root
+		user = like_event.user
+		redirect_to controller: :users, action: :show, id: user.id
 	end
 
 	private

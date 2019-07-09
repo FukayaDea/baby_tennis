@@ -74,7 +74,7 @@
 					    	<p><%= like_event.event.event_date.strftime("%Y/%m/%d") %>｜
 							<span class="erea"><%= like_event.event.prefecture %></span>
 							<%= link_to 'イベント詳細', "/events/#{like_event.event.id}", method: :get %>　
-							<%= link_to '削除', "/like_events/#{like_event.id}", method: :delete %></p>
+							<%= link_to '削除', "/like_events/#{like_event.id}", method: :delete, data: {confirm: "削除しますか？"}  %></p>
 						</div>
 					    <% end %>
 					    <%= paginate(@groups) %>
