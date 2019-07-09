@@ -24,7 +24,7 @@
 
 	    <div class="events">
 	    	<div class="my_events">
-				<p><span class="data"><%= @user.nickname %>さんの企画したイベント</span></p>
+				<p class="midle"><span class="data"><%= @user.nickname %>さんの企画したイベント</span></p>
 				
 				<% @events.each do |event| %>
 				<div class="my_event">
@@ -43,17 +43,17 @@
 
 		    <% if user_signed_in? && @user.id == current_user.id %>
 
-		    	<ul>
+<!-- 		    	<ul>
 				    <li id="left" class="selected">参加</li>
 				    <li id="centor">気になる</li>
 				    <li id="right">コメント</li>
-				</ul>
+				</ul> -->
 
 				<div class="tab_contents">
 
 				    <div class="left">
 				    <div class="left join_events">
-				    <p><span class="data"><%= @user.nickname %>さんの参加イベント</span></p>
+				    <p class="midle"><span class="data"><%= @user.nickname %>さんの参加イベント</span></p>
 					    <% @groups.each do |group| %>
 					    <div class="left join_event">
 					    	<p><%= group.event.event_date.strftime("%Y/%m/%d") %>｜
@@ -68,7 +68,7 @@
 
 				    <div class="centor">
 				    <div class="centor like_events">
-				    <p><span class="data"><%= @user.nickname %>さんの気になるイベント</span></p>
+				    <p class="midle"><span class="data"><%= @user.nickname %>さんの気になるイベント</span></p>
 					    <% @like_events.each do |like_event| %>
 					    <div class="centor like_event">
 					    	<p><%= like_event.event.event_date.strftime("%Y/%m/%d") %>｜
@@ -85,11 +85,11 @@
 
 				    <div class="right">
 				    	<div class="right user_comments">
-				    	<p><span class="data"><%= @user.nickname %>さんのコメント</span></p>
+				    	<p class="midle"><span class="data"><%= @user.nickname %>さんのコメント</span></p>
 						<% @event_comments.each do |event_comment| %>
 						<div class="right user_comment">
 						    <p>＞＞ <%= event_comment.event.event_date.strftime("%Y/%m/%d") %>｜
-							<span class="user_erea"><%= event_comment.event.prefecture %>のイベント　</span>
+							<span class="user_erea erea"><%= event_comment.event.prefecture %>のイベント　</span>
 							<%= link_to 'イベント詳細', "/events/#{event_comment.event.id}", method: :get %></p>
 							<p>　<%= event_comment.comment.text %></p>
 						</div>

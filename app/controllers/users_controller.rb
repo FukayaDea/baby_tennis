@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 		@co_events = @user.commented_events.order(created_at: :desc).distinct
 		@comments = @user.comments.order(created_at: :desc)
 		@event_comments = EventComment.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(5)
-		@groups = Group.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(5)
+		@groups = Group.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(3)
 		@like_events = LikeEvent.where(user_id: params[:id]).order(created_at: :desc).page(params[:page]).per(5)
 	end
 
