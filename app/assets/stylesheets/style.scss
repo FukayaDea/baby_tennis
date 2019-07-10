@@ -710,28 +710,29 @@ display: inline;
 // 掲示板
 
 .room {
-    width: 600px;
-    margin: 0 auto;
-	h2 {
-	text-align: center;
-	padding-bottom: 5px;
-	}
-	#search {
-	margin: 0  0 10px 0;
-	}
-	.name {
-	height: 22px;
-	}
-	input {
-	margin: 10px;
-	}
-	.room_rule {
-	p {
-	  text-align: center;
-	  margin: 0 0 20px;
-	}
-	}
+	    width: 600px;
+	    margin: 0 auto;
+		h2 {
+			text-align: center;
+			padding-bottom: 5px;
+		}
+		#search {
+			margin: 0  0 10px 0;
+		}
+		.name {
+			height: 22px;
+		}
+		input {
+			margin: 10px;
+		}
+		.room_rule {
+		p {
+		  text-align: center;
+		  margin: 0 0 20px;
+		}
+		}
 }
+
 
 .info_result {
 	.comments {
