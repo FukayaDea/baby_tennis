@@ -66,6 +66,32 @@ img {
 	overflow: hidden!important;
 }
 
+.frame {
+	border: 2px solid #888;
+	border-radius: 3px;
+	background-color: #FFF;
+	margin: 30px auto;
+	width: 500px;
+	min-height: 200px;
+	text-align: center;
+	padding: 20px 0;
+	h2 {
+	color: $orange;
+	margin-bottom: 5px;
+	}
+	.btn {
+	margin-top: 10px;
+	color: #666666;
+	border-color: #666666;
+	background-color: #EEE;
+  &:hover {
+    background-color: #666666;
+    color: #FFFFFF;
+    border-color: #666666;
+  }
+	}
+}
+
 #title a {
 text-decoration: none;
 color: #FFF;
@@ -424,10 +450,17 @@ height: 48px;
 	}
 }
 
+
 // 画像
 .image {
 	height: 400px;
 	width: 540px;
+}
+
+.pro_img {
+	img {
+	border-radius: 7px;
+	}
 }
 
 // ユーザー
@@ -677,9 +710,14 @@ display: inline;
 // 掲示板
 
 .room {
+    width: 600px;
+    margin: 0 auto;
 	h2 {
 	text-align: center;
 	padding-bottom: 5px;
+	}
+	#search {
+	margin: 0  0 10px 0;
 	}
 	.name {
 	height: 22px;
@@ -695,4 +733,11 @@ display: inline;
 	}
 }
 
-
+.info_result {
+	.comments {
+	margin-top: 100px;
+	}
+	h3 {
+	text-align: center;
+	}
+}

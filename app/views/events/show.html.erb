@@ -15,7 +15,7 @@
 			<p><span class="data">アクセス　</span><%= @event.access %></p>
 			<p><span class="data">参加費　　</span><%= @event.budget %>円</p>
 			<p><span class="data">募集人数　</span><%= @event.max_member %>人</p>
-			<p><span class="data">参加人数　</span><%= @groups.count %>人</p>
+			<p><span class="data">参加人数　</span><%= @event.joining %>人</p>
 			<% if @event.racket == 1 %>
 			  <p><span class="data">ラケット　</span>持参</p>
 			<% elsif @event.racket == 2 %>
@@ -36,6 +36,8 @@
 			    <%= link_to '削除', "/events/#{@event.id}", method: :delete, class: :editbtn, data: {confirm: "削除しますか？"}  %><br>
 			</div>
 		    <% end %>
+
+		    <% if user_signed_in? %>
 		    
 			<% unless @like_events.exists?(user_id: current_user.id) || @event.user.id == current_user.id %>
 			<div class="check">
@@ -44,6 +46,8 @@
 				  <%= submit_tag("気になる", class: 'checkbtn') %>
 				<% end %>
 			</div>
+			<% end %>
+
 			<% end %>
 
 		<% if user_signed_in? && @event.user.id != current_user.id %>	

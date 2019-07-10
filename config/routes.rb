@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :tennis_infos, only: [:index, :new, :create, :destroy]
 
   get 'search' => 'events#search'
+  get '/tennis_info/search' => 'tennis_infos#search'
 end

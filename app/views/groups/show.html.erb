@@ -1,8 +1,27 @@
-<% @groups.each do |group| %>
-	<a href="/users/<%= group.user.id %>"><%= group.user.nickname %></a>さん<br>
-	  <% if user_signed_in? &&  group.user.id == current_user.id && unless group.event.user_id == current_user.id %>
-	    <%= link_to '参加をやめる', "/groups/#{group.id}", method: :delete %><br>
-	  <% end %>
-	  <% end %>
+<div class="content">
 
-<% end %>
+	<div class="group_show frame">
+
+	<h2>このイベントの参加者</h2>
+
+	<% @groups.each do |group| %>
+
+	<div class="pro_img">
+
+	    <% if group.user.image.attached? %>
+		    <p><%= image_tag(rails_blob_path(group.user.image),:size => "100x100") %></p>
+		    <% else %>
+		    <p><%= image_tag("default_image.jpg", :size => "100x100") %></p>
+	    <% end %>
+	</div>
+		<a href="/users/<%= group.user.id %>"><%= group.user.nickname %></a>さん<br>
+		  <% if user_signed_in? &&  group.user.id == current_user.id && unless group.event.user_id == current_user.id %>
+		    <%= link_to '参加をやめる', "/groups/#{group.id}", method: :delete, class:"btn" %><br>
+		  <% end %>
+		  <% end %>
+
+	<% end %>
+
+	</div>
+
+</div>
