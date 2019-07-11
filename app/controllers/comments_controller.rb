@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 		comment = Comment.find(params[:id])
 		comment.destroy
 		event = comment.event
-		flash[:notice] = "イベントを削除しました"
+		flash[:notice] = "コメントを削除しました"
 		redirect_to controller: :events, action: :show, id: event.id
 	end
 

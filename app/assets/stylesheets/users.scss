@@ -32,6 +32,13 @@ $purple: #660099;
   color: #660099;
 }
 
+.user_show {
+  .midle {
+  width: 620px;
+  word-wrap: break-word;
+  }
+}
+
 .my_events {
   width: 800px;
   margin: 10px 0px 30px;
@@ -52,7 +59,7 @@ $purple: #660099;
   border-bottom: 1px solid #888;
   width: 600px;
   p {
-
+   
   }
   a {
   display: inline-block;

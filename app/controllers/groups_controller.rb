@@ -3,13 +3,12 @@ class GroupsController < ApplicationController
 	def create
 		Group.create(group_params)
 		@event = Event.find(params[:event_id])
-		@event.joining =+ 1
-		@event.save(joining: @event.joining)
 		redirect_to controller: :events, action: :show, id: @event.id
 	end
 
 	def show
 		@groups = Group.includes(:user).where(event_id: params[:id])
+		@event = Event.find(params[:id])
 	end
 
 	def destroy

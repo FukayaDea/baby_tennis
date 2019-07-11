@@ -9,7 +9,7 @@
 
     <div class="field">
       <p><span class="data"><%= f.label :ニックネーム %></span></p>
-      <%= f.text_field :nickname, placeholder: 'ニックネームを入力(必須)',autofocus: true %>
+      <%= f.text_field :nickname, placeholder: '最大20文字まで',autofocus: true, maxlength: 20 %>
     </div>
 
     <div class="field">

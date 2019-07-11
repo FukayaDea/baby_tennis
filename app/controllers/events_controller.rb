@@ -3,7 +3,7 @@ class EventsController < ApplicationController
     before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@events = Event.includes(:user, :comments, :like_events).all.order(created_at: :desc).page(params[:page]).per(5)
+		@events = Event.includes(:user, :comments, :like_events).all.order(updated_at: :desc).page(params[:page]).per(10)
 	end
 
 	def new
@@ -61,11 +61,11 @@ class EventsController < ApplicationController
 
 	private
 	def event_params
-		params.require(:event).permit(:event_date, :prefecture, :court, :court_url, :meeting_place, :meeting_time, :access, :budget, :max_member, :joining, :racket, :remarks).merge(user_id: current_user.id)
+		params.require(:event).permit(:event_date, :prefecture, :court, :court_url, :meeting_place, :meeting_time, :access, :budget, :max_member, :racket, :remarks).merge(user_id: current_user.id)
 	end
 
 	def update_params
-		params.require(:event).permit(:event_date, :prefecture, :court, :court_url, :meeting_place, :meeting_time, :access, :budget, :max_member, :joining, :racket, :remarks)
+		params.require(:event).permit(:event_date, :prefecture, :court, :court_url, :meeting_place, :meeting_time, :access, :budget, :max_member, :racket, :remarks)
 	end
 
 	def move_to_index

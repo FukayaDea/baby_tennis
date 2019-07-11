@@ -30,8 +30,7 @@
           <%= f.number_field :budget, class:"form-control" %>円<span class="small">(※半角)</span>
           <p><span class="data">募集人数</span></p>
           <%= f.number_field :max_member, class:"form-control" %>人<span class="small">(※半角)</span>
-          <p><span class="data">参加人数</span></p>
-          <%= f.number_field :joining, class:"form-control", placeholder: "募集時点の参加者数" %>人<span class="small">(※半角)</span>
+
           <label><p><span class="data">ラケット</span></p>
           <%= f.radio_button :racket, "1", {:checked => true} %>持参</label>
           <label><%= f.radio_button :racket, "2" %>有料レンタル</label>

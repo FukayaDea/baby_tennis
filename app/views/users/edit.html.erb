@@ -8,11 +8,11 @@
 	        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
 		    
 			<p><span class="data">ニックネーム</span></p>
-			<%= f.text_field :nickname, placeholder: "ニックネーム", class:"form-control" %>
+			<%= f.text_field :nickname, placeholder: "最大20文字まで", class:"form-control", size: 30, maxlength: 20 %>
 			<p><span class="data">テニス歴：</span></p>
-			<%= f.text_field :career, placeholder: "テニス歴", class:"form-control" %>
+			<%= f.text_field :career, placeholder: "テニス歴", class:"form-control", size: 30 %>
 			<p><span class="data">活動エリア</span></p>
-			<%= f.text_field :play_erea, placeholder: "活動エリア", class:"form-control" %></p>
+			<%= f.text_field :play_erea, placeholder: "活動エリア", class:"form-control", size: 30 %></p>
 			<p><span class="data">フリー</span></p>
 			<%= f.text_area :profile, placeholder: "自己紹介", cols:"50", rows:"3", class:"form-control" %>
 			<p><span class="data">SNSリンク</span></p>
