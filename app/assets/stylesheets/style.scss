@@ -106,7 +106,7 @@ height: 48px;
 	width: 100%;
 	.nav {
 	float: left;
-	margin-left: 155px;
+	margin-left: 100px;
 	}
 	.user {
 	float: right;
@@ -772,3 +772,37 @@ display: inline;
 	text-align: center;
 	}
 }
+
+//ダイアリー
+
+.room {
+	#di_post {
+	position: relative;
+	left: 480px;
+	.post_btn {
+		margin: 0 0 15px;
+	}
+	}
+}
+
+.di_new {
+	width: 600px;
+	margin: 0 auto;
+	.user_edit_frame {
+		height: 420px;
+		h2 {
+		text-align: center;
+        margin-bottom: 20px; 
+        color: $orange;
+		}
+		p {
+		margin: 10px 0;
+		}
+		.btn_mo {
+		margin: 35px 0;
+		width: 470px;
+		}
+	}
+}
+
+

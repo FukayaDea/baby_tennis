@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :like_events, only: [:show, :create, :destroy]
   resources :chats, only: [:index, :new, :create, :destroy]
   resources :tennis_infos, only: [:index, :new, :create, :destroy]
+  resources :diaries, only: [:index, :new, :create, :destroy]
 
   get 'search' => 'events#search'
   get '/tennis_info/search' => 'tennis_infos#search'

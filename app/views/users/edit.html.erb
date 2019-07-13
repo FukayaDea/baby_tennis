@@ -5,7 +5,7 @@
 		<h3>登録情報</h3>
 	      <div class="form-group file">
 	      	<p><span class="data">プロフィール画像</span></p>
-	        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
+	        <%= f.file_field :image %>
 		    
 			<p><span class="data">ニックネーム</span></p>
 			<%= f.text_field :nickname, placeholder: "最大20文字まで", class:"form-control", size: 30, maxlength: 20 %>
@@ -20,6 +20,9 @@
 			<%= f.submit "編集", class: 'edi_btn' %>
 		</div>
 		<% end %>
+
         </div>
+		<a href="/users/<%= current_user.id %>", class="btn" >戻る</a>
     </div>
+
 </div>

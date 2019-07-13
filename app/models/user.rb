@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :like_events, dependent: :destroy
   has_many :chats, dependent: :destroy
   has_many :tennis_infos, dependent: :destroy
+  has_many :diarys, dependent: :destroy
+
 
   has_one_attached :image, dependent: :destroy
 

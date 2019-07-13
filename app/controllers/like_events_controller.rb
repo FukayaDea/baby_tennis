@@ -2,7 +2,8 @@ class LikeEventsController < ApplicationController
 
 	def create
 		LikeEvent.create(like_event_params)
-		redirect_to :root
+		@event = Event.find(params[:event_id])
+		redirect_to controller: :events, action: :show, id: @event.id
 	end
 
 	def show

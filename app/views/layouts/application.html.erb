@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tennis</title>
+    <title>BabyTennis</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "https://unpkg.com/ress/dist/ress.min.css" %>
@@ -13,12 +13,13 @@
   <body>
     <header id="header">
 
-      <h1 id="title"><a href="/">tennis</a></h1>
+      <h1 id="title"><a href="/">BabyTennis</a></h1>
 
       <nav id="nav">
       <div class="nav">
         <a href="/chats" class="nav_btn">雑談</a>
         <a href="/tennis_infos" class="nav_btn">情報交換</a>
+        <a href="/diaries" class="nav_btn">ダイアリー</a>
       </div>
 
       <% if user_signed_in? %>
