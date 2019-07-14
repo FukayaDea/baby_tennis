@@ -17,9 +17,15 @@
 //= require_tree .
 
 $(window).on("load", function() {
-  $("button").on("click", function() {
+  $(".close").on("click", function() {
     $(this).hide();
     $(".alert-danger").hide();
     $(".alert-success").hide();
+  });
+});
+
+$(window).on("load", function() {
+  $("#liked_user").on("click", function() {
+    $(".like_users").show();
   });
 });

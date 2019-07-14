@@ -99,6 +99,29 @@ display: inline-block;
 height: 48px;
 }
 
+// いいね
+.likes {
+   display: -webkit-flex;
+
+   padding-top: 0;
+   flex-direction: row-reverse;
+   .like_count {
+   	padding-top: 1px;
+   }
+   .checkbtn {
+   margin-top: 0;
+
+   }
+   .checkbtn2 {
+   margin-top: 0;
+
+   }
+}
+
+.liked_users {
+	display: none;
+}
+
 // ナビ
 #nav {
 	background-color: #33CC66;
@@ -351,6 +374,16 @@ height: 48px;
 	  }
 }
 
+.checkbtn2 {
+	margin: 15px 0 0 15px;
+	width: 80px;
+	background-color: #FF9900;
+	border-radius: 3px;
+	color: #FFF;
+	  &:hover {
+	    background-color: $accent;
+	  }
+}
 .editbtn {
 	background-color: #888;
 	display: inline-block;

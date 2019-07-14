@@ -4,6 +4,7 @@
     <% if user_signed_in? && @user.id == current_user.id %>
       <%= link_to "プロフィール編集", edit_user_path(current_user), class: :edit %><br>
     <% end %>
+
 		<div class="profile">
 
 			<div class="pro_img">
@@ -99,6 +100,12 @@
 					</div>
 			    </div>
 		    </div>
+		    
+    <% @user.liked_chats.each do |liked_chat|  %>
+    <a href="/users/<%= liked_chat.user.id %>"><%= liked_chat.user.nickname %></a>
+    <%= liked_chat.text %>
+
+    <% end %>
     <div class="user_back">
 	  <a class="btn" href="/">TOPへ戻る</a>
     </div> 

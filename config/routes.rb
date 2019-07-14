@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:show, :create, :destroy]
   resources :like_events, only: [:show, :create, :destroy]
   resources :chats, only: [:index, :new, :create, :destroy] do
-    resources :like_chats, only: [:create, :destroy]
+    resources :like_chats, only: [:create, :destroy, :show]
   end
   resources :tennis_infos, only: [:index, :new, :create, :destroy]
   resources :diaries, only: [:index, :new, :create, :destroy]
