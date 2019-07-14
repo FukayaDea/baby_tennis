@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   resources :comments, only: [:new, :create, :destroy]
   resources :groups, only: [:show, :create, :destroy]
   resources :like_events, only: [:show, :create, :destroy]
-  resources :chats, only: [:index, :new, :create, :destroy]
+  resources :chats, only: [:index, :new, :create, :destroy] do
+    resources :like_chats, only: [:create, :destroy]
+  end
   resources :tennis_infos, only: [:index, :new, :create, :destroy]
   resources :diaries, only: [:index, :new, :create, :destroy]
+  
 
   get 'search' => 'events#search'
   get '/tennis_info/search' => 'tennis_infos#search'

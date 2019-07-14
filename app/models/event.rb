@@ -12,6 +12,7 @@ class Event < ApplicationRecord
     has_many :groups, dependent: :destroy
     has_many :event_comments, dependent: :destroy
     has_many :like_events, dependent: :destroy
+    has_many :liked_users, through: :like_events, source: :user
 
     def user_comment(user_id)
     	Comment.find_by(user_id: user_id, event_id: id)

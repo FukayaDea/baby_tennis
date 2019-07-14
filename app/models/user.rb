@@ -12,9 +12,15 @@ class User < ApplicationRecord
   has_many :event_groups, through: :events, source: :group, dependent: :destroy
   has_many :event_comments, dependent: :destroy
   has_many :like_events, dependent: :destroy
+  has_many :liked_events, through: :like_events, source: :event
   has_many :chats, dependent: :destroy
   has_many :tennis_infos, dependent: :destroy
   has_many :diarys, dependent: :destroy
+  has_many :like_chats, dependent: :destroy
+  has_many :liked_chats, through: :like_chats, source: :chat
+  def already_liked?(chat)
+    self.like_chats.exists?(chat_id: chat.id)
+  end
 
 
   has_one_attached :image, dependent: :destroy
