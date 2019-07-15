@@ -23,7 +23,7 @@
 			<% else %>
 			  <p><span class="data">ラケット　</span>無料レンタル</p>
 			<% end %>
-			<span class="data">備考　　　</span><%= simple_format(@event.remarks) %>
+			<span class="data">備考　　　</span><%= simple_format(h(@event.remarks)) %>
 			<p><span class="data">気になる　</span><%= @like_events.count %>件</p>
 			<p><span class="data"><%= link_to '参加者', group_path, method: :get %>　　</span>
 			<% @groups.each do |group| %>

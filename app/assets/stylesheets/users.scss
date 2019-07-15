@@ -17,7 +17,7 @@ $purple: #660099;
 .events {
   .midle {
   height: 25px;
-  margin-bottom: 15px;
+  margin: 10px 0 0px;
   }
 }
 
@@ -34,8 +34,19 @@ $purple: #660099;
 
 .user_show {
   .midle {
+  font-size: 18px;
   width: 620px;
   word-wrap: break-word;
+  }
+  h3 {
+  color: $blue;
+  font-size: 22px;
+  }
+  .under_line {
+  display: inline-block;
+  width: 230px;
+  height: 23px;
+  margin-bottom: 15px;
   }
 }
 
@@ -43,8 +54,8 @@ $purple: #660099;
   width: 800px;
   margin: 10px 0px 30px;
   border-bottom: 2px solid #888;
-  padding-bottom: 20px;
-  padding-left: 135px;
+  padding: 10px 0 20px 135px;
+
   background-color: #fff;
   p {
   padding: 10px 0 5px;
@@ -120,7 +131,7 @@ $purple: #660099;
 }
 
 .user_comments {
-  padding: 20px 45px 20px 135px;
+  padding: 10px 45px 20px 135px;
 }
 
 .right {
@@ -129,7 +140,7 @@ $purple: #660099;
 }
 
 .join_events {
-  padding: 20px 45px 20px 135px;
+  padding: 10px 45px 20px 135px;
   border-bottom: 20px solid #DDFFFF;
 }
 
@@ -142,7 +153,7 @@ $purple: #660099;
 }
 
 .like_events {
-  padding: 20px 45px 20px 135px;
+  padding: 10px 45px 20px 135px;
   border-bottom: 20px solid #DDFFFF;
 }
 
@@ -199,10 +210,11 @@ $purple: #660099;
 }
 
 .my_diaries {
-  margin: 0 0 20px;
+  margin: 10px 0 30px;
   padding: 20px 45px 20px 135px;
   background-color: #FFF;
   .my_diary {
+    margin: 0 0 20px;
     border-bottom: 2px solid #888;
     .diary_img {
       width: 400px;
@@ -216,7 +228,12 @@ $purple: #660099;
     margin: 0 0 20px;
     padding: 20px 45px 20px 135px;
     background-color: #FFF;
+    h4 {
+    margin-bottom: 5px;
+    }
   .my_like_thing {
+    margin: 0px 0 20px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #888;
   }
   }

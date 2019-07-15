@@ -26,7 +26,7 @@
 	    <div class="events">
 	    	<h3>イベント</h3>
 	    	<div class="my_events">
-				<p class="midle"><span class="data"><%= @user.nickname %>さんの企画したイベント</span></p>
+				<h4 class="midle"><%= @user.nickname %>さんの企画したイベント</h4>
 				
 				<% @events.each do |event| %>
 				<div class="my_event">
@@ -49,7 +49,7 @@
 
 				    <div class="left">
 				    <div class="left join_events">
-				    <p class="midle"><span class="data"><%= @user.nickname %>さんの参加イベント</span></p>
+				    <h4 class="midle"><%= @user.nickname %>さんの参加イベント</h4>
 					    <% @groups.each do |group| %>
 					    <div class="left join_event">
 					    	<p><%= group.event.event_date.strftime("%Y/%m/%d") %>｜
@@ -64,7 +64,7 @@
 
 				    <div class="centor">
 				    <div class="centor like_events">
-				    <p class="midle"><span class="data"><%= @user.nickname %>さんの気になるイベント</span></p>
+				    <h4 class="midle"><%= @user.nickname %>さんの気になるイベント</h4>
 					    <% @like_events.each do |like_event| %>
 					    <div class="centor like_event">
 					    	<p><%= like_event.event.event_date.strftime("%Y/%m/%d") %>｜
@@ -81,7 +81,7 @@
 
 				    <div class="right">
 				    	<div class="right user_comments">
-				    	<p class="midle"><span class="data"><%= @user.nickname %>さんのコメント</span></p>
+				    	<h4 class="midle"><%= @user.nickname %>さんのコメント</h4>
 						<% @event_comments.each do |event_comment| %>
 						<div class="right user_comment">
 						    <p>＞＞ <%= event_comment.event.event_date.strftime("%Y/%m/%d") %>｜
@@ -95,12 +95,12 @@
 					</div>
 			    </div>
 		    </div>
-		    <p class="midle"><span class="data"><%= @user.nickname %>さん's Diary</span></p>
+		    <h3><%= @user.nickname %>さん's Diary</h3>
 		    <div class="my_diaries">
 
 			    <% @my_diaries.each do |my_diary| %>
 			    	<div class="my_diary">
-			    		<p><%= my_diary.created_at.strftime("%Y/%m/%d") %></p>
+			    		<p><span class="under_line"><%= my_diary.created_at.strftime("%Y/%m/%d") %></span></p>
 						<p><%= my_diary.text %></p>
 					    <% if my_diary.image.attached? %>
 						    <div class="diary_img"><%= image_tag(rails_blob_path(my_diary.image),:size => "370x250") %></div>
@@ -116,7 +116,7 @@
 				    <h4>雑談</h4>
 				    <% @liked_chats.each do |liked_chat|  %>
 				    <div class="my_like_thing">
-					    <p><a href="/users/<%= liked_chat.user.id %>"><%= liked_chat.user.nickname %></a></p>
+					    <p><span class="under_line"><a href="/users/<%= liked_chat.user.id %>">◆ <%= liked_chat.user.nickname %></a></span></p>
 					    <p><%= liked_chat.text %></p>
 					</div>
 				    <% end %>
@@ -127,7 +127,7 @@
 				    <h4>情報交換</h4>
 				    <% @liked_infos.each do |liked_info|  %>
 				    <div class="my_like_thing">
-					    <p><a href="/users/<%= liked_info.user.id %>"><%= liked_info.user.nickname %></a></p>
+					    <p><span class="under_line"><a href="/users/<%= liked_info.user.id %>">◆ <%= liked_info.user.nickname %></a></span></p>
 					    <p><%= liked_info.text %></p>
 					</div>
 				    <% end %>
@@ -138,7 +138,7 @@
 					<h4>ダイアリー</h4>
 				    <% @liked_diaries.each do |liked_diary|  %>
 					    <div class="my_like_thing">
-						    <p><a href="/users/<%= liked_diary.user.id %>"><%= liked_diary.user.nickname %></a></p>
+						    <p><span class="under_line"><a href="/users/<%= liked_diary.user.id %>">◆ <%= liked_diary.user.nickname %></a></span></p>
 						    <p><%= liked_diary.text %></p>
 						</div>
 				    <% end %>
