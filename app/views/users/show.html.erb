@@ -24,6 +24,7 @@
 	    </div>
 
 	    <div class="events">
+	    	<h3>イベント</h3>
 	    	<div class="my_events">
 				<p class="midle"><span class="data"><%= @user.nickname %>さんの企画したイベント</span></p>
 				
@@ -43,12 +44,6 @@
 		    <div class="tab_menu">
 
 		    <% if user_signed_in? && @user.id == current_user.id %>
-
-<!-- 		    	<ul>
-				    <li id="left" class="selected">参加</li>
-				    <li id="centor">気になる</li>
-				    <li id="right">コメント</li>
-				</ul> -->
 
 				<div class="tab_contents">
 
@@ -100,32 +95,52 @@
 					</div>
 			    </div>
 		    </div>
+		    <p class="midle"><span class="data"><%= @user.nickname %>さん's Diary</span></p>
+		    <div class="my_diaries">
+
+			    <% @my_diaries.each do |my_diary| %>
+			    	<div class="my_diary">
+			    		<p><%= my_diary.created_at.strftime("%Y/%m/%d") %></p>
+						<p><%= my_diary.text %></p>
+					    <% if my_diary.image.attached? %>
+						    <div class="diary_img"><%= image_tag(rails_blob_path(my_diary.image),:size => "370x250") %></div>
+					    <% end %>
+					</div>
+			    <% end %>
+			    <%= paginate(@my_diaries) %>
+		    </div>
 
 		    <div class="my_likes">
 		    	<h3>いいね</h3>
 		    	<div class="my_like">
-				    <p>雑談</p>
+				    <h4>雑談</h4>
 				    <% @liked_chats.each do |liked_chat|  %>
-				    <a href="/users/<%= liked_chat.user.id %>"><%= liked_chat.user.nickname %></a>
-				    <%= liked_chat.text %><br>
+				    <div class="my_like_thing">
+					    <p><a href="/users/<%= liked_chat.user.id %>"><%= liked_chat.user.nickname %></a></p>
+					    <p><%= liked_chat.text %></p>
+					</div>
 				    <% end %>
 				    <%= paginate(@liked_chats) %>
 				</div>
 
 				<div class="my_like">
-				    <p>情報交換</p>
+				    <h4>情報交換</h4>
 				    <% @liked_infos.each do |liked_info|  %>
-				    <a href="/users/<%= liked_info.user.id %>"><%= liked_info.user.nickname %></a>
-				    <%= liked_info.text %><br>
+				    <div class="my_like_thing">
+					    <p><a href="/users/<%= liked_info.user.id %>"><%= liked_info.user.nickname %></a></p>
+					    <p><%= liked_info.text %></p>
+					</div>
 				    <% end %>
 				    <%= paginate(@liked_infos) %>
 				</div>
 
 			    <div class="my_like">
-				　　<p>日記</p>
+					<h4>ダイアリー</h4>
 				    <% @liked_diaries.each do |liked_diary|  %>
-				    <a href="/users/<%= liked_diary.user.id %>"><%= liked_diary.user.nickname %></a>
-				    <%= liked_diary.text %><br>
+					    <div class="my_like_thing">
+						    <p><a href="/users/<%= liked_diary.user.id %>"><%= liked_diary.user.nickname %></a></p>
+						    <p><%= liked_diary.text %></p>
+						</div>
 				    <% end %>
 				    <%= paginate(@liked_diaries) %>
 				</div>

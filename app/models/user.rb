@@ -15,7 +15,7 @@ class User < ApplicationRecord
   has_many :liked_events, through: :like_events, source: :event
   has_many :chats, dependent: :destroy
   has_many :tennis_infos, dependent: :destroy
-  has_many :diarys, dependent: :destroy
+  has_many :diaries, dependent: :destroy
   has_many :like_chats, dependent: :destroy
   has_many :liked_chats, through: :like_chats, source: :chat
   def already_liked_c?(chat)

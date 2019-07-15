@@ -197,3 +197,27 @@ $purple: #660099;
   margin: 15px 0;
   }
 }
+
+.my_diaries {
+  margin: 0 0 20px;
+  padding: 20px 45px 20px 135px;
+  background-color: #FFF;
+  .my_diary {
+    border-bottom: 2px solid #888;
+    .diary_img {
+      width: 400px;
+      margin: 10px auto;
+    }
+  }
+}
+
+.my_likes {
+  .my_like {
+    margin: 0 0 20px;
+    padding: 20px 45px 20px 135px;
+    background-color: #FFF;
+  .my_like_thing {
+    border-bottom: 2px solid #888;
+  }
+  }
+}
