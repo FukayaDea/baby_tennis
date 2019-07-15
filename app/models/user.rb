@@ -18,10 +18,21 @@ class User < ApplicationRecord
   has_many :diarys, dependent: :destroy
   has_many :like_chats, dependent: :destroy
   has_many :liked_chats, through: :like_chats, source: :chat
-  def already_liked?(chat)
+  def already_liked_c?(chat)
     self.like_chats.exists?(chat_id: chat.id)
   end
 
+  has_many :like_diaries, dependent: :destroy
+  has_many :liked_diaries, through: :like_diaries, source: :diary
+  def already_liked_d?(diary)
+    self.like_diaries.exists?(diary_id: diary.id)
+  end
+
+  has_many :like_infos, dependent: :destroy
+  has_many :liked_infos, through: :like_infos, source: :tennis_info
+  def already_liked?(info)
+    self.like_infos.exists?(tennis_info_id: info.id)
+  end
 
   has_one_attached :image, dependent: :destroy
 

@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   resources :chats, only: [:index, :new, :create, :destroy] do
     resources :like_chats, only: [:create, :destroy, :show]
   end
-  resources :tennis_infos, only: [:index, :new, :create, :destroy]
-  resources :diaries, only: [:index, :new, :create, :destroy]
+
+  resources :tennis_infos, only: [:index, :new, :create, :destroy] do
+    resources :like_infos, only: [:create, :destroy, :show]
+  end
+  
+  resources :diaries, only: [:index, :new, :create, :destroy] do
+    resources :like_diaries, only: [:create, :destroy, :show]
+  end
   
 
   get 'search' => 'events#search'

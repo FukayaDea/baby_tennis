@@ -100,15 +100,40 @@
 					</div>
 			    </div>
 		    </div>
-		    
-    <% @user.liked_chats.each do |liked_chat|  %>
-    <a href="/users/<%= liked_chat.user.id %>"><%= liked_chat.user.nickname %></a>
-    <%= liked_chat.text %>
 
-    <% end %>
-    <div class="user_back">
-	  <a class="btn" href="/">TOPへ戻る</a>
-    </div> 
+		    <div class="my_likes">
+		    	<h3>いいね</h3>
+		    	<div class="my_like">
+				    <p>雑談</p>
+				    <% @liked_chats.each do |liked_chat|  %>
+				    <a href="/users/<%= liked_chat.user.id %>"><%= liked_chat.user.nickname %></a>
+				    <%= liked_chat.text %><br>
+				    <% end %>
+				    <%= paginate(@liked_chats) %>
+				</div>
+
+				<div class="my_like">
+				    <p>情報交換</p>
+				    <% @liked_infos.each do |liked_info|  %>
+				    <a href="/users/<%= liked_info.user.id %>"><%= liked_info.user.nickname %></a>
+				    <%= liked_info.text %><br>
+				    <% end %>
+				    <%= paginate(@liked_infos) %>
+				</div>
+
+			    <div class="my_like">
+				　　<p>日記</p>
+				    <% @liked_diaries.each do |liked_diary|  %>
+				    <a href="/users/<%= liked_diary.user.id %>"><%= liked_diary.user.nickname %></a>
+				    <%= liked_diary.text %><br>
+				    <% end %>
+				    <%= paginate(@liked_diaries) %>
+				</div>
+			</div>
+
+		    <div class="user_back">
+			  <a class="btn" href="/">TOPへ戻る</a>
+		    </div> 
 		</div>
 
     </div>
