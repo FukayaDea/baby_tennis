@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :diaries, only: [:index, :new, :create, :destroy] do
     resources :like_diaries, only: [:create, :destroy, :show]
   end
-  
+
+  get 'about' => 'pages#about'
+  get 'terms' => 'pages#terms'
+  get 'privacy' => 'pages#privacy'
+  get 'how_to' => 'pages#how_to'
 
   get 'search' => 'events#search'
   get '/tennis_info/search' => 'tennis_infos#search'

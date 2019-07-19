@@ -7,7 +7,8 @@ $gray: #D8D8D8;
 $lightGray: #f5f5f3;
 $white: white;
 $blue: #0066FF;
-$orange: #ff962d;
+$s_blue: #4169e1;
+$orange: #ff8e1e;
 $purple: #660099;
 
 // ヘッダー
@@ -20,12 +21,12 @@ header {
 	  margin: 0 auto;
       width: 100%;
       height: 48px;
-      background-color: #0066FF;
+      background-color: $blue;
 	}
 }
 
 h2 {
-	font-size: 35px;
+	font-size: 38px;
 
 }
 
@@ -142,7 +143,7 @@ height: 48px;
 	.user {
 	float: right;
 	right: 10px;
-	margin-right: 155px;
+	margin-right: 100px;
 	}
 	a {
 	text-decoration: none;
@@ -165,9 +166,13 @@ height: 48px;
   }
 }
 
+body {
+	background-color: #afeeee;
+}
+
 #main {
 	padding-top: 88px;
-	background-color: #afeeee;
+
 }
 
 #footer {
@@ -466,43 +471,6 @@ height: 48px;
 	}
 }
 
-// ユーザー
-// マイページ
-.user_show {
-	width: 800px;
-	margin: 0 auto;
-	h2 {
-	color: $orange;
-	width: 800px;
-	word-wrap: break-word;
-	}
-}
-
-.profile {
-	margin: 10px 0 30px;
-    height: 200px;
-	background-color: #fff;
-	border: 2px solid #888;
-    padding: 20px 30px;
-    overflow: scroll;
-    clear: both;
-	.pro_img {
-		float: left;
-		margin-right: 20px;
-		img {
-		border-radius: 7px;
-		}
-	}
-	.pro_txt {
-		float: left;
-		width: 600px;
-
-		p {
-		border-bottom: 1px solid #888;
-		}
-	}
-}
-
 // ボタン
 .btn {
 	width: 140px;
@@ -787,6 +755,21 @@ display: inline;
 		h2 {
 			text-align: center;
 			padding-bottom: 5px;
+		}
+		.chat {
+			h2 {
+				color: #ff7f00;
+			}
+		}
+		.info {
+			h2 {
+				color: #4169e1;
+			}
+		}
+		.diary {
+			h2 {
+				color: #006a6c;
+			}
 		}
 		#search {
 			margin: 0  0 10px 0;
