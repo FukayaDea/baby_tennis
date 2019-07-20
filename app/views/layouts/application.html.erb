@@ -15,27 +15,29 @@
 
       <h1 id="title"><a href="/">Baby<span class="font_space">T</span>ennis</a></h1>
 
-      <nav id="nav">
-      <div class="nav">
-        <a href="/chats" class="nav_btn">雑談</a>
-        <a href="/tennis_infos" class="nav_btn">情報交換</a>
-        <a href="/diaries" class="nav_btn">ダイアリー</a>
-        <a href="/about" class="">BabyTennisとは？</a>
-      </div>
-
-      <% if user_signed_in? %>
-        <div class="user">
-          <a href="/users/<%= current_user.id %>" class="nav_btn" >マイページ</a>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav_btn' %>
+      <nav id="navi" >
+      <div id="nav">
+        <div class="nav">
+          <a href="/chats" class="nav_btn">雑談</a>
+          <a href="/tennis_infos" class="nav_btn">情報交換</a>
+          <a href="/diaries" class="nav_btn">ダイアリー</a>
+          <a href="/about" class="nav_about">BabyTennisとは？</a>
+          <a href="/how_to" class="nav_about">サイトの使い方</a>
         </div>
 
-      <% else %>
-        <div class="user">
-          <%= link_to "ログイン", new_user_session_path, class: 'nav_btn' %>
-          <%= link_to "新規登録", new_user_registration_path, class: 'nav_btn' %>
-        </div>
-      <% end %>
+        <% if user_signed_in? %>
+          <div class="user">
+            <a href="/users/<%= current_user.id %>" class="nav_btn" >マイページ</a>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav_btn' %>
+          </div>
 
+        <% else %>
+          <div class="user">
+            <%= link_to "ログイン", new_user_session_path, class: 'nav_btn' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'nav_btn' %>
+          </div>
+        <% end %>
+      </div> 
       </nav>
 
     </header>

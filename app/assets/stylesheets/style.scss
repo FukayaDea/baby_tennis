@@ -139,22 +139,35 @@ height: 48px;
 }
 
 // ナビ
-#nav {
+#navi {
 	background-color: #33CC66;
 	height: 40px;
 	width: 100%;
+}
+#nav {
+	max-width: 1115px;
+	height: 40px;
+	margin: 0 auto;
 	.nav {
 	float: left;
-	margin-left: 100px;
+	margin-left: 0px;
 	}
 	.user {
 	float: right;
 	right: 10px;
-	margin-right: 100px;
+	margin-left: 0px;
 	}
 	a {
 	text-decoration: none;
     color: #009966;
+	}
+	.nav_about {
+		margin-left: 10px;
+		font-weight: bold;
+		color: #fff;
+	  &:hover {
+	    color: $orange;
+	  }
 	}
 }
 .nav_btn {
@@ -172,6 +185,8 @@ height: 48px;
     color: lighten(#009966, 15%);
   }
 }
+
+
 
 body {
 	background-color: #afeeee;
