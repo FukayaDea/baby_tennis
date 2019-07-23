@@ -4,7 +4,6 @@
     <title>BabyTennis</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "https://unpkg.com/ress/dist/ress.min.css" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'faulse' %>
     <%= stylesheet_link_tag "https://unpkg.com/ress/dist/ress.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -42,16 +41,20 @@
 
     </header>
 
-
+   <div class="back_img">
     <section id="main">
       <!--   フラッシュメッセージ -->
       <%= bootstrap_flash %>
 
       <%= yield %>
     </section>
+    </div>
 
     <footer id="footer">
-      
+      <a href="/about">BabyTennisとは？</a>
+      <a href="/link">テニス関連リンク</a>
+      <a href="/terms">利用規約</a>
+      <a href="/privacy">プライバシーポリシー</a>
     </footer>
 
   </body>

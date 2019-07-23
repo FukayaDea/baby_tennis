@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'terms' => 'pages#terms'
   get 'privacy' => 'pages#privacy'
   get 'how_to' => 'pages#how_to'
+  get 'link' => 'pages#link'
 
   get 'search' => 'events#search'
   get '/tennis_info/search' => 'tennis_infos#search'

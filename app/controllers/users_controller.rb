@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 		if current_user.save
 			redirect_to action: :show
 		else
-			flash.now[:alert] = "編集に失敗しました"
+			flash.now[:alert] = "編集に失敗しました※他者が使用中のニックネームは使えません"
 			render action: :edit
 		end
 	end
