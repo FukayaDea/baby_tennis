@@ -262,7 +262,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: 'email'
   config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET'], scope: 'email', oauth_callback: "#{ENV['HOST']}/users/auth/twitter/callback"
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email, profile', redirect_uri: "http://localhost:3000/users/auth/google_oauth2/callback"
+  config.omniauth :google_oauth2, Rails.application.credentials.google[:api_key], Rails.application.credentials.google[:secret_key], scope: 'email, profile', redirect_uri: "http://localhost:3000/users/auth/google_oauth2/callback"
   OmniAuth.config.logger = Rails.logger if Rails.env.development?
 
   # ==> Warden configuration
