@@ -72,6 +72,7 @@ gem 'kaminari'
 gem 'jquery-rails' 
 gem 'jquery-ui-rails'
 
+
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
