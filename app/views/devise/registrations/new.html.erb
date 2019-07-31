@@ -35,13 +35,24 @@
     <div class="field">
       <p><span class="data"><%= f.label :年齢確認 %></span><span class="small">（※ユーザー登録できるのは２０歳以上の方に限ります)</span><br>
       <%= f.check_box :over20, {} , 1, nil %><span class="data">20歳以上</span></p>
+      <p><%= f.check_box :agree, {} , 1, nil %><span class="data"><a href="/terms" class="terms_agree">利用規約</a>に同意する</span></p>
     </div>
 
     <div class="actions">
       <%= f.submit "新規登録" %>
     </div>
-
-    <%= render "devise/shared/links" %>
+    <div class="sns_new google">
+    <%= link_to "Googleアカウントで新規登録", user_google_oauth2_omniauth_authorize_path %><br />
+    </div>
+    <div class="sns_new fb">
+    <%= link_to "Facebookで新規登録", user_facebook_omniauth_authorize_path %><br />
+    </div>
+    <div class="sns_new twitter">
+    <%= link_to "Twitterで新規登録", user_twitter_omniauth_authorize_path %><br />
+    </div>
+    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+      <%= link_to "確認メール再送", new_confirmation_path(resource_name) %><br />
+    <% end %>
 
 
   <% end %>

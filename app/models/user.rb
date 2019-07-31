@@ -11,6 +11,7 @@ class User < ApplicationRecord
       user.nickname = auth.info.name
       user.password = Devise.friendly_token[0,20]
       user.over20 = 1
+      user.agree = 1
     end
   end
 
@@ -46,7 +47,7 @@ class User < ApplicationRecord
 
   has_one_attached :image, dependent: :destroy
 
-  validates :nickname, :over20, presence: true
+  validates :nickname, :over20, :agree, presence: true
   
   validates :nickname, uniqueness: true
 

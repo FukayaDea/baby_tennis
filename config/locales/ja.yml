@@ -9,6 +9,8 @@ ja:
     meeting_place: 集合場所
     meeting_time: 集合時間
     password_confirmation: 確認用パスワード
+    over20: "年齢確認"
+    agree: "利用規約への同意"
   date:
     abbr_day_names:
     - 日

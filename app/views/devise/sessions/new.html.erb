@@ -27,7 +27,21 @@
   </div>
 <% end %>
 <div class="sign">
-<%= render "devise/shared/links" %>
+    <div class="sns_new google">
+    <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path %><br />
+    </div>
+    <div class="sns_new fb">
+    <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path %><br />
+    </div>
+    <div class="sns_new twitter">
+    <%= link_to "Twitterでログイン", user_twitter_omniauth_authorize_path %><br />
+    </div>
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "パスワードを忘れた", new_password_path(resource_name) %><br />
+    <% end %>
+    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+      <%= link_to "確認メール再送", new_confirmation_path(resource_name) %><br />
+    <% end %>
 </div>
 </div>
 </div>
