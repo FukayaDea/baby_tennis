@@ -1,5 +1,6 @@
 ja:
   attributes:
+    nickname: ニックネーム
     email: メールアドレス
     password: パスワード
     group_id: グループ名
@@ -11,6 +12,7 @@ ja:
     password_confirmation: 確認用パスワード
     over20: "年齢確認"
     agree: "利用規約への同意"
+    remember_me: "ログイン状態を保存する"
   date:
     abbr_day_names:
     - 日

@@ -1,47 +1,57 @@
 <div class="content">
 
-<div id="sign">
+  <div id="sign">
 
-<h2>ログイン</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2>ログイン</h2>
   <div class="field">
-    <p><span class="data"><%= f.label :email %></span></p>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control"  %>
-  </div>
+    <h3 class="sns">SNSでログイン</h3>
+    <div class="sns_news">
+          <div class="sns_new google">
+          <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path %><br />
+          </div>
+          <div class="sns_new fb">
+          <%= link_to "Facebookアカウントでログイン", user_facebook_omniauth_authorize_path %><br />
+          </div>
+          <div class="sns_new twitter">
+          <%= link_to "Twitterアカウントでログイン", user_twitter_omniauth_authorize_path %><br />
+          </div>
+        <p><span class="small">新規登録をしていない方がSNSアカウントでログインをした場合、新規登録となります。<br>
+        新規登録するにあたっては、<a href="/terms" class="terms_agree">利用規約</a>に同意するものとします。<br>
+        ユーザー登録できるのは20歳以上の方に限ります。</span></p>
 
-  <div class="field">
-    <p><span class="data"><%= f.label :password %></span></p>
-    <%= f.password_field :password, autocomplete: "current-password", class:"form-control"  %>
-  </div>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="check">
-      <p><%= f.check_box :remember_me, class: 'check_box' %>
-      <span class="data"><%= f.label :remember_me %></span></p>
-    </div>
-  <% end %>
+      <h3 class="mail_new">メールアドレスでログイン</h3>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-<% end %>
-<div class="sign">
-    <div class="sns_new google">
-    <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path %><br />
-    </div>
-    <div class="sns_new fb">
-    <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path %><br />
-    </div>
-    <div class="sns_new twitter">
-    <%= link_to "Twitterでログイン", user_twitter_omniauth_authorize_path %><br />
-    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <p><span class="data"><%= f.label :email %></span></p>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control"  %>
+
+
+        <p><span class="data"><%= f.label :password %></span></p>
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control"  %>
+
+
+      <% if devise_mapping.rememberable? %>
+        <div class="check">
+          <p><%= f.check_box :remember_me, class: 'check_box' %>
+          <span class="data"><%= f.label :remember_me %></span></p>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "ログイン" %>
+      </div>
+    <% end %>
     <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
       <%= link_to "パスワードを忘れた", new_password_path(resource_name) %><br />
     <% end %>
     <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
       <%= link_to "確認メール再送", new_confirmation_path(resource_name) %><br />
     <% end %>
-</div>
-</div>
+
+  </div>
+  
+  </div>
 </div>

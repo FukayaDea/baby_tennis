@@ -260,8 +260,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], scope: 'email'
-  config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_SECRET'], scope: 'email', oauth_callback: "#{ENV['HOST']}/users/auth/twitter/callback"
+  config.omniauth :facebook, Rails.application.credentials.facebook[:api_key], Rails.application.credentials.facebook[:secret_key], scope: 'email'
+  config.omniauth :twitter, Rails.application.credentials.twitter[:api_key], Rails.application.credentials.twitter[:secret_key], scope: 'email'
   config.omniauth :google_oauth2, Rails.application.credentials.google[:api_key], Rails.application.credentials.google[:secret_key], scope: 'email, profile', redirect_uri: "http://localhost:3000/users/auth/google_oauth2/callback"
   OmniAuth.config.logger = Rails.logger if Rails.env.development?
 
