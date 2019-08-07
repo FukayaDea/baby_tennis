@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   resources :diaries, only: [:index, :new, :create, :destroy] do
     resources :like_diaries, only: [:create, :destroy, :show]
   end
-
+  
+  get 'email/new' => 'users#email_new'
+  
   get 'about' => 'pages#about'
   get 'terms' => 'pages#terms'
   get 'privacy' => 'pages#privacy'

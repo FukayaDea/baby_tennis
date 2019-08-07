@@ -17,6 +17,10 @@ class UsersController < ApplicationController
 		
 	end
 
+	def email_new
+		
+	end
+
 	def update
 		current_user.update(update_params)
 
@@ -30,6 +34,6 @@ class UsersController < ApplicationController
 
 	private
 	def update_params
-		params.require(:user).permit(:image, :nickname, :career, :play_erea, :profile, :link)
+		params.require(:user).permit(:image, :nickname, :career, :play_erea, :profile, :email, :link)
 	end
 end
