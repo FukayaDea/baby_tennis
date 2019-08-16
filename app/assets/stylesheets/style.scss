@@ -733,6 +733,9 @@ body {
 		input {
 			margin: 10px;
 		}
+		input[type="submit"]:disabled {
+	        background-color: #ffddbc;    
+	    }
 		.room_rule {
 		p {
 		  text-align: center;
@@ -789,6 +792,9 @@ body {
 		margin: 35px 0;
 		width: 470px;
 		}
+		input[type="submit"]:disabled {
+	        background-color: #ffddbc;    
+	    }
 	}
 }
 

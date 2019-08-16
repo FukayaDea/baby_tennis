@@ -67,10 +67,10 @@
 	    <div class="commbtn">
 		    <%= form_for @comment do |f| %>
 		      <div class="form-group">
-		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"60", rows:"3", autofocus:"true", class:"form-control" %>
+		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"60", rows:"3", autofocus:"true", class:"form-control", id:"comment_submit" %>
 		      </div>
 		      <%= f.hidden_field :event_id, :value => @event.id %>
-		      <%= f.submit "コメントする", class:"btn_mo"%>
+		      <%= f.submit "コメントする", class:"btn_mo", id:"submit_btn" %>
 		    <% end %>
 	    </div>
 	    <% end %>

@@ -23,3 +23,9 @@
     margin: 2.5px 0;
     }
 }
+
+.eve_show {
+    input[type="submit"]:disabled {
+        background-color: #ffddbc;    
+    }
+}
