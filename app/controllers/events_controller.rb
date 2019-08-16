@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-    before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
+   before_action :move_to_index, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@events = Event.includes(:user, :comments, :like_events).all.order(updated_at: :desc).page(params[:page]).per(10)

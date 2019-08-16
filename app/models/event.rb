@@ -1,6 +1,5 @@
 class Event < ApplicationRecord
 
-	# after_create :create_feed_content
 	after_create :create_group
 
 	validates :event_date, :prefecture,:meeting_place, :meeting_time, presence: true
@@ -19,9 +18,6 @@ class Event < ApplicationRecord
     end
 
     private
-    # def create_feed_content
-    # 	self.feed_content = FeedContent.create(updated_at: updated_at, user_id: user_id)
-    # end
 
     def create_group
     	Group.create(event_id: id, user_id: user.id )
