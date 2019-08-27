@@ -1,0 +1,50 @@
+<div class="content">
+
+	<div class="room">
+		<div class="room_rule info">
+		 <h2>テニストーク</h2>
+		 <p>コートやスクール、ラケットなどテニスに関する情報を交換しましょう！</p>
+		</div>
+
+		<div id="search">
+		    <p>キーワード検索</p>
+		    <%= form_tag(tennis_info_search_path, method: :get, class: 'search' ) do %>
+		      <%= text_field_tag :keyword, '', placeholder: "キーワードを入力" %>
+		      <%= submit_tag 'Search', :name => nil %>
+		    <% end %>
+		  </div>
+
+
+
+	    <div class="commbtn">
+	    	<% if user_signed_in? %>
+	    	
+		    <%= form_for @tennis_info, remote: true do |f| %>
+		      <div class="form-group">
+		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"64", rows:"3", autofocus:"true", class:"form-control", id:"comment_submit" %>
+		      </div>
+		      <%= f.submit "コメントする", class:"btn_mo", id:"submit_btn" %>
+		    <% end %>
+	    </div>
+	    <% end %>
+	    <div class="comments">
+		    <span class="data">コメント欄</span>
+		    <% unless @tennis_infos.exists? %>
+		      <p>まだコメントはありません。</p>
+		      <p>たくさんコメントをして、みんなでテニスを楽しみましょう！</p>		    	
+		    <% end %>
+
+		    <div class="comment">
+
+		    <%= render @tennis_infos %>
+
+		    </div>
+
+			<%= paginate(@tennis_infos) %>
+
+	    </div>
+	    <div class="back">
+		<a class="btn" href="/">TOPへ戻る</a>
+	    </div>
+    </div>
+</div>

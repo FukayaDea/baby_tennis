@@ -1,0 +1,224 @@
+<div class="content">
+	<div class="page">
+
+	<h2>サイトの使い方</h2>
+		<div class="how one">
+			<div class="para first">
+				<h3>サイトTOP</h3>
+				<p class="box">＜できること＞<br>
+				・イベントの作成<br>
+				・イベント探し</p>
+
+				
+
+			</div>
+
+
+			<div class="tab-menu">
+				<ul>
+					<li id="left" class="selected"><strong>イベントを作成したい</strong></li>
+					<li id="right"><strong>イベントを探したい</strong></li>
+				</ul>
+				<div class="contents">
+					<div class="left">
+						<p><strong>イベント作成ボタンをクリック！</strong></p>
+						<p><%= image_tag("index_image.png", :size => "430x500") %></p>
+						<div class="para left">
+							<h3>イベント作成</h3>
+							<p><strong>日付やエリア、集合場所、集合時間、参加費などの必要事項を入力フォームに沿って記入</strong>し、
+							投稿ボタンを押せばイベント作成完了！
+
+							<p>日付、エリア、集合場所、集合時間は必須項目です。<br>
+							<span style="color: #0000ff;">URL欄を用意しているので、必要に応じて会場のURLなどを貼って下さい。</span>
+
+							<p>参加者に何か伝えたいことがあれば備考欄を使って下さい。<br>
+							<strong>作成したイベントは後から編集や削除をすることができます。</strong>
+
+							<p><span style="color: #0000ff;"><strong><br>積極的にイベントを作成してテニス仲間を増やしましょう！</strong></span>
+							<p><%= image_tag("eve_new.png", :size => "400x530") %></p>
+						</div>
+						<div class="para left">
+							<h3>イベント詳細</h3>
+							<p><strong>自分で作成したイベントはイベント詳細ページから編集、削除ができます。</strong><br>
+							右下にあるグレーの編集ボタンを押せばイベントの編集ができます。
+
+							<p><strong><span style="color: #0000ff;">イベント詳細ページではコメントを残すことができます。</span></strong><br>
+							追加情報があった場合や参加希望者からの質問への回答にはコメント欄を使って下さい。
+
+							<p>自分で投稿したコメントはコメントを削除ボタンを押せば削除できます。
+
+							<p><span style="color: #0000ff;">参加希望者との連絡のやり取りは基本的にコメント欄を使って下さい。</span><br>
+							<span style="color: #ff0000;">このサイトにLINEのIDや個人の電話番号を載せるのはNGです。</span><br>
+							どうしても個々で連絡しなければならない時は、TwitterのDMなどを使って下さい。
+
+							<p><strong><span style="color: #00bfff;">イベントを編集した場合は、変更があったことが参加者や参加希望者に伝わるよう、「どこをどう変えた」のかコメント欄にコメントを残して下さい。</span></strong>
+
+							<p>右下の削除ボタンを押せば、イベントを削除できます。
+							<p><%= image_tag("eve_show1.png", :size => "400x500") %></p>
+						</div>
+					</div>
+
+					<div class="right">
+
+						<p><strong>イベントごとの概要（日時やエリア）を見て気になったイベントは詳細ボタンをクリック！</strong><br>
+						アイコンの上のニックネームをクリックすればイベント作成者のマイページに行きます。<br>
+						<span style="color: #0000ff;">イベントのエリアを絞りたい時は、エリア検索で都道府県を入れて検索！</span></p>
+						<p><%= image_tag("index_image.png", :size => "430x500") %></p>
+
+						<div class="para right">
+							<h3>イベント詳細</h3>
+							<p><strong>イベントの詳細な内容がわかるページです。</strong>
+
+							<p><strong>行きたい！</strong>と思ったら参加するボタンをクリック！<br>
+							参加者欄にあなたのニックネームが追加されます。
+
+							<p><span style="color: #ff0000;">参加したいけど、まだ予定がわからない、、、</span><br>
+							<strong>という時は気になるボタンでブックマーク！</strong>
+
+							<p><span style="color: #ff0000;">気になるけど、もうちょっと情報が欲しい、、、</span><br>
+							<strong>そんな時はコメントでイベント作成者に質問をしよう！</strong>
+
+							<p><span style="color: #0000ff;">自分のコメントは削除できます。</span><br>
+							<strong>気軽にコメントをしてテニス仲間を増やそう！</strong>
+							<p><%= image_tag("eve_show1.png", :size => "400x500") %></p>
+							<h4>参加のキャンセル</h4>
+							<p><strong>イベント詳細ページ</strong>の<strong>参加者</strong>をクリックすると参加者一覧ページが開きます。<br>
+							そこの<strong>参加をやめる</strong>ボタンをクリックすれば参加のキャンセルができます。
+
+							<p><strong>またはマイページからも参加のキャンセルができます。</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="para">
+				<h3>掲示板</h3>
+				<p class="box">＜掲示板に共通の機能＞<br>
+				・自分のコメントは削除できる<br>
+				・投稿者の名前をクリックすればその人にマイページに行ける<br>
+				・いいねを押した投稿はマイページからいつでも見返せる</p>
+				<h4>①雑談</h4>
+				<p>雑談用掲示板です。<br>
+				<span style="color: #0000ff;">特にテーマの縛りはありません。</span><br>
+				コメントを入力して、コメントするボタンをクリック！<br>
+				それだけ！<br>
+				<span style="color: #00bfff;"><strong>気に入ったコメントはいいねを押そう！</strong></span>
+				<p><%= image_tag("chat.png", :size => "400x500") %></p>
+				<h4>②情報交換</h4>
+				<p>テニスに関する情報交換のための掲示板です。<br>
+				<span style="color: #0000ff;">テニスに関して共有したいことや、気になることがあればここを使いましょう。</span>
+
+				<p><strong>キーワードで掲示板内の投稿を検索することもできます。</strong>
+
+				<p><span style="color: #00bfff;"><strong>気に入った情報があればいいねを押そう！</strong></span><br>
+				いいねした投稿はマイページからいつでも見返せます！
+				<p><%= image_tag("info.png", :size => "400x500") %></p>
+				<h4>③ダイアリー</h4>
+				<p>テニスの記録や感想を残すためのテニス日記。<br>
+				<span style="color: #00bfff;"><strong>テニスの振り返りや感想を自由に書いて下さい。</strong></span>
+
+				<p><strong>あくまでも自分のための活動記録だから、Twitterみたいに気楽に投稿しましょう。</strong>
+
+				<p>投稿ボタンをクリックすると、投稿ページに移ります。<br>
+				<span style="color: #0000ff;">１投稿につき１枚までなら写真を載せられます！</span>
+
+				<p>気に入った投稿は積極的にいいねしよう！<br>
+				<span style="color: #0000ff;">ダイアリーの投稿はマイページからいつでも見返せます。</span>
+				<p><%= image_tag("dia.png", :size => "400x500") %></p>
+			</div>
+			<div class="para">
+				<h3>マイページ</h3>
+				<p class="box">＜できること＞<br>
+				・プロフィールの編集<br>
+				・イベントの管理・確認<br>
+				・ダイアリーの見返し<br>
+				・いいねした投稿のチェック</p>
+				<h4>プロフィールの編集</h4>
+				<p><strong>テニス歴、活動エリア、フリースペースで簡単な自己紹介ができます。</strong>
+
+				<p><span style="color: #0000ff;">ニックネームの変更、アイコン画像の設定も可能です！</span><br>
+				SNSのリンク欄もあります。
+				<h4>イベントの管理・確認</h4>
+				<p><strong><span style="color: #0000ff;">自分の作成したイベント</span>や<span style="color: #0000ff;">参加ボタンを押したイベント</span>、<span style="color: #0000ff;">気になるでブックマークしたイベント</span>、<span style="color: #0000ff;">コメントをしたイベント</span>の一覧が見れます。</strong>
+
+				<p>リンクをクリックすればそのイベントの詳細ページに行きます。
+
+				<p><span style="color: #0000ff;">自分の作成したイベントの参加者を確認したり、</span>
+				<span style="color: #0000ff;">参加イベントの参加をやめることもできます。</span>
+				<p><%= image_tag("user_eve.png", :size => "460x400") %></p>
+				<h4>ダイアリーの見返し</h4>
+				<p><strong>自分の投稿したダイアリーを見返すことができます。</strong>
+				<p><%= image_tag("user_dia.png", :size => "460x400") %></p>
+				<h4>いいねした投稿のチェック</h4>
+				<p><strong>雑談、情報交換、ダイアリーでいいねをした投稿の一覧が見られます。</strong>
+
+				<p><span style="color: #ff0000;">雑談や情報交換の掲示板で自分が投稿した内容は、ダイアリーのようにマイページから見返すことはできません。</span><br>
+				自分の投稿を後からいつでも見返せるようにしたい時は、自分の投稿にいいねをしましょう。
+
+				<p>・ダイアリー→自分の投稿はいいねをしなくてもマイページからいつでも見返せる<br>
+				・雑談、情報交換→自分の投稿をマイページから見返すには自分でいいねをする必要がある
+				<p><%= image_tag("user_show_like.png", :size => "450x480") %></p>
+			</div>
+		</div>
+
+
+		<div class="how">
+			<div class="para first">
+				<h3>ルール</h3>
+				<p>みなさんが楽しく安心してこのサイトを使えるためにいくつかのルールを設けます。<br>
+				※このページに記載されている内容は、あくまでも概要なので、詳しくは<a href="/terms">利用規約</a>をご確認ください
+
+				<p><span style="color: #ff0000;"><strong>ざっくり言うと、他の方を傷つけたり、陥れたりするような行為は全て厳禁です。</strong></span>
+
+				<p><strong>普通に使う分には何も問題ありませんが、写真の載せる場合は他の方の迷惑にならないよう十分に気をつけて下さい。</strong>
+			</div>
+			<div class="para">
+				<h3>利用対象者</h3>
+				<p><strong>ユーザー登録できるのは20歳以上の方のみです。</strong>
+			</div>
+			<div class="para">
+				<h3>禁止事項</h3>
+				<p><span style="color: #ff0000;"><strong>以下の行為は厳禁です。</strong></span>
+
+				<p><strong>マルチ商法などへの勧誘行為</strong><br>
+				勧誘目的でイベントを作成することはもちろん、掲示板での勧誘行為も厳禁です
+
+				<p><strong>個人を特定できる情報の掲載</strong><br>
+				・写真を載せる際は顔が写っている人の同意を得てから載せて下さい<br>
+				・LINEのIDや個人の電話番号などの連絡先も載せないで下さい<br>
+				・イベント作成者が参加希望者と連絡を取る際は、イベント詳細ページのコメント機能を使うようにして下さい<br>
+				・どうしても個々に連絡を取る必要がある場合はTwitterのダイレクトメッセージなどをご利用下さい
+
+				<p><strong>誹謗中傷等、他者を傷つけたり不快にさせる行為</strong><br>
+				ケンカはよそでやって下さい。<br>
+				<span style="color: #00bfff;"><strong>気持ちよくテニスをしましょう！</strong></span>
+
+				<p><strong>違法行為、それに準ずる行為</strong><br>
+				アウトー
+
+				<p><strong>反社会的行為</strong><br>
+				これもアウトー
+			</div>
+			<div class="para">
+				<h3>お願い</h3>
+				<p><span style="color: #00bfff;"><strong>初心者が気軽にテニスをできるようにするのが目的なので、基本的にイベントに参加条件は付けないようにして下さい。</strong></span>
+
+				<p>条件を付けるとしたら、女性の主催者が参加者を女性限定にしたり、初心者限定のイベントなどを想定しています。
+
+				<p>男性主催者が参加者を女性限定にするのは不可です。
+
+				<p>以上
+
+				<p><strong><span style="color: #00bfff;">思いやりを持ってみんなで安心してテニスを楽しみましょう！</span></strong>
+
+				<p>このサイトがあなたの素敵な思い出づくりのきっかけになってくれることを願っています。
+			</div>
+		</div>
+		<div class="back">
+			<a class="btn" href="/">TOPへ戻る</a>
+	    </div>
+	</div>
+</div>

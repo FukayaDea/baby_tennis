@@ -1,0 +1,48 @@
+<div class="comment">
+
+
+    <div class="comimg">
+    <% if chat.user.image.attached? %>
+
+	    <%= image_tag(rails_blob_path(chat.user.image),:size => "80x80") %>
+	<% else %>
+	    <%= image_tag("default_image.jpg", :size => "80x80") %>
+    <% end %>
+    </div>
+    <div class="comtxt">
+		<ul>
+		  <li><%= chat.created_at.strftime("%Y/%m/%d/%H:%M") %>
+		  <% if user_signed_in? && chat.user.id == current_user.id %>
+		  <li><%= link_to 'コメントを削除', "/chats/#{chat.id}", method: :delete, class: "editbtn", remote: true, data: {confirm: "削除しますか？"} %>
+		  <% end %>
+		 </ul>			  
+		 <p><a href="/users/<%= chat.user.id %>" class="name">◆ <%= chat.user.nickname %></a></p>			
+		 <p><%= chat.text %></p>
+
+		 <% if user_signed_in? %>
+			<% if current_user.already_liked_c?(chat) %>
+			<div class="likes">
+			  <div class="like_count"><button id="liked_user"><%= chat.like_chats.count %></button></div>
+			  <div class="like"><%= button_to 'いいね', chat_like_chat_path(chat_id: chat.id, id: chat.like_chats), method: :delete, :class =>'checkbtn2', remote: true %></div>
+
+			</div>
+
+			<% else %>
+			<div class="likes">
+				  <div class="like_count"><button id="liked_user"><%= chat.like_chats.count %></button></div>
+				  <div class="like"><%= button_to 'いいね', chat_like_chats_path(chat), :class =>'checkbtn', remote: true %></div>
+
+			</div>
+			<% end %>
+			<div class="liked_users">
+			いいねしたユーザー
+			<% chat.liked_users.each do |user| %>
+			  <li><%= user.nickname %></li>
+			<% end %>
+		    </div>
+
+		 <% end %>
+
+  	</div>
+
+</div>

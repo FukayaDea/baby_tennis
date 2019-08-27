@@ -1,0 +1,22 @@
+<div class="content">
+
+	<div id="pass">
+
+		<h2>メールアドレス変更</h2>
+		<%= form_for current_user do |f| %>
+
+	      <div class="form-group file">
+	      	<p>送信ボタンを押すと、新しく登録したメールアドレス宛に確認のメールが届きます。<br>
+	      	届いたメールのリンクをクリックして変更を完了してください。</p>
+
+			<p><span class="data">現在のメールアドレス</span><br>
+			<%= current_user.email %></p>
+			<%= f.email_field :email, autocomplete: "email", class:"form-control" %>
+
+			<%= f.submit "送信", class: 'edi_btn' %>
+		</div>
+		<% end %>
+
+	</div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="content">
+
+	<div class="room">
+		<div class="room_rule diary">
+
+			<h2>テニス日記</h2>
+			<p>テニスの振返りや感想を自由に書こう</p>
+		</div>
+
+		<% if user_signed_in? %>
+
+		<div id="di_post">
+		  <a href="/diaries/new" class="post_btn">投稿</a>
+		</div>
+
+
+	    <% end %>
+	    <div class="comments">
+		    <span class="data">コメント欄</span>
+		    <% unless @diaries.exists? %>
+		      <p>まだコメントはありません。</p>
+		      <p>たくさんコメントをして、みんなでテニスを楽しみましょう！</p>		    	
+		    <% end %>
+
+		    <div class="comment">
+
+		    	<%= render @diaries %>
+
+
+		    </div>
+
+			<%= paginate(@diaries) %>
+
+	    </div>
+	    <div class="back">
+		<a class="btn" href="/">TOPへ戻る</a>
+	    </div>
+    </div>
+</div>

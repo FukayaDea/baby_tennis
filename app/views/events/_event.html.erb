@@ -1,0 +1,29 @@
+<div class="content_post">
+<div class="big">
+  <div class="post_user">
+    <p><span class="name"><a href="/users/<%= event.user.id %>"><%= event.user.nickname %></a></span></p>
+    <% if event.user.image.attached? %>
+      <%= image_tag(rails_blob_path(event.user.image),:size => "100x100") %>
+    <% else %>
+        <%= image_tag("default_image.jpg", :size => "100x100") %>
+    <% end %>
+  </div>
+
+  <div class="post_contain">
+    
+      <p><span class="data">日時　　：</span><%= event.event_date %></p>
+      <p><span class="data">エリア　：</span><%= event.prefecture %></p>
+      <p class="place"><span class="data">集合場所：</span><%= event.meeting_place %></p>
+      <p><span class="data">集合時間：</span><%= event.meeting_time.strftime("%H時%M分") %></p>
+  </div>
+
+  <div class="sub_contain">
+    
+      <p><span class="data">コメント：</span><%= event.comments.count %>件</p>
+      <p><span class="data">気になる：</span><%= event.like_events.count %>件</p>
+  </div>
+</div>
+  <div class="more">
+      <%= link_to '詳細', "/events/#{event.id}", method: :get %>
+  </div>
+</div>

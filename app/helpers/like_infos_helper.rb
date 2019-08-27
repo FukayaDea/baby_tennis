@@ -1,0 +1,2 @@
+module LikeInfosHelper
+end

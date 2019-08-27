@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
 
-	after_create :create_group
+	 after_create :create_group
 
 	validates :event_date, :prefecture,:meeting_place, :meeting_time, presence: true
 

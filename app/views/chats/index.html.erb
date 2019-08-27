@@ -1,0 +1,42 @@
+<div class="content">
+
+	<div class="room">
+		<div class="room_rule chat">
+
+			<h2>雑談ルーム</h2>
+			<p>なんでもどーぞ</p>
+		</div>
+
+	<% if user_signed_in? %>
+
+    <div class="commbtn">
+	    <%= form_for @chat, remote: true do |f| %>
+	      <div class="form-group">
+	        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"64", rows:"3", autofocus:"true", class:"form-control", id:"comment_submit" %>
+	      </div>
+	      <%= f.submit "コメントする", class:"btn_mo", id:"submit_btn" %>
+	    <% end %>
+    </div>
+    <% end %>
+    <div class="comments">
+	    <span class="data">コメント欄</span>
+	    <% unless @chats.exists? %>
+	      <p>まだコメントはありません。</p>
+	      <p>たくさんコメントをして、みんなでテニスを楽しみましょう！</p>		    	
+	    <% end %>
+
+	    <div class="comment">
+
+
+		<%= render @chats %>
+
+	    </div>
+
+		<%= paginate(@chats) %>
+
+    </div>
+    <div class="back">
+	<a class="btn" href="/">TOPへ戻る</a>
+    </div>
+    </div>
+</div>

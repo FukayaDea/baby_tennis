@@ -1,0 +1,31 @@
+<div class="content">
+
+	<div class="group_show frame">
+
+		<h2>いいね</h2>
+
+		<% @like_chats.each do |like_chat| %>
+
+		<div class="pro_img">
+
+		    <% if like_chat.user.image.attached? %>
+			    <p><%= image_tag(rails_blob_path(like_chat.user.image),:size => "100x100") %></p>
+			<% else %>
+			    <p><%= image_tag("default_image.jpg", :size => "100x100") %></p>
+		    <% end %>
+
+		</div>
+
+			<a href="/users/<%= like_chat.user.id %>"><%= like_chat.user.nickname %></a>さん<br>
+			  
+
+		<% end %>
+
+
+		</div>
+		<div class="group_back">
+		    <a href="/chats %>", class="btn">雑談に戻る</a>
+		</div>
+	</div>
+
+</div>
