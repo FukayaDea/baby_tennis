@@ -42,9 +42,9 @@
 # Global options
 # --------------
   set :ssh_options, {
-    keys: %w(~/.ssh/Dea1_fukaya/id_rsa)
-#    forward_agent: false,
-#    auth_methods: %w(password)
+    keys: %w(~/.ssh/Dea1_fukaya/id_rsa),
+    forward_agent: true,
+    auth_methods: %w(publickey)
   }
 #
 # The server-based syntax can be used to override options:
