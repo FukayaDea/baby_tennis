@@ -19,7 +19,7 @@ set :branch, 'master'
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+ set :pty, true
 
 # Default value for :linked_files is []
  append :linked_files, "config/master.key"
@@ -39,7 +39,20 @@ set :branch, 'master'
  set :rbenv_ruby, '2.5.1'
  set :log_level, :debug
 
+
 namespace :deploy do
+
+  # task :init_permission do
+  #   on release_roles :all do
+  #     execute :sudo, :chown, '-R', "#{fetch(:user)}:#{fetch(:group)}", deploy_to
+  #   end
+  # end
+
+  # task :reset_permission do
+  #   on release_roles :all do
+  #     execute :sudo, :chown, '-R', "nginx:nginx", deploy_to
+  #   end
+  # end
 
   # unicornの再起動
   desc 'Restart application'
@@ -65,7 +78,11 @@ namespace :deploy do
     end
   end
 
+#  before :starting, :init_permission
+
   after :publishing, :restart
+
+#  after :finished, :reset_permission
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
