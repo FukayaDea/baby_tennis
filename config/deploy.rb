@@ -71,7 +71,7 @@ namespace :deploy do
                   sql = "CREATE DATABASE IF NOT EXISTS baby_tennis_production;"
                   # クエリの実行。
                 # userとpasswordはmysqlの設定に合わせて
-                execute "mysql --user=root --password=mbcfZ572_ -e '#{sql}'"
+                execute "mysql --user=root --password=fcbm572_Z -e '#{sql}'"
 
         end
       end

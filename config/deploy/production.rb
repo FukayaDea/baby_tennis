@@ -1,6 +1,6 @@
 
 
- server "150.95.204.25", user: "fukaya", group: "wheel", roles: %w{app db web}, port: 57926
+ server "163.44.169.39", user: "gattsu", group: "wheel", roles: %w{app db web}, port: 62958
 
 
 
@@ -10,4 +10,3 @@
     forward_agent: true,
     auth_methods: %w(publickey)
   }
-

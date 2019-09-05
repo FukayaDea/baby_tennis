@@ -55,5 +55,5 @@ production:
   pool: 5
   database: baby_tennis_production
   username: root
-  password: mbcfZ572_
+  password: fcbm572_Z
   socket: /var/lib/mysql/mysql.sock
