@@ -1,8 +1,18 @@
-$(window).on("load", function() {
+
+// $(window).on("load", function() {
+//   $("li").on("click", function() {
+//     $("li.selected").removeClass("selected");
+//     $(this).addClass("selected");
+//     $(".contents div").hide();
+//     $("." + this.id).show();
+//   });
+// });
+
+window.addEventListener("load", function() {
   $("li").on("click", function() {
     $("li.selected").removeClass("selected");
     $(this).addClass("selected");
     $(".contents div").hide();
-    $("." + this.id).show();
+    $("." + this.id).show(); 
   });
 });
