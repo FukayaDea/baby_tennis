@@ -103,4 +103,5 @@ Rails.application.configure do
     :user_name => "babytennis.cup@gmail.com", #先ほど作成した送信用gmailアドレス
     :password => "ctcqfzijqnkcvffy", #2段階認証したアカウントで発行したアプリパスワード
     :authentication => 'plain'
+  }
 end
