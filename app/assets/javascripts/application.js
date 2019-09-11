@@ -16,6 +16,8 @@
 
 //= require_tree .
 
+if (window.location.hash == "#_=_") window.location.hash = "";
+
 $(window).on("load", function() {
   $(".close").on("click", function() {
     $(this).hide();
