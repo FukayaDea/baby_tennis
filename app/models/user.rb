@@ -12,6 +12,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
       user.over20 = 1
       user.agree = 1
+      user.save!
     end
   end
 
