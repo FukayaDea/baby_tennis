@@ -14,6 +14,10 @@
 //= require rails-ujs
 //= require activestorage
 
+//= require popper
+//= require bootstrap-sprockets
+
+
 //= require_tree .
 
 $(window).on("load", function() {
