@@ -74,7 +74,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-gem 'therubyracer'
+#gem 'therubyracer'
+gem 'mini_racer'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-material-design'
 gem 'pry-rails'
@@ -88,5 +89,4 @@ gem 'jquery-ui-rails'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-
 
