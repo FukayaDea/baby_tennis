@@ -59,8 +59,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { protocol: 'https', host: 'http://localhost:3000/' }
-  config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
+  config.action_mailer.default_url_options = { protocol: 'https', host: 'https://031309a6.ngrok.io' }
+  config.action_mailer.default_url_options = { host: 'https://031309a6.ngrok.io' }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -72,4 +72,6 @@ Rails.application.configure do
     :password => "ctcqfzijqnkcvffy", #2段階認証したアカウントで発行したアプリパスワード
     :authentication => 'login'
   }
+
+  config.web_console.whitelisted_ips = '2001:268:c184:aa52:819b:3d77:299f:3455'
 end
