@@ -13,13 +13,13 @@ $purple: #660099;
 .page {
 	h2 {
 	text-align: center;
-	margin: 10px 0 30px;
+	margin: 10px 0 10px;
 	color: $blue;
 	font-size: 46px;
 
 	}
 	.back {
-	width: 900px;
+	width: 100%;
 	margin-bottom: 20px;
 	}
 	.rule {
@@ -29,7 +29,7 @@ $purple: #660099;
 
 .about {
     background-color: #fff;
-	max-width: 900px;
+	max-width: 100%;
 	margin: 20px auto;
 	padding: 0px 0px;
 	.para {
@@ -42,21 +42,21 @@ $purple: #660099;
 			color: #fff;
 			height: 55px;
 			padding: 2px 0px;
-			margin: 50px 0 45px;
+			margin: 20px 0 25px;
 		}
 		}
 		h4 {
 			font-size: 22px;
 			color: $orange;
-			padding: 10px 100px 0;
+			padding: 10px 10px 0;
 
 			margin: 20px 0 10px;
 		}
 		p {
-			font-size: 18px;
+			font-size: 17px;
 			margin-bottom: 20px;
 			line-height: 40px;
-			padding: 0 110px;
+			padding: 0 20px;
 		}
 	}
 	.first {
@@ -68,8 +68,8 @@ $purple: #660099;
 .about {
 	.last {
 	p {
-		padding: 20px 110px;
-		font-size: 20px;
+		padding: 20px 20px;
+		font-size: 17px;
 	}
 	}
 	.manage {
@@ -95,11 +95,11 @@ $purple: #660099;
 	.tab-menu {
 		min-height: 1150px;
 		ul {
-		    margin: 0 175px 30px;
+		    margin: 0 10px 30px;
 		}
 		li {
 		    display: inline-block;
-		    width: 250px;
+		    width: 100%;
 		    height: 42px;
 		    padding: 8px 10px;
 		    cursor: pointer;
@@ -108,7 +108,7 @@ $purple: #660099;
 		    font-size: 18px;
 		    color: #fff;
 		    text-align: center;
-		    margin: 0 10px 0px;
+		    margin: 0 0px 10px;
 		    &.selected {
 			    background-color: $orange;
 
@@ -120,7 +120,8 @@ $purple: #660099;
 		.contents {
 		  .right { 
 		    display: none;
-		    height: 2180px!important;
+		    height: 2540px!important;
+
 		  }
 		}
 
@@ -130,8 +131,8 @@ $purple: #660099;
 
 .how {
     background-color: #fff;
-	max-width: 900px;
-	margin: 60px auto 20px;
+	width: 96%;
+	margin: 10px auto 20px;
 	padding: 0px 0px 20px;
 	.para {
 
@@ -149,7 +150,7 @@ $purple: #660099;
 		h4 {
 			font-size: 22px;
 			padding: 5px 10px 5px;
-			margin: 35px 110px 30px;
+			margin: 35px 10px 30px;
 			border-left: 7px solid #33CC66;
 			border-bottom: 2px solid #33CC66;
 		}
@@ -157,9 +158,9 @@ $purple: #660099;
 			font-size: 18px;
 			margin-bottom: 30px;
 			line-height: 40px;
-			padding: 0 110px;
+			padding: 0 20px;
 			img {
-			margin: 0 130px;
+			margin: 0 0px;
 			}
 		}
 	}
@@ -181,13 +182,14 @@ height: 100%;
 
 
 .terms {
-	width: 1000px;
+	width: 100%;
 	background-color: #fff;
 	margin: 20px auto;
-	padding: 50px 150px 50px;
+	padding: 40px 20px 40px;
 	h2 {
 	color: #000;
-	font-size: 36px;
+	font-size: 28px;
+	margin: 10px 0 20px;
 	}
 	h3 {
 	margin: 10px 0;
@@ -219,7 +221,7 @@ height: 100%;
 	padding: 0 0 30px;
 	ul {
 
-		padding-left: 64px;
+		padding-left: 34px;
 		margin-bottom: 20px;
 		li {
     		line-height: 30px!important;

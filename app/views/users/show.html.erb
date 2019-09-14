@@ -9,9 +9,9 @@
 
 			<div class="pro_img">
 		    <% if @user.image.attached? %>
-			    <p><%= image_tag(rails_blob_path(@user.image),:size => "100x100") %></p>
+			    <p><%= image_tag(rails_blob_path(@user.image),:size => "60x60") %></p>
 			    <% else %>
-			    <p><%= image_tag("default_image.jpg", :size => "100x100") %></p>
+			    <p><%= image_tag("default_image.jpg", :size => "60x60") %></p>
 		    <% end %>
 		    </div>
 
@@ -30,7 +30,7 @@
 				
 				<% @events.each do |event| %>
 				<div class="my_event">
-					<p><%= event.event_date.strftime("%Y/%m/%d") %>｜
+					<p><%= event.event_date.strftime("%m/%d") %>｜
 				<span class="erea"><%= event.prefecture %></span>
 					<%= link_to 'イベント詳細', "/events/#{event.id}", method: :get %>
 					　<%= link_to '参加者', "/groups/#{event.id}", method: :get %></p>
@@ -50,7 +50,7 @@
 				    <h4 class="midle"><%= @user.nickname %>さんの参加イベント</h4>
 					    <% @groups.each do |group| %>
 						<div class="my_event">
-					    	<p><%= group.event.event_date.strftime("%Y/%m/%d") %>｜
+					    	<p><%= group.event.event_date.strftime("%m/%d") %>｜
 							<span class="erea"><%= group.event.prefecture %></span>
 							<%= link_to 'イベント詳細', "/events/#{group.event.id}", method: :get %>　
 							<%= link_to '参加をやめる', "/groups/#{group.id}", method: :delete %></p>
@@ -64,7 +64,7 @@
 				    <h4 class="midle"><%= @user.nickname %>さんの気になるイベント</h4>
 					    <% @like_events.each do |like_event| %>
 						<div class="my_event">
-					    	<p><%= like_event.event.event_date.strftime("%Y/%m/%d") %>｜
+					    	<p><%= like_event.event.event_date.strftime("%m/%d") %>｜
 							<span class="erea"><%= like_event.event.prefecture %></span>
 							<%= link_to 'イベント詳細', "/events/#{like_event.event.id}", method: :get %>　
 							<%= link_to '削除', "/like_events/#{like_event.id}", method: :delete, data: {confirm: "削除しますか？"}  %></p>
@@ -80,8 +80,8 @@
 				    	<h4 class="midle"><%= @user.nickname %>さんのコメント</h4>
 						<% @event_comments.each do |event_comment| %>
 						<div class="right user_comment">
-						    <p>＞＞ <%= event_comment.event.event_date.strftime("%Y/%m/%d") %>｜
-							<span class="user_erea erea"><%= event_comment.event.prefecture %>のイベント　</span>
+						    <p>＞＞ <%= event_comment.event.event_date.strftime("%m/%d") %>｜
+							<span class="user_erea erea"><%= event_comment.event.prefecture %>のイベント</span>
 							<%= link_to 'イベント詳細', "/events/#{event_comment.event.id}", method: :get %></p>
 							<p>　<%= event_comment.comment.text %></p>
 						</div>
@@ -96,7 +96,7 @@
 
 			    <% @my_diaries.each do |my_diary| %>
 			    	<div class="my_diary">
-			    		<p><span class="under_line"><%= my_diary.created_at.strftime("%Y/%m/%d") %></span></p>
+			    		<p><span class="under_line"><%= my_diary.created_at.strftime("%m/%d") %></span></p>
 						<p><%= simple_format(h(my_diary.text)) %></p>
 					    <% if my_diary.image.attached? %>
 						    <div class="diary_img"><%= image_tag(rails_blob_path(my_diary.image),:size => "370x250") %></div>

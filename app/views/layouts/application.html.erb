@@ -4,6 +4,7 @@
     <title>BabyTennis</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width">
     <%= javascript_include_tag 'application'%>
     <%= stylesheet_link_tag "https://unpkg.com/ress/dist/ress.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -21,8 +22,7 @@
           <a href="/chats" class="nav_btn">雑談</a>
           <a href="/tennis_infos" class="nav_btn">情報交換</a>
           <a href="/diaries" class="nav_btn">ダイアリー</a>
-          <a href="/about" class="nav_about">BabyTennisとは？</a>
-          <a href="/how_to" class="nav_about">サイトの使い方</a>
+          <a href="/how_to" class="nav_btn">サイトの使い方</a>
         </div>
 
         <% if user_signed_in? %>
@@ -42,6 +42,7 @@
 
     </header>
 
+
    <div class="back_img">
 
     <section id="main">
@@ -60,7 +61,7 @@
       <a href="/terms">利用規約</a>
       <a href="/privacy">プライバシーポリシー</a>
     </footer>
-    
+
   </body>
 </div>
 </html>

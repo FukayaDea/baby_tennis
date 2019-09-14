@@ -1,7 +1,9 @@
 <div class="content">
 
 <div class="main">
-
+<!--contentns-->
+<div id="contents">
+  
 <% if user_signed_in? %>
   <div id="post">
     <a href="/events/new" class="post_btn">イベント作成</a>
@@ -24,6 +26,7 @@
   <%= paginate(@events) %>
 
   </div>
-
+</div>
+<!--//contents-->
 </div>
 </div>

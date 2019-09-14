@@ -13,7 +13,7 @@ $purple: #660099;
 // ユーザー
 // マイページ
 .user_show {
-  width: 800px;
+  width: 98%;
   margin: 0 auto;
   h2 {
   color: #ff7f00;
@@ -23,11 +23,11 @@ $purple: #660099;
 }
 
 .profile {
-  margin: 10px 0 30px;
-    height: 200px;
+  margin: 10px 0 20px;
+  min-height: 130px;
   background-color: #fff;
   border: 2px solid #888;
-    padding: 20px 30px;
+    padding: 12px 8px;
     overflow: scroll;
     clear: both;
   .pro_img {
@@ -39,10 +39,11 @@ $purple: #660099;
   }
   .pro_txt {
     float: left;
-    width: 600px;
+    width: 74%;
 
     p {
     border-bottom: 1px solid #888;
+    font-size: 16px;
     }
   }
 }
@@ -71,14 +72,14 @@ $purple: #660099;
 
 .user_show {
   h2 {
-    margin-bottom: 30px;
-    font-size: 80px;
-    width: 1030px;
+    margin-bottom: 10px;
+    font-size: 60px;
+    width: 100%;
     letter-spacing: -0.05em;
   }
   .midle {
   font-size: 18px;
-  width: 620px;
+  width: 100%;
   word-wrap: break-word;
   }
   h3 {
@@ -94,29 +95,31 @@ $purple: #660099;
   }
   .under_line {
   display: inline-block;
-  width: 230px;
+  width: 100%;
   height: 23px;
   margin-bottom: 15px;
+  }
+  p {
+  font-size: 14px;
   }
 }
 
 .my_events {
-  width: 800px;
+  width: 100%;
   margin: 0px 0px 0px;
   border-bottom: 2px solid #bbb;
-  padding: 10px 120px 20px 120px;
-
+  padding: 10px;
   background-color: #fff;
   h4 {
   height: 30px!important;
-  width: 560px!important;
+  width: 100%!important;
   border-bottom: 2px solid #888;
   margin-bottom: 10px!important;
   }
   p {
   padding: 10px 0 5px;
   height: 32px;
-  margin-right: 15px;
+  margin-right: 0px;
   }
   .pagination {
   padding-top: 20px;
@@ -124,21 +127,23 @@ $purple: #660099;
 }
 
 .my_event {
-  margin: 0 15px;
+  margin: 0 0px;
   padding-bottom: 5px;
   border-bottom: 1px solid #888;
-  width: 535px;
+  width: 100%;
   p {
    
   }
   a {
   display: inline-block;
   padding-bottom: 2px;
+  font-size: 14px;
+  width: 25%;
   }
 }
 
 .tab_menu {
-  width: 800px;
+  width: 100%;
   margin-left: 0px;
   margin-bottom: 30px;
   min-height: 150px;
@@ -179,7 +184,7 @@ $purple: #660099;
 }
 
 .user_comments {
-  padding: 10px 120px 20px 120px;
+  padding: 10px 10px 20px;
 }
 
 .right {
@@ -188,7 +193,7 @@ $purple: #660099;
 }
 
 .join_events {
-  padding: 10px 45px 20px 135px;
+  padding: 10px 5px 20px 35px;
   border-bottom: 2px solid #888;
 }
 
@@ -205,7 +210,7 @@ $purple: #660099;
 .user_comments {
   h4 {
   border-bottom: 2px solid #888;
-  width: 560px!important;
+  width: 100%!important;
   }
 }
 
@@ -218,8 +223,9 @@ $purple: #660099;
 }
 
 .user_erea {
+   padding-top: 5px;
    display: inline-block;
-   width: 160px;
+   width: 40%;
 }
 
 .user_back {
@@ -230,7 +236,7 @@ $purple: #660099;
 
 .user_edit_frame {
   height: 570px;
-  width: 600px;
+  width: 98%;
   margin: 30px auto;
   border: 2px solid #BBB;
   border-radius: 3px;
@@ -242,10 +248,10 @@ $purple: #660099;
 }
 
 .user_edit {
-  width: 470px;
+  width: 96%;
   margin: 30px auto;
   .edi_btn {
-  width: 466px;
+  width: 100%;
   margin: 15px 0;
   }
 }
@@ -258,7 +264,7 @@ $purple: #660099;
     margin: 0 0 20px;
     border-bottom: 2px solid #888;
     .diary_img {
-      width: 400px;
+      width: 200px;
       margin: 10px auto;
     }
   }
@@ -268,11 +274,11 @@ $purple: #660099;
   margin-bottom: 20px;
   .my_like {
     margin: 0 0 0px;
-    padding: 10px 120px 20px 120px;
+    padding: 10px 20px 20px 20px;
     background-color: #FFF;
     border-bottom: 2px solid #bbb;
     h4 {
-    width: 560px;
+    width: 100%;
     height: 32px;
     margin-bottom: 25px;
     text-align: center;
@@ -301,20 +307,20 @@ $purple: #660099;
 
 // サインアップ・サインイン
 .sign {
-  width: 450px;
+  width: 98%;
   margin: 0 auto;
 }
 
 #sign {
-  padding: 20px 30px 25px;
-  width: 600px;
+  padding: 20px 20px 25px;
+  width: 98%;
   margin: 5px auto;
   min-height: 350px;
   border: 1px solid $gray;
   border-radius: 3px;
   background-color: #FFF;
   .field {
-  width: 450px;
+  width: 100%;
   margin: 0 auto;
   }
   h2 {
@@ -330,7 +336,7 @@ $purple: #660099;
   font-size: 15px;
   }
   form {
-  width: 450px;
+  width: 100%;
   margin: 10px auto;
   
   }
@@ -364,8 +370,8 @@ $purple: #660099;
 
 #pass {
   padding: 30px 30px 35px;
-  width: 600px;
-  margin: 100px auto;
+  width: 98%;
+  margin: 50px auto;
   min-height: 230px;
   border: 1px solid $gray;
   border-radius: 3px;
@@ -382,7 +388,7 @@ $purple: #660099;
   padding: 20px 0 10px;
   }
   form {
-  width: 470px;
+  width: 100%;
   margin: 20px auto;
   
   }
@@ -423,7 +429,7 @@ display: inline;
 }
 
 .sns_news {
-  width: 405px;
+  width: 100%;
   margin: 0 auto;
   p {
   padding: 5px 0 20px!important;
@@ -435,14 +441,14 @@ display: inline;
   border-radius: 5px;
   height: 36px;
   text-align: center;
-  width: 380px;
-  margin: 0 auto 5px;
+  width: 96%;
+  margin: 0 auto 10px;
 
   a {
     color: white;
     display: inline-block;
     height: 36px;
-    width: 380px;
+    width: 100%;
     padding: 6px 0;
     font-weight: bold;
   }

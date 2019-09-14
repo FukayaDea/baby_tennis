@@ -1,5 +1,5 @@
 .event_new_frame {
-	width: 600px;
+	width: 98%;
 	border: 3px solid #BBB;
 	border-radius: 2px;
 	margin: 0 auto 20px;
@@ -7,7 +7,7 @@
 }
 
 .event_new {
-	width: 470px;
+	width: 96%;
 	margin: 0 auto;
     h2 {
     font-size: 20px;
@@ -16,8 +16,9 @@
     margin-top: 3px;
     }
     form input[type="submit"] {
-    width: 470px;
-    margin: 5px 0 10px;
+    width: 100%;
+    margin: 5px auto 10px;
+
     }
     p {
     margin: 2.5px 0;

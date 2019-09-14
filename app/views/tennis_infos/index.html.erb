@@ -21,7 +21,7 @@
 	    	
 		    <%= form_for @tennis_info, remote: true do |f| %>
 		      <div class="form-group">
-		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"64", rows:"3", autofocus:"true", class:"form-control", id:"comment_submit" %>
+		        <%= f.text_area :text, placeholder: "コメントを入力してください", cols:"38", rows:"3", autofocus:"true", class:"form-control", id:"comment_submit" %>
 		      </div>
 		      <%= f.submit "コメントする", class:"btn_mo", id:"submit_btn" %>
 		    <% end %>

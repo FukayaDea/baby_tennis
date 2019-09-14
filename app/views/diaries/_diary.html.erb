@@ -2,16 +2,16 @@
 
     <div class="comimg">
     <% if diary.user.image.attached? %>
-	    <%= image_tag(rails_blob_path(diary.user.image),:size => "80x80") %>
+	    <%= image_tag(rails_blob_path(diary.user.image),:size => "60x60") %>
 	    <% else %>
-	    <%= image_tag("default_image.jpg", :size => "80x80") %>
+	    <%= image_tag("default_image.jpg", :size => "60x60") %>
     <% end %>
     </div>
     <div class="comtxt">
 		<ul>
 		  <li><%= diary.created_at.strftime("%Y/%m/%d/%H:%M") %>
 		  <% if user_signed_in? && diary.user.id == current_user.id %>
-		  <li><%= link_to 'コメントを削除', "/diaries/#{diary.id}", method: :delete, class: "editbtn", remote: true, data: {confirm: "削除しますか？"} %>
+		  <li><%= link_to '削除', "/diaries/#{diary.id}", method: :delete, class: "editbtn", remote: true, data: {confirm: "削除しますか？"} %>
 		  <% end %>
 		 </ul>			  
 		 <p><a href="/users/<%= diary.user.id %>" class="name">◆ <%= diary.user.nickname %></a><br>
