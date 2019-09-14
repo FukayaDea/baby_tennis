@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  
     <header id="header">
 
       <h1 id="title"><a href="/">Baby<span class="font_space">T</span>ennis</a></h1>
@@ -42,20 +43,24 @@
     </header>
 
    <div class="back_img">
+
     <section id="main">
       <!--   フラッシュメッセージ -->
       <%= bootstrap_flash %>
 
       <%= yield %>
     </section>
+
     </div>
 
+    
     <footer id="footer">
       <a href="/about">BabyTennisとは？</a>
       <a href="/link">テニス関連リンク</a>
       <a href="/terms">利用規約</a>
       <a href="/privacy">プライバシーポリシー</a>
     </footer>
-
+    
   </body>
+</div>
 </html>
