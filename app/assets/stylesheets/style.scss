@@ -1,6 +1,9 @@
 /* @group Fluid-img */
 
-img { max-width : 100%}
+img { 
+max-width : 100%;
+
+}
 
 /* @end */
 
@@ -93,7 +96,7 @@ img {
 }
 .name {
 	display: inline-block;
-	width: 230px;
+	width: 100%;
 
 	padding: 0 auto;
 	text-align: center;
@@ -102,10 +105,11 @@ img {
 }
 .erea {
     display: inline-block;
-	width: 85px;
-	height: 21px;
-	padding-top: 5px;
+	width: 45%;
+	height: 27px;
+	padding-top: 10px;
 	overflow: hidden!important;
+	margin: 0 2% 0 1%;
 }
 
 .frame {
@@ -209,7 +213,7 @@ height: 48px;
 }
 
 .nav_btn {
-    font-size: 12px;
+    font-size: 13px;
 	border: 0.5px solid #009966;
 	background-color: #fff352;
 	font-weight: bold;
@@ -249,16 +253,16 @@ body {
 #footer {
 
 	background-color: #0066FF;
-	height: 70px;
+	height: 78px;
 	padding: 6px 0;
 	text-align: center;
 
 	a {
 		color: #fff;
-		margin-top: 4px;
+		margin-top: 0px;
 		margin-left: 0px;
 		border-left: 0px solid #fff;
-		padding: 0 25px;
+		padding: 5px 10px;
     	display: inline-block;
 	  &:hover {
 	  		color: lighten(#009966, 15%);
@@ -322,19 +326,23 @@ body {
 .content_post {
 	border: 2px solid #AAA;
 	background-color: #FFF;
-	height: 205px;
-	margin: 4px 4px 10px;
-	padding: 8px 8px 4px;
+	height: 185px;
+	margin: 2px 1% 10px;
+	padding: 8px 4% 4px 2%;
 	border-radius: 6px;
 	.name {
-	width: 70px;
+	width: 100%;
 	word-wrap: break-word;
+	height: 25px;
+	overfrow: hidden;
+
 	}
 	p {
 	font-size: 14px;
-	padding-top: 6px;
-	line-height:28px;
+	padding-top: 4px;
+	line-height:25px;
 	border-bottom: 1.25px solid #777;
+	
 	}
 }
 
@@ -349,38 +357,42 @@ body {
 	height: 130px;
 	width: 100%;
 
-	margin: 0 2px 0 4px;
+	margin: 0 4px 0 4px;
 
 }
 .post_user {
 	float: left;
 	clear: both;
-	margin-right: 8px;
+	margin-right: 4%;
+	width: 23%;
 	p {
 	padding-top: 0;
 	height: 30px;
+	overflow: hidden;
 	}
 	img {
 	border-radius: 7px;
-
+	width: 90%;
+	height: 90%;
 	}
 }
 .post_contain {
 	float: left;
-	margin-right: 4px;
+	margin-right: 3%;
 	width: 40%;
 	p {
-	height: 35px;
+	height: 30px;
 	overflow: hidden;
 	}
 }
 .sub_contain {
 	float: left;
+	width: 30%;
 }
 
 .more {
 	width: 70%;
-	margin: 20px auto 0;
+	margin: 4px auto 0;
     font-size: 20px;
 	clear: both;
 	font-weight: bold;
@@ -401,17 +413,19 @@ body {
 
 .success {
 	height: 200px;
-	width: 100%;
+	width: 90%;
 	margin: 30px auto;
 	h2 {
 	text-align: center;
-	padding: 0 10px;
+	padding: 0 0px;
+	}
+	.btn {
+	width: 50%;
+	margin: 35px auto;
+	text-align: center;
 	}
 }
-.success .btn {
-	width: 250px;
-	margin: 35px 75px;
-}
+
 
 // イベント詳細
 
@@ -466,9 +480,12 @@ body {
 		margin-bottom: 10px;
 		.comimg {
             float: left;
-            margin-right: 6px;
+            margin-right: 3%;
+            width: 19%;
             img {
             	border-radius: 3px;
+            	width: 100%;
+            	height: 100%;
             }
 		}
 		.comtxt {
@@ -490,13 +507,17 @@ body {
 			}
 			ul {
 				li {
-					width: 132.5px;
+					width: 50%;
 
 				    float: left;
 					list-style: none;
-					font-size: 14px;
-					text-align: center;
+					font-size: 15px;
+
 				}
+			}
+			img {
+			width: 90%;
+			height: 50%;
 			}
 
 		}
@@ -547,6 +568,9 @@ body {
 	}
 	.len {
 	width: 70%;
+	}
+	textarea {
+	resize: horizontal;
 	}
 
 }
@@ -640,7 +664,7 @@ body {
 }
 
 .commbtn {
-	width: 95%;
+	width: 96%;
 	margin: 2.5px auto 10px;
 	text-align: center;
 }
@@ -738,7 +762,7 @@ body {
 	    margin: 0 auto;
 		h2 {
 			text-align: center;
-			padding-bottom: 5px;
+			padding: 8px 0;
 		}
 		.chat {
 			h2 {
@@ -756,7 +780,7 @@ body {
 			}
 		}
 		#search {
-			margin: 0  0 10px 0;
+			margin: 0  2% 10px;
 			clear: both;
 		}
 		.comments {
@@ -771,7 +795,7 @@ body {
 			height: 22px;
 		}
 		input {
-			margin: 10px;
+			margin: 5px;
 		}
 		input[type="submit"]:disabled {
 	        background-color: #ffddbc;    
@@ -779,7 +803,7 @@ body {
 		.room_rule {
 		p {
 		  text-align: center;
-		  margin: 0 0 20px;
+		  margin: 0 2% 20px;
 		}
 		}
 }
@@ -832,11 +856,19 @@ body {
 		.btn_mo {
 		margin: 35px 0;
 		width: 70%;
+		text-align: center; 
 		}
 		input[type="submit"]:disabled {
-	        background-color: #ffddbc;    
+	        background-color: #ffddbc; 
 	    }
 	}
 }
 
-
+.user_edit {
+	.form-group {
+	text-align: center;
+	#diary_image {
+	width: 100%;
+	}
+	}
+}

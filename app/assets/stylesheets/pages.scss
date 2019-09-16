@@ -15,7 +15,7 @@ $purple: #660099;
 	text-align: center;
 	margin: 10px 0 10px;
 	color: $blue;
-	font-size: 46px;
+	font-size: 40px;
 
 	}
 	.back {
@@ -36,8 +36,8 @@ $purple: #660099;
 
 		h3 {
 			text-align: center;
-			font-size: 34px;
-	        max-width: 900px;
+			font-size: 32px;
+	        width: 100%;
 			background-color: #20b2aa;
 			color: #fff;
 			height: 55px;
@@ -53,7 +53,7 @@ $purple: #660099;
 			margin: 20px 0 10px;
 		}
 		p {
-			font-size: 17px;
+			font-size: 16px;
 			margin-bottom: 20px;
 			line-height: 40px;
 			padding: 0 20px;
@@ -69,7 +69,7 @@ $purple: #660099;
 	.last {
 	p {
 		padding: 20px 20px;
-		font-size: 17px;
+		font-size: 16px;
 	}
 	}
 	.manage {
@@ -120,7 +120,7 @@ $purple: #660099;
 		.contents {
 		  .right { 
 		    display: none;
-		    height: 2540px!important;
+		    max-height: 2440px!important;
 
 		  }
 		}
@@ -137,13 +137,13 @@ $purple: #660099;
 	.para {
 
 		h3 {
-			font-size: 34px;
-	        max-width: 900px;
+			font-size: 32px;
+	        width: 100%;
 			background-color: #33CC66;
 			color: #fff;
-			height: 55px;
+			height: 50px;
 			padding: 2px 0px;
-			margin: 50px 0 45px;
+			margin: 50px 0 35px;
 			text-align: center;
 		}
 		}
@@ -155,12 +155,14 @@ $purple: #660099;
 			border-bottom: 2px solid #33CC66;
 		}
 		p {
-			font-size: 18px;
-			margin-bottom: 30px;
-			line-height: 40px;
-			padding: 0 20px;
+			font-size: 16px;
+			margin-bottom: 26px;
+			line-height: 36px;
+			padding: 0 8%;
 			img {
 			margin: 0 0px;
+			width: 98%;
+			height: 98%;
 			}
 		}
 	}
@@ -219,9 +221,13 @@ height: 100%;
 
 .links {
 	padding: 0 0 30px;
+	h3 {
+	font-size: 24px!important;
+	height: 38px!important;
+	}
 	ul {
 
-		padding-left: 34px;
+		padding: 0 6% 0 12%;
 		margin-bottom: 20px;
 		li {
     		line-height: 30px!important;

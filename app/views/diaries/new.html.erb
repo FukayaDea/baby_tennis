@@ -6,7 +6,7 @@
 			<h2>テニス日記</h2>
 		      <div class="form-group file">
 
-				<%= f.text_area :text, placeholder: "活動の内容や振り返り、感想などを自由に書こう", cols:"38", rows:"5", class:"form-control", id:"comment_submit" %>
+				<%= f.text_area :text, placeholder: "活動の内容や振り返り、感想などを自由に書こう", cols:"31", rows:"5", class:"form-control", id:"comment_submit" %>
 		      	<p><span class="data">画像を追加</span></p>
 		        <%= f.file_field :image %>
 				<%= f.submit "投稿", class: 'btn_mo', id:"submit_btn" %>

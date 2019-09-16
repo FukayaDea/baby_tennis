@@ -9,7 +9,7 @@
     </div>
     <div class="comtxt">
 		<ul>
-		  <li><%= diary.created_at.strftime("%Y/%m/%d/%H:%M") %>
+		  <li><%= diary.created_at.strftime("%m/%d/%H:%M") %>
 		  <% if user_signed_in? && diary.user.id == current_user.id %>
 		  <li><%= link_to '削除', "/diaries/#{diary.id}", method: :delete, class: "editbtn", remote: true, data: {confirm: "削除しますか？"} %>
 		  <% end %>
@@ -17,7 +17,7 @@
 		 <p><a href="/users/<%= diary.user.id %>" class="name">◆ <%= diary.user.nickname %></a><br>
 		<%= simple_format(h(diary.text)) %></p>
 	    <% if diary.image.attached? %>
-		    <%= image_tag(rails_blob_path(diary.image),:size => "370x250") %>
+		    <%= image_tag(rails_blob_path(diary.image),:size => "220x220") %>
 	    <% end %>
 		 <% if user_signed_in? %>
 			<% if current_user.already_liked_d?(diary) %>

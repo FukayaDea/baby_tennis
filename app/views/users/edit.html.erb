@@ -14,7 +14,7 @@
 			<p><span class="data">活動エリア</span></p>
 			<%= f.text_field :play_erea, placeholder: "活動エリア", class:"form-control", size: 30 %></p>
 			<p><span class="data">フリー</span></p>
-			<%= f.text_area :profile, placeholder: "自己紹介", cols:"38", rows:"3", class:"form-control" %>
+			<%= f.text_area :profile, placeholder: "自己紹介", cols:"32", rows:"3", class:"form-control" %>
 			<p><span class="data">メールアドレス(非公開)</span></p>
 			<p><%= current_user.email %></p>
 			<p><%= link_to 'メールアドレスを変更する', '/email/new' %></p>
