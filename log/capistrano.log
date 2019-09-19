@@ -18940,3 +18940,21 @@ remote: Counting objects:   6% (1/16)[Kremote: Counting objects:  12% (2/16)[
   INFO [a07801f0] Running /usr/bin/env echo "Branch master (at 2f21e89b904c413b869ea127646a4f6c386763ee) deployed as release 20190917132419 by fukamachitakuya" >> /var/www/baby_tennis/revisions.log as gattsu@163.44.169.39
  DEBUG [a07801f0] Command: cd /var/www/baby_tennis/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 2f21e89b904c413b869ea127646a4f6c386763ee) deployed as release 20190917132419 by fukamachitakuya" >> /var/www/baby_tennis/revisions.log )
   INFO [a07801f0] Finished in 0.310 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-09-19 18:16:57 +0900 cap production deploy:assets:precompile
+  INFO ---------------------------------------------------------------------------
+ DEBUG [f13528c3] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as gattsu@163.44.169.39
+ DEBUG [f13528c3] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [f13528c3] Finished in 1.146 seconds with exit status 0 (successful).
+ DEBUG [e6c1cd89] Running if test ! -d /var/www/baby_tennis/current; then echo "Directory does not exist '/var/www/baby_tennis/current'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [e6c1cd89] Command: if test ! -d /var/www/baby_tennis/current; then echo "Directory does not exist '/var/www/baby_tennis/current'" 1>&2; false; fi
+ DEBUG [e6c1cd89] Finished in 0.296 seconds with exit status 0 (successful).
+  INFO [77e08034] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as gattsu@163.44.169.39
+ DEBUG [77e08034] Command: cd /var/www/baby_tennis/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [77e08034] 	[2K
+ DEBUG [77e08034] 	[1G[1myarn install v1.17.3[22m
+ DEBUG [77e08034] 	[2K[1G[2m[1/4][22m Resolving packages...
+ DEBUG [77e08034] 	[1G⠁ [0K[2K[1G
+ DEBUG [77e08034] 	[2K[1G[32msuccess[39m Already up-to-date.
+ DEBUG [77e08034] 	[2K[1GDone in 0.19s.
+  INFO [77e08034] Finished in 3.452 seconds with exit status 0 (successful).
