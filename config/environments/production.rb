@@ -22,7 +22,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = true
 
-  config.assets.enabled = true
+  #config.assets.enabled = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
