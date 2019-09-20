@@ -90,4 +90,5 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
+gem 'bootstrap', '~> 4.1.1'
 
