@@ -14,14 +14,14 @@ class ChatsController < ApplicationController
 
 	def create
 		Chat.create(create_params)
-		@chats = Chat.includes(:user).all.order(created_at: :desc)
+		@chats = Chat.includes(:user).all.order(created_at: :desc).page(params[:page]).per(50)
 
 	end
 
 	def destroy
 		chat = Chat.find(params[:id])
 		chat.destroy
-		@chats = Chat.includes(:user).all.order(created_at: :desc)
+		@chats = Chat.includes(:user).all.order(created_at: :desc).page(params[:page]).per(50)
 
 
 	end
