@@ -29138,3 +29138,292 @@ remote: Compressing objects:  33% (1/3)[Kremote: Compressing objects:  66% (2/
   INFO [b6a21a98] Running /usr/bin/env echo "Branch master (at 07f0ca05578fb4c3255c2bd2eb314352ac8cc465) deployed as release 20191004025822 by fukamachitakuya" >> /var/www/baby_tennis/revisions.log as gattsu@163.44.169.39
  DEBUG [b6a21a98] Command: cd /var/www/baby_tennis/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 07f0ca05578fb4c3255c2bd2eb314352ac8cc465) deployed as release 20191004025822 by fukamachitakuya" >> /var/www/baby_tennis/revisions.log )
   INFO [b6a21a98] Finished in 0.376 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2019-10-04 12:25:50 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [1becfc3b] Running [ -d $HOME/.rbenv/versions/2.5.1 ] as gattsu@163.44.169.39
+ DEBUG [1becfc3b] Command: [ -d $HOME/.rbenv/versions/2.5.1 ]
+ DEBUG [1becfc3b] Finished in 1.744 seconds with exit status 0 (successful).
+  INFO [88333c90] Running /usr/bin/env mkdir -p /tmp as gattsu@163.44.169.39
+ DEBUG [88333c90] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /tmp )
+  INFO [88333c90] Finished in 0.543 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh 0.0%
+  INFO Uploading /tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh 100.0%
+  INFO [766f51a5] Running /usr/bin/env chmod 700 /tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh as gattsu@163.44.169.39
+ DEBUG [766f51a5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env chmod 700 /tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh )
+  INFO [766f51a5] Finished in 0.520 seconds with exit status 0 (successful).
+  INFO [c1ea6489] Running /usr/bin/env git ls-remote git@github.com:FukayaDea/baby_tennis.git HEAD as gattsu@163.44.169.39
+ DEBUG [c1ea6489] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh" ; /usr/bin/env git ls-remote git@github.com:FukayaDea/baby_tennis.git HEAD )
+ DEBUG [c1ea6489] 	5392a6f0bf3b1fa3a10c3bff565b998fee16da7d	HEAD
+  INFO [c1ea6489] Finished in 2.628 seconds with exit status 0 (successful).
+  INFO [3ab608e2] Running /usr/bin/env mkdir -p /var/www/baby_tennis/shared /var/www/baby_tennis/releases as gattsu@163.44.169.39
+ DEBUG [3ab608e2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/baby_tennis/shared /var/www/baby_tennis/releases )
+  INFO [3ab608e2] Finished in 0.427 seconds with exit status 0 (successful).
+  INFO [339877b8] Running /usr/bin/env mkdir -p /var/www/baby_tennis/shared/log /var/www/baby_tennis/shared/tmp/pids /var/www/baby_tennis/shared/tmp/cache /var/www/baby_tennis/shared/tmp/sockets /var/www/baby_tennis/shared/vendor/bundle /var/www/baby_tennis/shared/public/system /var/www/baby_tennis/shared/public/assets as gattsu@163.44.169.39
+ DEBUG [339877b8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/baby_tennis/shared/log /var/www/baby_tennis/shared/tmp/pids /var/www/baby_tennis/shared/tmp/cache /var/www/baby_tennis/shared/tmp/sockets /var/www/baby_tennis/shared/vendor/bundle /var/www/baby_tennis/shared/public/system /var/www/baby_tennis/shared/public/assets )
+  INFO [339877b8] Finished in 0.451 seconds with exit status 0 (successful).
+  INFO [ae2da712] Running /usr/bin/env mkdir -p /var/www/baby_tennis/shared/config as gattsu@163.44.169.39
+ DEBUG [ae2da712] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/baby_tennis/shared/config )
+  INFO [ae2da712] Finished in 0.500 seconds with exit status 0 (successful).
+ DEBUG [95b7f240] Running [ -f /var/www/baby_tennis/shared/config/master.key ] as gattsu@163.44.169.39
+ DEBUG [95b7f240] Command: [ -f /var/www/baby_tennis/shared/config/master.key ]
+ DEBUG [95b7f240] Finished in 0.595 seconds with exit status 0 (successful).
+ DEBUG [a486c078] Running [ -f /var/www/baby_tennis/current/REVISION ] as gattsu@163.44.169.39
+ DEBUG [a486c078] Command: [ -f /var/www/baby_tennis/current/REVISION ]
+ DEBUG [a486c078] Finished in 0.598 seconds with exit status 0 (successful).
+ DEBUG [503bfb38] Running /usr/bin/env cat /var/www/baby_tennis/current/REVISION 2>/dev/null as gattsu@163.44.169.39
+ DEBUG [503bfb38] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env cat /var/www/baby_tennis/current/REVISION 2>/dev/null )
+ DEBUG [503bfb38] 	07f0ca05578fb4c3255c2bd2eb314352ac8cc465
+ DEBUG [503bfb38] Finished in 0.505 seconds with exit status 0 (successful).
+ DEBUG [0efffe30] Running [ -f /var/www/baby_tennis/repo/HEAD ] as gattsu@163.44.169.39
+ DEBUG [0efffe30] Command: [ -f /var/www/baby_tennis/repo/HEAD ]
+ DEBUG [0efffe30] Finished in 0.522 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/baby_tennis/repo
+ DEBUG [5202be9e] Running if test ! -d /var/www/baby_tennis/repo; then echo "Directory does not exist '/var/www/baby_tennis/repo'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [5202be9e] Command: if test ! -d /var/www/baby_tennis/repo; then echo "Directory does not exist '/var/www/baby_tennis/repo'" 1>&2; false; fi
+ DEBUG [5202be9e] Finished in 0.501 seconds with exit status 0 (successful).
+  INFO [a2b235ec] Running /usr/bin/env git remote set-url origin git@github.com:FukayaDea/baby_tennis.git as gattsu@163.44.169.39
+ DEBUG [a2b235ec] Command: cd /var/www/baby_tennis/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh" ; /usr/bin/env git remote set-url origin git@github.com:FukayaDea/baby_tennis.git )
+  INFO [a2b235ec] Finished in 0.544 seconds with exit status 0 (successful).
+  INFO [8b9c1200] Running /usr/bin/env git remote update --prune as gattsu@163.44.169.39
+ DEBUG [8b9c1200] Command: cd /var/www/baby_tennis/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8b9c1200] 	Fetching origin
+ DEBUG [8b9c1200] 	remote: Enumerating objects: 13, done.[K
+remote: Counting objects:   7% (1/13)[Kremote: Counting objects:  15% (2/13)[Kremote: Counting objects:  23% (3/13)[Kremote: Counting objects:  30% (4/13)[Kremote: Counting objects:  38% (5/13)[Kremote: Counting objects:  46% (6/13)[Kremote: Counting objects:  53% (7/13)[Kremote: Counting objects:  61% (8/13)[Kremote: Counting objects:  69% (9/13)[Kremote: Counting objects:  76% (10/13)[Kremote: Counting objects:  84% (11/13)[Kremote: Counting objects:  92% (12/13)[Kremote: Counting objects: 100% (13/13)[Kremote: Counting objects: 100% (13/13), done.[K
+remote: Compressing objects:  33% (1/3)[Kremote: Compressing objects:  66% (2/3)[Kremote: Compressing objects: 100% (3/3)[K
+ DEBUG [8b9c1200] 	remote: Compressing objects: 100% (3/3), done.[K
+ DEBUG [8b9c1200] 	remote: Total 7 (delta 5), reused 6 (delta 4), pack-reused 0[K
+ DEBUG [8b9c1200] 	Unpacking objects:  14% (1/7)   
+ DEBUG [8b9c1200] 	Unpacking objects:  28% (2/7)   Unpacking objects:  42% (3/7)   Unpacking objects:  57% (4/7)   Unpacking objects:  71% (5/7)   Unpacking objects:  85% (6/7)   
+ DEBUG [8b9c1200] 	Unpacking objects: 100% (7/7)   Unpacking objects: 100% (7/7), done.
+ DEBUG [8b9c1200] 	From github.com:FukayaDea/baby_tennis
+   07f0ca0..5392a6f  master     -> master
+  INFO [8b9c1200] Finished in 2.912 seconds with exit status 0 (successful).
+ DEBUG [3d30b73c] Running if test ! -d /var/www/baby_tennis/repo; then echo "Directory does not exist '/var/www/baby_tennis/repo'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [3d30b73c] Command: if test ! -d /var/www/baby_tennis/repo; then echo "Directory does not exist '/var/www/baby_tennis/repo'" 1>&2; false; fi
+ DEBUG [3d30b73c] Finished in 0.345 seconds with exit status 0 (successful).
+  INFO [88f0c7df] Running /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600 as gattsu@163.44.169.39
+ DEBUG [88f0c7df] Command: cd /var/www/baby_tennis/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh" ; /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600 )
+  INFO [88f0c7df] Finished in 0.515 seconds with exit status 0 (successful).
+  INFO [505a65e1] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/baby_tennis/releases/20191004032600 as gattsu@163.44.169.39
+ DEBUG [505a65e1] Command: cd /var/www/baby_tennis/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/baby_tennis/releases/20191004032600 )
+  INFO [505a65e1] Finished in 0.920 seconds with exit status 0 (successful).
+ DEBUG [b5579700] Running if test ! -d /var/www/baby_tennis/repo; then echo "Directory does not exist '/var/www/baby_tennis/repo'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [b5579700] Command: if test ! -d /var/www/baby_tennis/repo; then echo "Directory does not exist '/var/www/baby_tennis/repo'" 1>&2; false; fi
+ DEBUG [b5579700] Finished in 0.464 seconds with exit status 0 (successful).
+ DEBUG [7cc303bc] Running /usr/bin/env git rev-list --max-count=1 master as gattsu@163.44.169.39
+ DEBUG [7cc303bc] Command: cd /var/www/baby_tennis/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-baby_tennis-production-fukamachitakuya.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7cc303bc] 	5392a6f0bf3b1fa3a10c3bff565b998fee16da7d
+ DEBUG [7cc303bc] Finished in 0.647 seconds with exit status 0 (successful).
+ DEBUG [a3b3b056] Running if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [a3b3b056] Command: if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi
+ DEBUG [a3b3b056] Finished in 0.522 seconds with exit status 0 (successful).
+  INFO [dcf8cf9b] Running /usr/bin/env echo "5392a6f0bf3b1fa3a10c3bff565b998fee16da7d" > REVISION as gattsu@163.44.169.39
+ DEBUG [dcf8cf9b] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "5392a6f0bf3b1fa3a10c3bff565b998fee16da7d" > REVISION )
+  INFO [dcf8cf9b] Finished in 0.447 seconds with exit status 0 (successful).
+  INFO [016f044d] Running /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600/config as gattsu@163.44.169.39
+ DEBUG [016f044d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600/config )
+  INFO [016f044d] Finished in 0.491 seconds with exit status 0 (successful).
+ DEBUG [70e4a466] Running [ -L /var/www/baby_tennis/releases/20191004032600/config/master.key ] as gattsu@163.44.169.39
+ DEBUG [70e4a466] Command: [ -L /var/www/baby_tennis/releases/20191004032600/config/master.key ]
+ DEBUG [70e4a466] Finished in 0.707 seconds with exit status 1 (failed).
+ DEBUG [b0400f7e] Running [ -f /var/www/baby_tennis/releases/20191004032600/config/master.key ] as gattsu@163.44.169.39
+ DEBUG [b0400f7e] Command: [ -f /var/www/baby_tennis/releases/20191004032600/config/master.key ]
+ DEBUG [b0400f7e] Finished in 0.456 seconds with exit status 0 (successful).
+  INFO [263d038a] Running /usr/bin/env rm /var/www/baby_tennis/releases/20191004032600/config/master.key as gattsu@163.44.169.39
+ DEBUG [263d038a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm /var/www/baby_tennis/releases/20191004032600/config/master.key )
+  INFO [263d038a] Finished in 0.576 seconds with exit status 0 (successful).
+  INFO [4b1a32ca] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/config/master.key /var/www/baby_tennis/releases/20191004032600/config/master.key as gattsu@163.44.169.39
+ DEBUG [4b1a32ca] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/config/master.key /var/www/baby_tennis/releases/20191004032600/config/master.key )
+  INFO [4b1a32ca] Finished in 0.597 seconds with exit status 0 (successful).
+  INFO [d028ab9b] Running /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600 /var/www/baby_tennis/releases/20191004032600/tmp /var/www/baby_tennis/releases/20191004032600/vendor /var/www/baby_tennis/releases/20191004032600/public as gattsu@163.44.169.39
+ DEBUG [d028ab9b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600 /var/www/baby_tennis/releases/20191004032600/tmp /var/www/baby_tennis/releases/20191004032600/vendor /var/www/baby_tennis/releases/20191004032600/public )
+  INFO [d028ab9b] Finished in 0.507 seconds with exit status 0 (successful).
+ DEBUG [a49801ef] Running [ -L /var/www/baby_tennis/releases/20191004032600/log ] as gattsu@163.44.169.39
+ DEBUG [a49801ef] Command: [ -L /var/www/baby_tennis/releases/20191004032600/log ]
+ DEBUG [a49801ef] Finished in 0.526 seconds with exit status 1 (failed).
+ DEBUG [4fdde3e8] Running [ -d /var/www/baby_tennis/releases/20191004032600/log ] as gattsu@163.44.169.39
+ DEBUG [4fdde3e8] Command: [ -d /var/www/baby_tennis/releases/20191004032600/log ]
+ DEBUG [4fdde3e8] Finished in 0.511 seconds with exit status 0 (successful).
+  INFO [321558bf] Running /usr/bin/env rm -rf /var/www/baby_tennis/releases/20191004032600/log as gattsu@163.44.169.39
+ DEBUG [321558bf] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /var/www/baby_tennis/releases/20191004032600/log )
+  INFO [321558bf] Finished in 0.532 seconds with exit status 0 (successful).
+  INFO [a4038a1c] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/log /var/www/baby_tennis/releases/20191004032600/log as gattsu@163.44.169.39
+ DEBUG [a4038a1c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/log /var/www/baby_tennis/releases/20191004032600/log )
+  INFO [a4038a1c] Finished in 0.500 seconds with exit status 0 (successful).
+ DEBUG [e4f1d91d] Running [ -L /var/www/baby_tennis/releases/20191004032600/tmp/pids ] as gattsu@163.44.169.39
+ DEBUG [e4f1d91d] Command: [ -L /var/www/baby_tennis/releases/20191004032600/tmp/pids ]
+ DEBUG [e4f1d91d] Finished in 0.590 seconds with exit status 1 (failed).
+ DEBUG [06557c6b] Running [ -d /var/www/baby_tennis/releases/20191004032600/tmp/pids ] as gattsu@163.44.169.39
+ DEBUG [06557c6b] Command: [ -d /var/www/baby_tennis/releases/20191004032600/tmp/pids ]
+ DEBUG [06557c6b] Finished in 0.449 seconds with exit status 1 (failed).
+  INFO [4dc73629] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/tmp/pids /var/www/baby_tennis/releases/20191004032600/tmp/pids as gattsu@163.44.169.39
+ DEBUG [4dc73629] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/tmp/pids /var/www/baby_tennis/releases/20191004032600/tmp/pids )
+  INFO [4dc73629] Finished in 0.598 seconds with exit status 0 (successful).
+ DEBUG [caf4057b] Running [ -L /var/www/baby_tennis/releases/20191004032600/tmp/cache ] as gattsu@163.44.169.39
+ DEBUG [caf4057b] Command: [ -L /var/www/baby_tennis/releases/20191004032600/tmp/cache ]
+ DEBUG [caf4057b] Finished in 0.479 seconds with exit status 1 (failed).
+ DEBUG [6f7a1b35] Running [ -d /var/www/baby_tennis/releases/20191004032600/tmp/cache ] as gattsu@163.44.169.39
+ DEBUG [6f7a1b35] Command: [ -d /var/www/baby_tennis/releases/20191004032600/tmp/cache ]
+ DEBUG [6f7a1b35] Finished in 0.413 seconds with exit status 1 (failed).
+  INFO [9b6780f3] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/tmp/cache /var/www/baby_tennis/releases/20191004032600/tmp/cache as gattsu@163.44.169.39
+ DEBUG [9b6780f3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/tmp/cache /var/www/baby_tennis/releases/20191004032600/tmp/cache )
+  INFO [9b6780f3] Finished in 0.516 seconds with exit status 0 (successful).
+ DEBUG [8d5dda73] Running [ -L /var/www/baby_tennis/releases/20191004032600/tmp/sockets ] as gattsu@163.44.169.39
+ DEBUG [8d5dda73] Command: [ -L /var/www/baby_tennis/releases/20191004032600/tmp/sockets ]
+ DEBUG [8d5dda73] Finished in 0.606 seconds with exit status 1 (failed).
+ DEBUG [106769cf] Running [ -d /var/www/baby_tennis/releases/20191004032600/tmp/sockets ] as gattsu@163.44.169.39
+ DEBUG [106769cf] Command: [ -d /var/www/baby_tennis/releases/20191004032600/tmp/sockets ]
+ DEBUG [106769cf] Finished in 0.609 seconds with exit status 1 (failed).
+  INFO [65bb3b66] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/tmp/sockets /var/www/baby_tennis/releases/20191004032600/tmp/sockets as gattsu@163.44.169.39
+ DEBUG [65bb3b66] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/tmp/sockets /var/www/baby_tennis/releases/20191004032600/tmp/sockets )
+  INFO [65bb3b66] Finished in 0.548 seconds with exit status 0 (successful).
+ DEBUG [57b1688f] Running [ -L /var/www/baby_tennis/releases/20191004032600/vendor/bundle ] as gattsu@163.44.169.39
+ DEBUG [57b1688f] Command: [ -L /var/www/baby_tennis/releases/20191004032600/vendor/bundle ]
+ DEBUG [57b1688f] Finished in 0.581 seconds with exit status 1 (failed).
+ DEBUG [6bf1a493] Running [ -d /var/www/baby_tennis/releases/20191004032600/vendor/bundle ] as gattsu@163.44.169.39
+ DEBUG [6bf1a493] Command: [ -d /var/www/baby_tennis/releases/20191004032600/vendor/bundle ]
+ DEBUG [6bf1a493] Finished in 0.418 seconds with exit status 1 (failed).
+  INFO [58179830] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/vendor/bundle /var/www/baby_tennis/releases/20191004032600/vendor/bundle as gattsu@163.44.169.39
+ DEBUG [58179830] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/vendor/bundle /var/www/baby_tennis/releases/20191004032600/vendor/bundle )
+  INFO [58179830] Finished in 0.523 seconds with exit status 0 (successful).
+ DEBUG [a8d3af36] Running [ -L /var/www/baby_tennis/releases/20191004032600/public/system ] as gattsu@163.44.169.39
+ DEBUG [a8d3af36] Command: [ -L /var/www/baby_tennis/releases/20191004032600/public/system ]
+ DEBUG [a8d3af36] Finished in 0.500 seconds with exit status 1 (failed).
+ DEBUG [7eb0f076] Running [ -d /var/www/baby_tennis/releases/20191004032600/public/system ] as gattsu@163.44.169.39
+ DEBUG [7eb0f076] Command: [ -d /var/www/baby_tennis/releases/20191004032600/public/system ]
+ DEBUG [7eb0f076] Finished in 0.515 seconds with exit status 1 (failed).
+  INFO [bc241f38] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/public/system /var/www/baby_tennis/releases/20191004032600/public/system as gattsu@163.44.169.39
+ DEBUG [bc241f38] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/public/system /var/www/baby_tennis/releases/20191004032600/public/system )
+  INFO [bc241f38] Finished in 0.521 seconds with exit status 0 (successful).
+ DEBUG [dd365483] Running [ -L /var/www/baby_tennis/releases/20191004032600/public/assets ] as gattsu@163.44.169.39
+ DEBUG [dd365483] Command: [ -L /var/www/baby_tennis/releases/20191004032600/public/assets ]
+ DEBUG [dd365483] Finished in 0.503 seconds with exit status 1 (failed).
+ DEBUG [eacc4de9] Running [ -d /var/www/baby_tennis/releases/20191004032600/public/assets ] as gattsu@163.44.169.39
+ DEBUG [eacc4de9] Command: [ -d /var/www/baby_tennis/releases/20191004032600/public/assets ]
+ DEBUG [eacc4de9] Finished in 0.496 seconds with exit status 1 (failed).
+  INFO [7e3c0635] Running /usr/bin/env ln -s /var/www/baby_tennis/shared/public/assets /var/www/baby_tennis/releases/20191004032600/public/assets as gattsu@163.44.169.39
+ DEBUG [7e3c0635] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/shared/public/assets /var/www/baby_tennis/releases/20191004032600/public/assets )
+  INFO [7e3c0635] Finished in 0.523 seconds with exit status 0 (successful).
+ DEBUG [aa791c7e] Running if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [aa791c7e] Command: if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi
+ DEBUG [aa791c7e] Finished in 0.625 seconds with exit status 0 (successful).
+ DEBUG [edf9f036] Running $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/baby_tennis/shared/bundle as gattsu@163.44.169.39
+ DEBUG [edf9f036] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle check --path /var/www/baby_tennis/shared/bundle )
+ DEBUG [edf9f036] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [edf9f036] 	[31mThe following gems are missing[0m
+[31m * public_suffix (4.0.1)[0m
+[31m * addressable (2.7.0)[0m
+[31m * net-ssh (5.2.0)[0m
+[31m * net-scp (2.0.0)[0m
+[31m * sshkit (1.20.0)[0m
+[31m * airbrussh (1.3.4)[0m
+[31m * io-like (0.3.0)[0m
+[31m * archive-zip (0.12.0)[0m
+[31m * bindex (0.8.1)[0m
+[31m * byebug (11.0.1)[0m
+[31m * capistrano (3.11.1)[0m
+[31m * capistrano-bundler (1.6.0)[0m
+[31m * capistrano-rails (1.4.0)[0m
+[31m * capistrano-rbenv (2.1.4)[0m
+[31m * regexp_parser (1.6.0)[0m
+[31m * xpath (3.2.0)[0m
+[31m * capybara (3.29.0)[0m
+[31m * childprocess (2.0.0)[0m
+[31m * chromedriver-helper (2.1.1)[0m
+[31m * diff-lcs (1.3)[0m
+[31m * factory_bot (5.0.2)[0m
+[31m * factory_bot_rails (5.0.2)[0m
+[31m * faker (2.4.0)[0m
+[31m * ruby_dep (1.5.0)[0m
+[31m * listen (3.1.5)[0m
+[31m * rails-controller-testing (1.0.4)[0m
+[31m * rspec-support (3.8.2)[0m
+[31m * rspec-core (3.8.2)[0m
+[31m * rspec-expectations (3.8.4)[0m
+[31m * rspec-mocks (3.8.1)[0m
+[31m * rspec-rails (3.8.2)[0m
+[31m * rubyzip (1.2.4)[0m
+[31m * selenium-webdriver (3.142.4)[0m
+[31m * spring (2.1.0)[0m
+[31m * spring-watcher-listen (2.0.1)[0m
+[31m * web-console (3.7.0)[0m
+[33mInstall missing gems with `bundle install`[0m
+ DEBUG [edf9f036] Finished in 0.807 seconds with exit status 1 (failed).
+  INFO [b504675b] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/baby_tennis/shared/bundle --jobs 4 --without development test --deployment --quiet as gattsu@163.44.169.39
+ DEBUG [b504675b] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /var/www/baby_tennis/shared/bundle --jobs 4 --without development test --deployment --quiet )
+  INFO [b504675b] Finished in 1.023 seconds with exit status 0 (successful).
+ DEBUG [08986001] Running if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [08986001] Command: if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi
+ DEBUG [08986001] Finished in 0.519 seconds with exit status 0 (successful).
+  INFO [f7db2d4f] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as gattsu@163.44.169.39
+ DEBUG [f7db2d4f] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" RAILS_GROUPS="" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [f7db2d4f] 	[2K
+ DEBUG [f7db2d4f] 	[1G[1myarn install v1.17.3[22m
+ DEBUG [f7db2d4f] 	[2K[1G[34minfo[39m No lockfile found.
+ DEBUG [f7db2d4f] 	[2K[1G[2m[1/4][22m Resolving packages...
+[1G⠁ [0K
+ DEBUG [f7db2d4f] 	[2K[1G[2K[1G[2m[2/4][22m Fetching packages...
+ DEBUG [f7db2d4f] 	[2K[1G[2m[3/4][22m Linking dependencies...
+ DEBUG [f7db2d4f] 	[2K[1G[2m[4/4][22m Building fresh packages...
+ DEBUG [f7db2d4f] 	[2K[1G[32msuccess[39m Saved lockfile.
+ DEBUG [f7db2d4f] 	[2K[1GDone in 0.13s.
+  INFO [f7db2d4f] Finished in 3.575 seconds with exit status 0 (successful).
+ DEBUG [240257de] Running if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [240257de] Command: if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi
+ DEBUG [240257de] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO [25a23bee] Running /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600/assets_manifest_backup as gattsu@163.44.169.39
+ DEBUG [25a23bee] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mkdir -p /var/www/baby_tennis/releases/20191004032600/assets_manifest_backup )
+  INFO [25a23bee] Finished in 0.514 seconds with exit status 0 (successful).
+ DEBUG [4d3fbda7] Running /usr/bin/env ls /var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest* as gattsu@163.44.169.39
+ DEBUG [4d3fbda7] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest* )
+ DEBUG [4d3fbda7] 	/var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest-961309aa0a95a883eeb040b8eea6e47d.json
+ DEBUG [4d3fbda7] Finished in 0.436 seconds with exit status 0 (successful).
+ DEBUG [aa5765b7] Running /usr/bin/env ls /var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest* as gattsu@163.44.169.39
+ DEBUG [aa5765b7] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls /var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest* )
+ DEBUG [aa5765b7] 	/var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest-961309aa0a95a883eeb040b8eea6e47d.json
+ DEBUG [aa5765b7] Finished in 0.476 seconds with exit status 0 (successful).
+  INFO [d8af7bd4] Running /usr/bin/env cp /var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest-961309aa0a95a883eeb040b8eea6e47d.json /var/www/baby_tennis/releases/20191004032600/assets_manifest_backup as gattsu@163.44.169.39
+ DEBUG [d8af7bd4] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env cp /var/www/baby_tennis/releases/20191004032600/public/assets/.sprockets-manifest-961309aa0a95a883eeb040b8eea6e47d.json /var/www/baby_tennis/releases/20191004032600/assets_manifest_backup )
+  INFO [d8af7bd4] Finished in 0.505 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [6a13b89b] Running if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [6a13b89b] Command: if test ! -d /var/www/baby_tennis/releases/20191004032600; then echo "Directory does not exist '/var/www/baby_tennis/releases/20191004032600'" 1>&2; false; fi
+ DEBUG [6a13b89b] Finished in 0.505 seconds with exit status 0 (successful).
+  INFO [4f13b4fe] Running $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate as gattsu@163.44.169.39
+ DEBUG [4f13b4fe] Command: cd /var/www/baby_tennis/releases/20191004032600 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" RAILS_ENV="production" ; $HOME/.rbenv/bin/rbenv exec bundle exec rake db:migrate )
+  INFO [4f13b4fe] Finished in 2.231 seconds with exit status 0 (successful).
+  INFO [3eb9f1e0] Running /usr/bin/env ln -s /var/www/baby_tennis/releases/20191004032600 /var/www/baby_tennis/releases/current as gattsu@163.44.169.39
+ DEBUG [3eb9f1e0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ln -s /var/www/baby_tennis/releases/20191004032600 /var/www/baby_tennis/releases/current )
+  INFO [3eb9f1e0] Finished in 0.529 seconds with exit status 0 (successful).
+  INFO [82168461] Running /usr/bin/env mv /var/www/baby_tennis/releases/current /var/www/baby_tennis as gattsu@163.44.169.39
+ DEBUG [82168461] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env mv /var/www/baby_tennis/releases/current /var/www/baby_tennis )
+  INFO [82168461] Finished in 0.626 seconds with exit status 0 (successful).
+ DEBUG [c9bfb442] Running [ -f /var/www/baby_tennis/current/tmp/pids/unicorn.pid ] as gattsu@163.44.169.39
+ DEBUG [c9bfb442] Command: [ -f /var/www/baby_tennis/current/tmp/pids/unicorn.pid ]
+ DEBUG [c9bfb442] Finished in 0.528 seconds with exit status 0 (successful).
+  INFO [dc2bbbf2] Running /usr/bin/env kill -s USR2 $(< /var/www/baby_tennis/current/tmp/pids/unicorn.pid) as gattsu@163.44.169.39
+ DEBUG [dc2bbbf2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env kill -s USR2 $(< /var/www/baby_tennis/current/tmp/pids/unicorn.pid) )
+  INFO [dc2bbbf2] Finished in 0.485 seconds with exit status 0 (successful).
+ DEBUG [fe6b3ae1] Running /usr/bin/env ls -x /var/www/baby_tennis/releases as gattsu@163.44.169.39
+ DEBUG [fe6b3ae1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env ls -x /var/www/baby_tennis/releases )
+ DEBUG [fe6b3ae1] 	20190924041927	20190927041817	20190927043923	20191004025313	20191004025822
+20191004032600
+ DEBUG [fe6b3ae1] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 163.44.169.39
+ DEBUG [0730e6bb] Running [ -d /var/www/baby_tennis/current ] as gattsu@163.44.169.39
+ DEBUG [0730e6bb] Command: [ -d /var/www/baby_tennis/current ]
+ DEBUG [0730e6bb] Finished in 0.539 seconds with exit status 0 (successful).
+ DEBUG [a3c4f6fc] Running /usr/bin/env readlink /var/www/baby_tennis/current as gattsu@163.44.169.39
+ DEBUG [a3c4f6fc] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env readlink /var/www/baby_tennis/current )
+ DEBUG [a3c4f6fc] 	/var/www/baby_tennis/releases/20191004032600
+ DEBUG [a3c4f6fc] Finished in 0.493 seconds with exit status 0 (successful).
+  INFO [dc6647dd] Running /usr/bin/env rm -rf /var/www/baby_tennis/releases/20190924041927 as gattsu@163.44.169.39
+ DEBUG [dc6647dd] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env rm -rf /var/www/baby_tennis/releases/20190924041927 )
+  INFO [dc6647dd] Finished in 0.445 seconds with exit status 0 (successful).
+ DEBUG [c6047e5e] Running if test ! -d /var/www/baby_tennis/releases; then echo "Directory does not exist '/var/www/baby_tennis/releases'" 1>&2; false; fi as gattsu@163.44.169.39
+ DEBUG [c6047e5e] Command: if test ! -d /var/www/baby_tennis/releases; then echo "Directory does not exist '/var/www/baby_tennis/releases'" 1>&2; false; fi
+ DEBUG [c6047e5e] Finished in 0.480 seconds with exit status 0 (successful).
+  INFO [7eebbe22] Running /usr/bin/env echo "Branch master (at 5392a6f0bf3b1fa3a10c3bff565b998fee16da7d) deployed as release 20191004032600 by fukamachitakuya" >> /var/www/baby_tennis/revisions.log as gattsu@163.44.169.39
+ DEBUG [7eebbe22] Command: cd /var/www/baby_tennis/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.5.1" ; /usr/bin/env echo "Branch master (at 5392a6f0bf3b1fa3a10c3bff565b998fee16da7d) deployed as release 20191004032600 by fukamachitakuya" >> /var/www/baby_tennis/revisions.log )
+  INFO [7eebbe22] Finished in 0.597 seconds with exit status 0 (successful).
