@@ -26,7 +26,7 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <p><span class="data"><%= f.label :email %></span></p>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control"  %>
+        <%= f.email_field :email, autocomplete: "email", class:"form-control"  %>
 
 
         <p><span class="data"><%= f.label :password %></span></p>
