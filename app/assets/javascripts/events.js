@@ -1,4 +1,4 @@
-$(window).on("load", function() {
+$(window).on("turbolinks:load", function() {
   if ($('#comment_submit').val().length == 0) {
     $('#submit_btn').prop('disabled', true);
   }

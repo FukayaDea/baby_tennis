@@ -13,14 +13,14 @@
 //= require jquery
 //= require rails-ujs
 //= require activestorage
-
+//= require turbolinks
 //= require popper
 
 
 
 //= require_tree .
 
-$(window).on("load", function() {
+$(window).on("turbolinks:load", function() {
   $(".close").on("click", function() {
     $(this).hide();
     $(".alert-danger").hide();
@@ -28,7 +28,7 @@ $(window).on("load", function() {
   });
 });
 
-$(window).on("load", function() {
+$(window).on("turbolinks:load", function() {
   $("#liked_user").on("click", function() {
     $(".like_users").show();
   });
