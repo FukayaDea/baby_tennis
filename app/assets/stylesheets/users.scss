@@ -10,6 +10,8 @@ $blue: #0066FF;
 $orange: #ff962d;
 $purple: #660099;
 
+/* @group Contents */
+
 // ユーザー
 // マイページ
 .user_show {
@@ -504,4 +506,59 @@ display: inline;
 .terms_agree {
  color: #666666;
  border-bottom: 2px solid #666666;
+}
+
+/* @end */
+
+/*768px*/
+@media screen and (min-width : 768px){
+
+/* @group Contents */
+
+#sign {
+width : 60%;
+  .field {
+  width: 78%;
+  margin: 0 auto;
+  }
+}
+
+.sns_new {
+}
+
+.user_show {
+  width: 76%;
+}
+
+.user_edit_frame {
+  height: 570px;
+  width: 76%;
+}
+
+/* @end */
+}
+
+/*1024px*/
+@media screen and (min-width : 1024px){
+
+/* @group Contents */
+
+#sign {
+width : 46%;
+  .field {
+  width: 74%;
+  margin: 0 auto;
+  }
+}
+
+.user_show {
+  width: 64%;
+}
+
+.user_edit_frame {
+  height: 570px;
+  width: 50%;
+}
+
+/* @end */
 }

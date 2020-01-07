@@ -19,6 +19,19 @@ line-height : 1.5;
 
 /* @end */
 
+// 変数
+$accent: #33ccff;
+$black: #292929;
+$dark: #666;
+$darkGray: #999999;
+$gray: #D8D8D8;
+$lightGray: #f5f5f3;
+$white: white;
+$blue: #0066FF;
+$s_blue: #4169e1;
+$orange: #ff8e1e;
+$purple: #660099;
+
 /* @group Contents */
 
 #contents {
@@ -33,20 +46,157 @@ text-align : left}
 margin-bottom : 0px;
 box-shadow : 0 0 5px #2f1f1f}
 
+// イベント詳細
+#eve_show {
+	margin: 0 auto;
+	width: 98%;
+	h2 {
+	text-align: center;
+	margin-bottom: 15px;
+	color: 	$blue;
+	}
+}
+.post {
+	border: 2px solid #888;
+	margin: 2.5px auto;
+	min-height: 490px;
+	width: 100%;
+	padding: 25px 35px 40px;
+	background-color: #FFF;
+	p {
+	border-bottom: 1px solid #BBB;
+	}
+	.check {
+	width: 100%;
+
+    }
+	.edit {
+	padding-top: 10px;
+	text-align: right;
+	}
+}
+
+// 検索
+
+.result {
+	h3 {
+	text-align: center;
+	}
+	.pagination {
+	padding-top: 0;
+	}
+	.content {
+	height: calc(90vh - 190px);
+	}
+	.btn {
+	margin: 10px 0;
+	}
+}
+
+.info_result {
+	.comments {
+	margin-top: 100px;
+	}
+	h3 {
+	text-align: center;
+	}
+}
+
+// 掲示板
+
+.room {
+	    width: 98%;
+	    margin: 0 auto;
+		h2 {
+			text-align: center;
+			padding: 8px 0;
+		}
+		.chat {
+			h2 {
+				color: #ff7f00;
+			}
+		}
+		.info {
+			h2 {
+				color: #4169e1;
+			}
+		}
+		.diary {
+			h2 {
+				color: #006a6c;
+			}
+		}
+		#search {
+			margin: 0  2% 10px;
+			clear: both;
+		}
+		.comments {
+			.comment {
+				text-align: left;
+			}
+		}
+		.commbtn {
+		    clear: both;
+		}
+		.name {
+			height: 22px;
+		}
+		input {
+			margin: 5px;
+		}
+		input[type="submit"]:disabled {
+	        background-color: #ffddbc;    
+	    }
+		.room_rule {
+		p {
+		  text-align: center;
+		  margin: 0 2% 20px;
+		}
+		}
+}
+
 /* @end */
 
-// 変数
-$accent: #33ccff;
-$black: #292929;
-$dark: #666;
-$darkGray: #999999;
-$gray: #D8D8D8;
-$lightGray: #f5f5f3;
-$white: white;
-$blue: #0066FF;
-$s_blue: #4169e1;
-$orange: #ff8e1e;
-$purple: #660099;
+/*768px*/
+@media screen and (min-width : 768px){
+
+/* @group Contents */
+
+#contents {
+width : 60%;
+text-align : center}
+#eve_show {
+    width: 64%}
+
+.result {
+width : 60%}
+
+.info_result {
+width : 76%;
+}
+
+.room {
+	    width: 76%}
+}
+
+/* @end */
+
+/*1024px*/
+@media screen and (min-width : 1024px){
+
+/* @group Contents */
+
+#contents {
+width : 50%;
+text-align : center}
+#eve_show {
+    width: 50%}
+
+.room {
+	    width: 62%}
+}
+
+/* @end */
 
 // ヘッダー
 
@@ -435,35 +585,7 @@ body {
 
 }
 
-.eve_show {
-	margin: 0 auto;
-	width: 98%;
-	h2 {
-	text-align: center;
-	margin-bottom: 15px;
-	color: 	$blue;
-	}
-}
 
-.post {
-	border: 2px solid #888;
-	margin: 2.5px auto;
-	min-height: 490px;
-	width: 100%;
-	padding: 25px 35px 40px;
-	background-color: #FFF;
-	p {
-	border-bottom: 1px solid #BBB;
-	}
-	.check {
-	width: 100%;
-
-    }
-	.edit {
-	padding-top: 10px;
-	text-align: right;
-	}
-}
 
 // コメント
 
@@ -729,20 +851,7 @@ body {
   text-indent: 0.5em;
 }
 
-.result {
-	h3 {
-	text-align: center;
-	}
-	.pagination {
-	padding-top: 0;
-	}
-	.content {
-	height: calc(90vh - 190px);
-	}
-	.btn {
-	margin: 10px 0;
-	}
-}
+
 
 	
 
@@ -754,68 +863,6 @@ body {
 	padding-top: 100px;
 }
 
-// 掲示板
-
-.room {
-	    width: 98%;
-	    margin: 0 auto;
-		h2 {
-			text-align: center;
-			padding: 8px 0;
-		}
-		.chat {
-			h2 {
-				color: #ff7f00;
-			}
-		}
-		.info {
-			h2 {
-				color: #4169e1;
-			}
-		}
-		.diary {
-			h2 {
-				color: #006a6c;
-			}
-		}
-		#search {
-			margin: 0  2% 10px;
-			clear: both;
-		}
-		.comments {
-			.comment {
-				text-align: left;
-			}
-		}
-		.commbtn {
-		    clear: both;
-		}
-		.name {
-			height: 22px;
-		}
-		input {
-			margin: 5px;
-		}
-		input[type="submit"]:disabled {
-	        background-color: #ffddbc;    
-	    }
-		.room_rule {
-		p {
-		  text-align: center;
-		  margin: 0 2% 20px;
-		}
-		}
-}
-
-
-.info_result {
-	.comments {
-	margin-top: 100px;
-	}
-	h3 {
-	text-align: center;
-	}
-}
 
 //ダイアリー
 
