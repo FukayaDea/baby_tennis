@@ -10,6 +10,8 @@ $s_blue: #4169e1;
 $orange: #ff8e1e;
 $purple: #660099;
 
+/* @group Contents */
+
 .page {
 	h2 {
 	text-align: center;
@@ -120,7 +122,7 @@ $purple: #660099;
 		.contents {
 		  .right { 
 		    display: none;
-		    max-height: 2440px!important;
+		    max-height: 2860px!important;
 
 		  }
 		}
@@ -233,4 +235,47 @@ height: 100%;
     		line-height: 30px!important;
 		}
 	}
+}
+
+/* @end */
+
+/*768px*/
+@media screen and (min-width : 768px){
+
+/* @group Contents */
+
+.page {
+	.tab-menu {
+
+		ul {
+		    max-width: 670px;
+		    margin: 0 auto 30px;
+		}
+		li {
+		    width: 49%;
+		}
+    }
+}
+
+.how {
+    max-width: 960px;}
+.about {
+    width: 88%;}
+.terms {
+    width: 88%;}
+
+/* @end */
+}
+
+/*1024px*/
+@media screen and (min-width : 1024px){
+
+/* @group Contents */
+
+.about {
+    max-width: 960px;}
+.terms {
+    max-width: 960px;}
+
+/* @end */
 }

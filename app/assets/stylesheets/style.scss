@@ -46,6 +46,13 @@ text-align : left}
 margin-bottom : 0px;
 box-shadow : 0 0 5px #2f1f1f}
 
+.box {
+	border: 2px solid #00bfff;
+	max-width: 600px; 
+	padding: 10px 30px!important;
+	margin: 0 10px 38px!important;
+}
+
 // イベント詳細
 #eve_show {
 	margin: 0 auto;
@@ -155,6 +162,47 @@ box-shadow : 0 0 5px #2f1f1f}
 		}
 }
 
+// 入力フォーム
+.form-group {
+    margin-top: 10px;
+	.form-control {
+	border: 1px solid #888;
+	background-color: #fff;
+	}
+	.len {
+	width: 70%;
+	}
+	textarea {
+	resize: horizontal;
+	}
+
+}
+
+// ダイアリー
+.di_new {
+	width: 98%;
+	margin: 0 auto;
+	.user_edit_frame {
+		height: 420px;
+		h2 {
+		text-align: center;
+        margin-bottom: 20px; 
+        color: $orange;
+		}
+		p {
+		margin: 10px 0;
+		}
+		.btn_mo {
+		margin: 35px 0;
+		width: 70%;
+		text-align: center; 
+		}
+		input[type="submit"]:disabled {
+	        background-color: #ffddbc; 
+	    }
+	}
+}
+
 /* @end */
 
 /*768px*/
@@ -162,11 +210,17 @@ box-shadow : 0 0 5px #2f1f1f}
 
 /* @group Contents */
 
+.box {
+	max-width: 500px; 
+	margin: 0 auto 30px!important;
+}
+
 #contents {
-width : 60%;
+max-width : 680px;
 text-align : center}
+
 #eve_show {
-    width: 64%}
+    max-width : 640px;}
 
 .result {
 width : 60%}
@@ -176,7 +230,12 @@ width : 76%;
 }
 
 .room {
-	    width: 76%}
+	    max-width : 700px;}
+
+
+.di_new {
+	max-width: 720px;}
+
 }
 
 /* @end */
@@ -186,17 +245,9 @@ width : 76%;
 
 /* @group Contents */
 
-#contents {
-width : 50%;
-text-align : center}
-#eve_show {
-    width: 50%}
-
-.room {
-	    width: 62%}
-}
 
 /* @end */
+}
 
 // ヘッダー
 
@@ -229,12 +280,7 @@ img {
   object-fit: cover; 
 }
 
-.box {
-	border: 2px solid #00bfff;
-	max-width: 600px; 
-	padding: 10px 30px!important;
-	margin: 0 10px 38px!important;
-}
+
 
 .midle {
 	font-size: 20px;
@@ -680,21 +726,6 @@ body {
 	}
 }
 
-// 入力フォーム
-.form-group {
-    margin-top: 10px;
-	.form-control {
-	border: 1px solid #888;
-	background-color: #fff;
-	}
-	.len {
-	width: 70%;
-	}
-	textarea {
-	resize: horizontal;
-	}
-
-}
 
 // 画像
 .image {
@@ -884,31 +915,6 @@ body {
 	}
 }
 
-
-
-.di_new {
-	width: 98%;
-	margin: 0 auto;
-	.user_edit_frame {
-		height: 420px;
-		h2 {
-		text-align: center;
-        margin-bottom: 20px; 
-        color: $orange;
-		}
-		p {
-		margin: 10px 0;
-		}
-		.btn_mo {
-		margin: 35px 0;
-		width: 70%;
-		text-align: center; 
-		}
-		input[type="submit"]:disabled {
-	        background-color: #ffddbc; 
-	    }
-	}
-}
 
 .user_edit {
 	.form-group {

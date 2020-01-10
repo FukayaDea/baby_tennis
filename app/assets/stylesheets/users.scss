@@ -286,7 +286,6 @@ $purple: #660099;
 .my_likes {
   margin-bottom: 20px;
   .my_like {
-    margin: 0 0 0px;
     padding: 10px 2% 20px;
     background-color: #FFF;
     border-bottom: 2px solid #bbb;
@@ -516,9 +515,9 @@ display: inline;
 /* @group Contents */
 
 #sign {
-width : 60%;
+max-width : 650px;
   .field {
-  width: 78%;
+  width: 74%;
   margin: 0 auto;
   }
 }
@@ -527,13 +526,41 @@ width : 60%;
 }
 
 .user_show {
-  width: 76%;
+  max-width: 700px;
 }
 
 .user_edit_frame {
-  height: 570px;
-  width: 76%;
+  max-width: 560px;
 }
+
+.user_edit {
+  width: 76%;
+  .edi_btn {
+  width: 52%;
+  margin: 16px 0;
+  }
+}
+
+.profile {
+  padding: 12px 14px 12px 24px;}
+
+.my_events {
+  padding: 15px 8%;}
+
+.user_comments {
+  padding: 15px 8%;
+}
+
+.my_diaries {
+  padding: 20px 8%;
+}
+.my_likes {
+  margin-bottom: 20px;
+  .my_like {
+    padding: 10px 8% 20px;
+    }
+}
+
 
 /* @end */
 }
@@ -543,21 +570,26 @@ width : 60%;
 
 /* @group Contents */
 
-#sign {
-width : 46%;
-  .field {
-  width: 74%;
-  margin: 0 auto;
-  }
+
+.profile {
+  padding: 20px 22px 20px 34px;}
+
+.my_events {
+  padding: 20px 10%;}
+
+.user_comments {
+  padding: 20px 10%;
 }
 
-.user_show {
-  width: 64%;
+.my_diaries {
+  padding: 20px 10%;
 }
 
-.user_edit_frame {
-  height: 570px;
-  width: 50%;
+.my_likes {
+  margin-bottom: 20px;
+  .my_like {
+    padding: 12px 10% 22px;
+    }
 }
 
 /* @end */
